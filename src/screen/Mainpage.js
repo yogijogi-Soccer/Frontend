@@ -21,6 +21,7 @@ function Mainpage() {
     <div>
     <Header />
     <div>요기조기 메인페이지</div>
+    <Button>버튼</Button>
     <Navigationbar />
     </div>
   );

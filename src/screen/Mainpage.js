@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Header from '../component/header'
 import Navigationbar from '../component/navigationbar';
+import Button from '../component/Button';
 
 
 function Mainpage() {

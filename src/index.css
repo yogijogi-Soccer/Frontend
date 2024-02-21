@@ -28,6 +28,12 @@ html {
   min-width: 100vw;
   height: 92px;
   background-color: #d8d8d8;
+  text-decoration: none;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -78,5 +84,25 @@ table {
 /* 추가 세팅 */
 :root {
   --vh: 100%;
-  --pointColor: #7AE582;
+
+  /*기본 흰~검 팔레트*/
+  --color-normal1 : #F8F9FA;
+  --color-normal2 : #E9ECEF;
+  --color-normal3 : #DEE2E6;
+  --color-normal4 : #CED4DA;
+  --color-normal5 : #ADB5BD;
+  --color-normal6 : #6C757D;
+  --color-normal7 : #495057;
+  --color-normal8 : #343A40;
+  --color-normal9 : #212529;
+
+  /* 공지 빨강 */
+  --color-error : #FF3838;
+
+  /* 포인트 색상 */
+  --color-point-darkturquoise : #004E64;
+  --color-point-cyan : #00A5CF;
+  --color-point-lightgreen : #9FFFCB;
+  --color-point-applegreen : #7AE582;
+  --color-point-green : #25A18E;
 }

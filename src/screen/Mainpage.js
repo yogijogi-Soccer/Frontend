@@ -1,4 +1,5 @@
 //메인페이지
+import React from 'react';
 import { useEffect } from 'react';
 import Header from '../component/header'
 import Navigationbar from '../component/navigationbar';

@@ -1,4 +1,5 @@
 //마이페이지
+import React from 'react';
 
 function Mypage(){
     return (

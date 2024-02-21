@@ -17,8 +17,18 @@ html {
   max-width: 100vw;
   min-width: 100vw;
   height: 56px;
+  display: grid;
   text-align: center;
-  background-color: var(--pointColor);
+  place-items: center;
+  background-color: var(--color-point-applegreen);
+  font-family: 'Cafe24Moyamoya-Face-v1.0';
+  font-size: 24px;
+}
+
+.header a {
+  text-decoration: none; 
+  color: black;
+
 }
 
 /* navigationbar 스타일 */
@@ -28,7 +38,19 @@ html {
   min-width: 100vw;
   height: 92px;
   background-color: #d8d8d8;
-  text-decoration: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: space-around;
+}
+
+.HomeIcon,
+.FindIcon,
+.CreateIcon,
+.UserIconIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .link{
@@ -105,4 +127,12 @@ table {
   --color-point-lightgreen : #9FFFCB;
   --color-point-applegreen : #7AE582;
   --color-point-green : #25A18E;
+}
+
+/* 폰트 스타일 */
+@font-face {
+  font-family: 'Cafe24Moyamoya-Face-v1.0';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/Cafe24Moyamoya-Face-v1.0.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }

@@ -7,10 +7,10 @@ function navigationbar(){
     return(
         <div>
             <div className="navigationbar">
-                <Link to="/" className="link">홈</Link>
-                <Link to="/find" className="link">팀 찾기</Link>
-                <Link to="/create" className="link">팀 생성</Link>
-                <Link to="/login" className="link">로그인</Link>
+                <div className='HomeIcon'><img src='img/homeIcon.png' alt="icon"/><Link to="/" className="link">홈</Link></div>
+                <div className='FindIcon'><img src='img/findIcon.png' alt="icon"/><Link to="/find" className="link">팀 찾기</Link></div>
+                <div className='CreateIcon'><img src='img/createIcon.png' alt="icon"/><Link to="/create" className="link">팀 생성</Link></div>
+                <div className='UserIconIcon'><img src='img/userIcon.png' alt="icon"/><Link to="/login" className="link">로그인</Link></div>
             </div>
         </div>
     )

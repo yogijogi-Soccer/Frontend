@@ -44,10 +44,7 @@ html {
   justify-content: space-around;
 }
 
-.HomeIcon,
-.FindIcon,
-.CreateIcon,
-.UserIconIcon {
+.naviIcon {
   display: flex;
   flex-direction: column;
   align-items: center;

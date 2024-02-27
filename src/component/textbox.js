@@ -1,3 +1,5 @@
+
+import React from 'react';
 import "./css/component.css"
 import "../index.css"
 

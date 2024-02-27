@@ -3,7 +3,9 @@ import React from 'react';
 import { useEffect } from 'react';
 import Header from '../component/header'
 import Navigationbar from '../component/navigationbar';
-import Button from '../component/Button';
+import SearchBar from '../component/searchBar';
+import "../component/css/Mainpage.css"
+import Carousel from '../component/Carousel';
 
 
 function Mainpage() {
@@ -16,13 +18,13 @@ function Mainpage() {
   }
   useEffect(()=> {
     setScreenSize();
-  });
+  }); 
 
   return (
-    <div>
+    <div className='Mainpage'>
     <Header />
-    <div>요기조기 메인페이지</div>
-    <Button>버튼</Button>
+    <SearchBar />
+    <Carousel />
     <Navigationbar />
     </div>
   );

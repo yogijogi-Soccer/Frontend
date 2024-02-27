@@ -12,6 +12,7 @@ html {
   min-height: 100vh;
 }
 
+<<<<<<< HEAD
 /* header 스타일 */
 .header {
   max-width: 100vw;
@@ -49,6 +50,9 @@ html {
   flex-direction: column;
   align-items: center;
 }
+=======
+
+>>>>>>> jihyeon
 
 .link{
   text-decoration: none;
@@ -97,6 +101,9 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+input:focus{
+  border-color: black;
 }
 
 

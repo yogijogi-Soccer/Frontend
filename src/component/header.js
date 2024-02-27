@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import "../index.css"
+import "./css/component.css"
 
 function header(){
     return (
-        <div className="header">
+        <header className="header">
             <Link to="/">요기조기</Link>
-        </div>
+        </header>
     )
     
 }

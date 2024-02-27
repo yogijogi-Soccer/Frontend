@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import "./css/component.css"
-import Button from "./Button";
+import "../index.css"
 
 function navigationbar(){
     return(

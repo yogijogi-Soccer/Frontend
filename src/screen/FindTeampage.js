@@ -1,10 +1,7 @@
 //팀 목록 페이지
-<<<<<<< HEAD
 import React from 'react';
-=======
 import Teamlist from "../component/teamlist";
 import Textbox from "../component/textbox";
->>>>>>> jihyeon
 
 function FindTeampage(){
     return (

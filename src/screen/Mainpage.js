@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 import Header from '../component/header'
 import Navigationbar from '../component/navigationbar';
 import SearchBar from '../component/searchBar';
-import "../component/css/Mainpage.css"
 import Carousel from '../component/Carousel';
+import "../component/css/Mainpage.css"
 
 
 function Mainpage() {
@@ -22,10 +22,10 @@ function Mainpage() {
 
   return (
     <div className='Mainpage'>
-    <Header />
-    <SearchBar />
-    <Carousel />
-    <Navigationbar />
+      <Header />
+      <SearchBar />
+      <Carousel />
+      <Navigationbar />
     </div>
   );
 }

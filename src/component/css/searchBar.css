@@ -6,7 +6,7 @@
 }
 
 .searchBar input{
-    width: 94%;
+    width: 92%;
     min-height: 4vh;
     position: absolute;
     background: var(--normal3, #dee2e6);

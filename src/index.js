@@ -10,6 +10,7 @@ import FindTeampage from './screen/FindTeampage';
 import Loginpage from './screen/Loginpage';
 import Mypage from './screen/Mypage';
 import Searchpage from './screen/Searchpage';
+import TeamDetailPage from './screen/TeamDetailPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +24,7 @@ root.render(
         <Route path="/join" element={<Joinpage/>} />
         <Route path="/my" element={<Mypage />} />
         <Route path="/search" element={<Searchpage />} />
+        <Route path="/TeamDetail" element={<TeamDetailPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

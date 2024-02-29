@@ -8,46 +8,45 @@ import "./css/Carousel.css"
 
 function Carousel(){
 
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
-    var settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      };
-
-      return (
-        <div className='Carousel'>
-            <Slider {...settings}>
-                <div>
-                    <div className='CarouselBox'>
-                        <img src="이미지_주소_또는_경로" alt="이미지_설명" />
-                    </div>
-                </div>
-                <div>
-                    <div className='CarouselBox'>
-                        <img src="이미지_주소_또는_경로" alt="이미지_설명" />
-                    </div>
-                </div>
-                <div>
-                    <div className='CarouselBox'>
-                        <img src="이미지_주소_또는_경로" alt="이미지_설명" />
-                    </div>
-                </div>
-                <div>
-                    <div className='CarouselBox'>
-                        <img src="이미지_주소_또는_경로" alt="이미지_설명" />
-                    </div>
-                </div>
-                <div>
-                    <div className='CarouselBox'>
-                        <img src="이미지_주소_또는_경로" alt="이미지_설명" />
-                    </div>
-                </div>
-            </Slider>
-        </div>
-      );
+  return (
+    <div className='Carousel'>
+      <Slider {...settings}>
+          <div>
+              <div className='CarouselBox'>
+                  <img src="이미지_주소_또는_경로" alt="이미지_설명" />
+              </div>
+          </div>
+          <div>
+              <div className='CarouselBox'>
+                  <img src="이미지_주소_또는_경로" alt="이미지_설명" />
+              </div>
+          </div>
+          <div>
+              <div className='CarouselBox'>
+                  <img src="이미지_주소_또는_경로" alt="이미지_설명" />
+              </div>
+          </div>
+          <div>
+              <div className='CarouselBox'>
+                  <img src="이미지_주소_또는_경로" alt="이미지_설명" />
+              </div>
+          </div>
+          <div>
+              <div className='CarouselBox'>
+                  <img src="이미지_주소_또는_경로" alt="이미지_설명" />
+              </div>
+          </div>
+      </Slider>
+    </div>
+  );
 }
 
 export default Carousel;

@@ -12,7 +12,10 @@ html {
   min-height: 100vh;
 }
 
-<<<<<<< HEAD
+.div-page{
+  margin: 30px;
+}
+
 /* header 스타일 */
 .header {
   max-width: 100vw;
@@ -50,9 +53,7 @@ html {
   flex-direction: column;
   align-items: center;
 }
-=======
 
->>>>>>> jihyeon
 
 .link{
   text-decoration: none;

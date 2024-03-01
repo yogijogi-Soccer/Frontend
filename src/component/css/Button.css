@@ -19,3 +19,15 @@ button{
 .Button:active{
     background-color: var(--color-point-lightgreen);
 }
+
+/* GreenButton.js css */
+.btn-green{
+    background-color: var(--color-point-green);
+    color: var(--color-normal1);
+    font-size: 12px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+}

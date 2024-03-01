@@ -1,7 +1,8 @@
+import React from 'react';
 import "./css/component.css"
 import "../index.css"
 
-function Button({children}){
+function textbox({children}){
     return (
         <input className="textbox" placeholder={children}>
         </input>
@@ -9,4 +10,4 @@ function Button({children}){
     
 }
 
-export default Button;
+export default textbox;

@@ -3,4 +3,41 @@
   min-width: 100vw;
   display: grid;
   grid-template-rows: 0.25fr 0.25fr 0.4fr 0.1fr;
+  padding: 10vw 0vw 10vw 0vw;
 }
+
+.TeamDetailOption1 {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 5vw 10vw 5vw 10vw;
+}
+
+
+.TeamLogoImg{
+  border-radius: 50%;
+  overflow: hidden;
+  width: 20vw;
+  height: 20vw;
+  box-shadow: 0px 0px 1vw rgba(0, 0, 0, 0.2);
+}
+
+.TeamDetailOption2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2열로 설정 */
+  grid-template-rows: repeat(3, 1fr); /* 3행으로 설정 */
+  gap: 10px; /* 그리드 아이템 간의 간격 설정 */
+  padding: 5vw 10vw 5vw 10vw;
+}
+
+.TeamDetailOption3{
+  padding: 5vw 10vw 5vw 10vw;
+}
+
+.TeamDetailOption4{
+  display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 5vw 0vw 5vw 0vw;
+}
+

@@ -1,0 +1,47 @@
+.JoinForm{
+ padding: 10vw 0vw 10vw 0vw;
+}
+
+.JoinFormBox1{
+ display: flex;
+ justify-content: center; 
+ align-items: center; 
+ font-weight: bold;
+ font-size: 6vw;
+}
+
+.JoinFormBox3,
+.JoinFormBox4,
+.JoinFormBox5,
+.JoinFormBox6,
+.JoinFormBox7 {
+    padding: 4vw 8vw;
+    font-size: 3.5vw;
+}
+
+.JoinFormBox3 span{
+ color: rgb(158, 158, 158);
+ font-size: 2.5vw;
+}
+
+.JoinFormBox5 input{
+ width: 100%;
+ height: 10vh;
+ border-radius: 3vw;
+}
+
+.JoinFormBox4 span {
+ display: block;
+}
+
+.JoinFormBox7{
+ display: flex;
+ justify-content: flex-end;
+}
+
+.JoinFormBox8{
+ display: flex;
+ justify-content: center; 
+ align-items: center;
+ padding: 5vw 0vw 5vw 0vw;
+}

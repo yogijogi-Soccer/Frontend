@@ -4,6 +4,7 @@ import React from 'react';
 import Header from '../component/header'
 import Navigationbar from '../component/navigationbar';
 import TeamDetailOption from '../component/TeamDetailOption';
+import JoinForm from '../component/JoinForm';
 
 function TeamDetailPage() {
 
@@ -11,6 +12,7 @@ function TeamDetailPage() {
   <div>
    <Header />
    <TeamDetailOption />
+   <JoinForm />
    <Navigationbar />
   </div>
  )

@@ -1,5 +1,6 @@
 //팀 목록 페이지
 import React from 'react';
+
 import { Link } from "react-router-dom";
 import Header from '../component/header'
 import Navigationbar from '../component/navigationbar';
@@ -21,7 +22,6 @@ function FindTeampage(){
       <Navigationbar />
     </div>
   )
-
 }
 
 export default FindTeampage;

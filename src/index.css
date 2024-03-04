@@ -98,6 +98,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+input:focus{
+  border-color: black;
+}
 
 
 /* 추가 세팅 */

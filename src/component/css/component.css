@@ -1,0 +1,32 @@
+
+/* teamlist 컴포넌트 css */
+.teamlist-div-component{
+    border: 1px solid var(--color-normal4);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* teamlist 컴포넌트 제목 */
+.teamlist-div-component_title{
+    font-size: 20px;
+    color: var(--color-normal9);
+}
+
+/* teamlist 컴포넌트 내용 */
+.teamlist-div-component_content{
+    font-size: 12px;
+    color: var(--color-normal9);
+}
+
+/* textbox 컴포넌트 css */
+.textbox{
+    border: 1px solid var(--color-normal8);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+/* textbox focus 될 때 색상 변하기 */
+.textbox:focus{
+    outline-color: var(--color-point-applegreen);
+}

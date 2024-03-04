@@ -35,7 +35,7 @@
 /* -------divbox css------ */
 .divbox{
     border: 1px solid var(--color-normal4);
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
 }
 .divbox_div-title{
@@ -53,7 +53,7 @@
     background-color: white;
 }
 
-.divbox_div-content{
+.divbox_div-content_notice{
     font-size: 12px;
     display: flex;
     justify-content: space-between;
@@ -64,4 +64,67 @@
 
 .divbox_content-date{
     color: var(--color-normal6);
+}
+
+
+/* 팀 정보 dicbox css */
+.divbox_div-content_team{
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: var(--color-normal9);
+    display: flex;
+    text-align: center;
+}
+
+.divbox_content-position{
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+}
+
+.content_position-p{
+    padding-bottom: 10px;
+}
+
+.content_count{
+    height: 10vw;
+    margin-top: 3.5vw;
+}
+
+.content_공격수{
+    border: 1px solid var(--color-point-lightgreen);
+    border-radius: 100px;
+    width: 10vw;
+    height: 10vw;
+}
+
+.content_수비수{
+    border: 1px solid var(--color-point-darkturquoise);
+    border-radius: 100px;
+    width: 10vw;
+    height: 10vw;
+}
+
+.content_골키퍼{
+    border: 1px solid var(--color-point-green);
+    border-radius: 100px;
+    width: 10vw;
+    height: 10vw;
+}
+
+.content_미드필더{
+    border: 1px solid var(--color-point-applegreen);
+    border-radius: 100px;
+    width: 10vw;
+    height: 10vw;
+}
+
+/* 경기일정 divbox css */
+.divbox_div-content_game{
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: var(--color-normal9);
+    align-items: center;
 }

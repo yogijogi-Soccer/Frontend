@@ -1,12 +1,16 @@
-.Carousel{
-    max-width: 100vw;
-    min-width: 100vw;
+.Carousel {
+    max-width: 100%;
     min-height: 20vh;
+    /* overflow: hidden; */
+}
+
+.slick-next {
+    right: 0;
 }
 
 .CarouselBox {
     width: 90%;
-    height: 200px;
+    height: 22vh;
     margin: 0 auto;
     background: var(--normal3, #dee2e6);
     border-radius: 10px;
@@ -17,7 +21,7 @@
 
 .CarouselBox > img {
     width: 100%;
-    height: 100%;
+    height: auto; 
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -26,5 +30,5 @@
 }
 
 .CarouselBox:hover > img {
-    transform: scale(1.05); /* 호버시 이미지를 약간 확대 */
+    transform: scale(1.05); 
 }

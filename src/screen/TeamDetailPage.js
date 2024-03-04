@@ -12,7 +12,7 @@ function TeamDetailPage() {
   <div>
    <Header />
    <TeamDetailOption />
-   <JoinForm />
+   {/* <JoinForm /> */}
    <Navigationbar />
   </div>
  )

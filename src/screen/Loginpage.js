@@ -71,9 +71,9 @@ function Loginpage() {
           />
           {passwordError && <span className="error-msg">{passwordError}</span>}
           <br />
-          {loginError && <span className="error-msg" style={{ color: 'red', fontSize: '8vw' }}>로그인에 실패했습니다. 다시 시도해주세요.</span>}
-          <br />
           <Button onClick={handleLoginButtonClick}>로그인</Button>
+          {loginError && <span className="error-msg">로그인에 실패했습니다. 다시 시도해주세요.</span>}
+          <br />
         </div>
 
         <div className='LoginBox2'>

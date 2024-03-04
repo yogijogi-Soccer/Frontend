@@ -1,11 +1,11 @@
 //회원가입 페이지
 import React from 'react';
 
-function Joinpage(){
+function SignupPage(){
     return (
         <div>회원가입 페이지</div>
     )
     
 }
 
-export default Joinpage;
+export default SignupPage;

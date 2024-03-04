@@ -23,6 +23,7 @@ function Mainpage() {
   return (
     <div className='Mainpage'>
       <Header />
+      <div className='MainPageComponents'></div>
       <SearchBar />
       <Carousel />
       <Navigationbar />

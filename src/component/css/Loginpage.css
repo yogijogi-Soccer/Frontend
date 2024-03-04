@@ -37,7 +37,33 @@
 }
 
 .memberInfo{
+ display: flex;
+ align-items: center; 
  padding-bottom: 8vw;
+ margin: 0vw 10vw;
+}
+
+.memberInfo a,
+.memberInfo span {
+  align-items: center;
+}
+
+.memberInfo a{
+  width: 26vw;
+  color: black;
+}
+
+.memberInfo button {
+ background: none;
+ border: none;
+ width: 26vw;
+ padding: 0;
+ margin: 0;
+ font: inherit;
+ color: inherit;
+ cursor: pointer;
+ outline: none;
+ font-size: 2.8vw;
 }
 
 .LoginBox2 hr{
@@ -45,6 +71,6 @@
  margin-bottom: 10vw;
 }
 
-.LoginBox2 Button {
+.kakaoButton Button{
  background-color: #FFDC23;
 }

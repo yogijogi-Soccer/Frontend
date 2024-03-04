@@ -4,7 +4,7 @@ import './index.css';
 import Mainpage from './screen/Mainpage';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Joinpage from './screen/Joinpage';
+import SignupPage from './screen/SignupPage';
 import CreateTeampage from './screen/CreateTeampage';
 import FindTeampage from './screen/FindTeampage';
 import Loginpage from './screen/Loginpage';
@@ -21,7 +21,7 @@ root.render(
         <Route path="/create" element={<CreateTeampage/> } />
         <Route path="/find" element={<FindTeampage/>} />
         <Route path="/login" element={<Loginpage />} />
-        <Route path="/join" element={<Joinpage/>} />
+        <Route path="/signup" element={<SignupPage/>} />
         <Route path="/my" element={<Mypage />} />
         <Route path="/search" element={<Searchpage />} />
         <Route path="/TeamDetail" element={<TeamDetailPage />} />

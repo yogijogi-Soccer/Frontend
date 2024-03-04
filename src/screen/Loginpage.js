@@ -3,6 +3,7 @@ import Header from '../component/header';
 import Navigationbar from '../component/navigationbar';
 import Button from '../component/Button';
 import "../component/css/Loginpage.css";
+import { Link } from "react-router-dom";
 
 function Loginpage() {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -78,14 +79,14 @@ function Loginpage() {
 
         <div className='LoginBox2'>
           <div className='memberInfo'>
-            <span>아이디 찾기</span>
+            <Link><button type="button">아이디 찾기</button></Link>
             <span> | </span>
-            <span>비밀번호 찾기</span>
+            <Link><button type="button">비밀번호 찾기</button></Link>
             <span> | </span>
-            <span>회원가입 하기</span>
+            <Link to="/signup"><button type="button">회원가입 하기</button></Link>
           </div>
           <hr />
-          <Button>카카오톡으로 로그인하기</Button>
+          <div className='kakaoButton'><Button>카카오톡으로 로그인하기</Button></div>
         </div>
       </div>
       <Navigationbar />

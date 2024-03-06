@@ -1,0 +1,17 @@
+.SignupPage {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ padding: 14vw 10vw;
+}
+
+.SignupPage h1{
+ font-size: 5vw;
+ font-weight: bold;
+
+}
+
+.SignupComponentBox1, .SignupComponentBox2, .SignupComponentBox3{
+ padding: 15vw 0vw;
+}

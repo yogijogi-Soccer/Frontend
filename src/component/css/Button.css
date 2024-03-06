@@ -19,3 +19,18 @@ button{
 .Button:active{
     background-color: var(--color-point-lightgreen);
 }
+
+.Button2{
+    color: var(--color-normal1);
+    padding-left: 15vw;
+    padding-right: 15vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    font-size: 20px;
+    border-radius: 50px;
+    background-color: var(--color-normal3);
+}
+
+.Button2:focus {
+    background-color: var(--color-point-green);
+}

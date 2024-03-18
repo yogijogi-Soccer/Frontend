@@ -4,6 +4,7 @@ import Header from '../component/header';
 import Navigationbar from '../component/navigationbar';
 import Button from '../component/Button';
 import Button2 from '../component/Button2';
+import WeekButton from '../component/weekButton';
 import "../component/css/SignupPage.css";
 
 function SignupPage() {
@@ -142,15 +143,8 @@ function SignupPage() {
       <h1>추가정보를 적어주세요. (2/2)</h1>
       <div>
         <span>가능한 요일(중복가능)</span>
-        <div>
-          <Button2>월</Button2>
-          <Button2>화</Button2>
-          <Button2>수</Button2>
-          <Button2>목</Button2>
-          <Button2>금</Button2>
-          <Button2>토</Button2>
-          <Button2>일</Button2>
-        </div>
+        {/* 요일 버튼 */}
+        <WeekButton />
         <span>가능한 시간대(중복가능)</span>
         <div>
           <span>시작시간</span>

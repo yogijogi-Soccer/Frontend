@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import Button from './Button';
 import "./css/JoinForm.css"
 
@@ -38,7 +39,7 @@ return (
      <label for="confirm">확인했습니다.</label>
      </div>
     </div>
-    <div className='JoinFormBox8'><Button>제출하기</Button></div>
+    <div className='JoinFormBox8'><Button><Link to="/" className="link">제출하기</Link></Button></div>
   </div>
 )
 

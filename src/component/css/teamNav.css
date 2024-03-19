@@ -116,10 +116,12 @@ body ::-webkit-scrollbar{
     
 }
 
-/* .wrap-vertical::-webkit-scrollbar{
-
+.Noticediv-btn{
+    background-color: white;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    display: flex;
+    text-align: right;
+    color: var(--color-point-green);
 }
-
-.wrap-vertical:active::-webkit-scrollbar{
-    overflow: scroll;
-} */

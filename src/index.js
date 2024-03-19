@@ -1,23 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import Mainpage from './screen/Mainpage';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import SignupPage from './screen/SignupPage';
-import CreateTeampage from './screen/CreateTeampage';
-import FindTeampage from './screen/FindTeampage';
-import Loginpage from './screen/Loginpage';
-import Mypage from './screen/Mypage';
-import Searchpage from './screen/Searchpage';
-import TeamDetailPage from './screen/TeamDetailPage';
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Mainpage from "./screen/Mainpage";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Joinpage from "./screen/Joinpage";
+import SignupPage from "./screen/SignupPage";
 import CreateTeampage from "./screen/CreateTeampage";
 import FindTeampage from "./screen/FindTeampage";
 import Loginpage from "./screen/Loginpage";
@@ -36,19 +23,14 @@ root.render(
         <Route path="/create" element={<CreateTeampage />} />
         <Route path="/find" element={<FindTeampage />} />
         <Route path="/login" element={<Loginpage />} />
-<<<<<<< HEAD
-        <Route path="/signup" element={<SignupPage/>} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="/my" element={<Mypage />} />
         <Route path="/search" element={<Searchpage />} />
-        <Route path="/TeamDetail" element={<TeamDetailPage />} />
-=======
-        <Route path="/join" element={<Joinpage />} />
         <Route path="/my" element={<Mypage />} />
         <Route path="/search" element={<Searchpage />} />
         <Route path="/detail" element={<TeamDetailpage />} />
         <Route path="/detail/notice" element={<TeamNoticepage />} />
         <Route path="/detail/member" element={<TeamMemberpage />} />
->>>>>>> teamdetail
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

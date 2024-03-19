@@ -1,0 +1,33 @@
+.TeamDetail-profile{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.TeamDetail-profile_box{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.TeamDetail-profile_img{
+    margin-right: 20px;
+}
+
+.TeamDetail-profile_title{
+    color: var(--color-normal9);
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.TeamDetail-profile_introduce{
+    color: var(--color-normal7);
+    background-color: var(--color-normal2);
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}

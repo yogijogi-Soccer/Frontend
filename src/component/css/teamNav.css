@@ -1,0 +1,93 @@
+.teamNav{
+    display: flex;
+    border-top: 1px solid var(--color-normal4);
+    border-bottom: 1px solid var(--color-normal4);
+    padding: 2vw;
+    margin-bottom: 5vh;
+}
+
+.teamNav_menu{
+    margin-right: 10px;
+    padding: 7px;
+    color: var(--color-normal6);
+}
+
+.click{
+    color: var(--color-point-green);
+    background-color: var(--color-normal2);
+    border-radius: 5px;
+}
+
+.teamcard{
+    display: flex;
+    flex-direction: row;
+}
+
+.teamcard_div{
+    width: 22vw;
+    height: 32vw;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.teamcard_div-img{
+    width: 18vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.teamcard_div-name{
+    margin-top: 10px;
+}
+
+.teamcard_div-yellowcard{
+    margin-top: 10px;
+}
+
+.공격수{
+    background-color: var(--color-point-lightgreen);
+}
+
+.수비수{
+    background-color: var( --color-point-darkturquoise);
+}
+
+.골키퍼{
+    background-color: var(--color-point-green);
+}
+
+.미드필더{
+    background-color: var(--color-point-applegreen);
+}
+
+.teamcard_blur{
+    margin: auto;
+    width: 21.5vw;
+    height: 31.5vw;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.608);
+}
+
+#scroll-horizontal .scroll-horizontal > div {
+    display: grid !important;
+    grid-template-rows: auto;
+    grid-auto-flow: column;
+}
+
+.wrap-vertical{
+    overflow: auto hidden;
+    white-space: nowrap;
+    
+}
+
+/* .wrap-vertical::-webkit-scrollbar{
+
+}
+
+.wrap-vertical:active::-webkit-scrollbar{
+    overflow: scroll;
+} */

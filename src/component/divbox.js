@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/component.css";
 import "../index.css";
+import { Link } from "react-router-dom";
 
 function divbox(props) {
   const scount = 0;
@@ -46,7 +47,9 @@ function divbox(props) {
     <div className="divbox">
       <div className="divbox_div-title">
         <p className="divbox_title">{props.title}</p>
-        <button className="divbox_button">{props.button}</button>
+        <Link to={props.link} className="divbox_button">
+          {props.button}
+        </Link>
       </div>
       {props.title === "팀 정보" ? Teamlist : ItemList}
     </div>

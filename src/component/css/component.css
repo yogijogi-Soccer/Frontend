@@ -51,6 +51,8 @@
 
 .divbox_button{
     background-color: white;
+    color: var(--color-normal9);
+    text-decoration: none;
 }
 
 .divbox_div-content_notice{
@@ -126,5 +128,40 @@
     justify-content: space-between;
     margin-bottom: 5px;
     color: var(--color-normal9);
+    align-items: center;
+}
+
+
+/* Noticelist css */
+.Notice_div{
+    display: flex;
+    border-top: solid 1px var(--color-normal3);
+    border-bottom: solid 1px var(--color-normal3);
+    padding: 10px;
+    margin-top: -1px;
+}
+
+.Notice_div-title{
+    width: 35vw;
+    font-size: 12px;
+}
+
+.Notice_div-update{
+    display: flex;
+    width: 8vw;
+    font-size: 10px;
+    align-items: center;
+    padding-right: 20vw;
+    color: var(--color-normal6);
+}
+
+.Notice_div-update img{
+    margin-right: 5px;
+}
+
+.Notice_div-date{
+    display: flex;
+    font-size: 10px;
+    color: var(--color-normal6);
     align-items: center;
 }

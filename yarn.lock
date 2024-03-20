@@ -9249,6 +9249,11 @@ react-is@^18.0.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
+react-kakao-login@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.npmjs.org/react-kakao-login/-/react-kakao-login-2.1.1.tgz"
+  integrity sha512-t9htk41/i0zUY7q92mtqdqVZZ018BPi1DgbSVVrPCmuMKhZGJOnZ9OfaKLVPu3sn8QXbJc3dPwqKOiElpb44hQ==
+
 react-router-dom@^6.22.3:
   version "6.22.3"
   resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.22.3.tgz"
@@ -9335,7 +9340,7 @@ react-slick@^0.30.2:
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
 
-react@*, "react@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", react@^18.0.0, react@^18.2.0, react@>=16.8:
+react@*, "react@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", react@^18.0.0, react@^18.2.0, "react@>= 15.3.0", react@>=16.8:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==

@@ -12,6 +12,10 @@ html {
   min-height: 100vh;
 }
 
+.div-page{
+  margin: 30px;
+}
+
 /* header 스타일 */
 .header {
   max-width: 100vw;

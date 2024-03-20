@@ -1,10 +1,10 @@
-//팀 상세 페이지
+//팀 가입 페이지
 
 import React from 'react';
 import Header from '../component/header'
 import Navigationbar from '../component/navigationbar';
-import TeamDetailOption from '../component/TeamDetailOption';
-import JoinForm from '../component/JoinForm';
+import TeamDetailOption from '../../component/TeamDetailOption';
+import JoinForm from '../../component/JoinForm';
 
 function TeamDetailPage() {
 

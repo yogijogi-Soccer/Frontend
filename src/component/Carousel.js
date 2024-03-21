@@ -21,27 +21,27 @@ function Carousel(){
       <Slider {...settings}>
           <div>
               <div className='CarouselBox'>
-                  <img src="이미지_주소_또는_경로" alt="이미지_설명" />
+                  <img src="/img/CarouselImg01.jpg" alt="이미지_설명" />
               </div>
           </div>
           <div>
               <div className='CarouselBox'>
-                  <img src="이미지_주소_또는_경로" alt="이미지_설명" />
+                  <img src="/img/CarouselImg02.jpg" alt="이미지_설명" />
               </div>
           </div>
           <div>
               <div className='CarouselBox'>
-                  <img src="이미지_주소_또는_경로" alt="이미지_설명" />
+                  <img src="/img/CarouselImg03.jpg" alt="이미지_설명" />
               </div>
           </div>
           <div>
               <div className='CarouselBox'>
-                  <img src="이미지_주소_또는_경로" alt="이미지_설명" />
+                  <img src="/img/CarouselImg04.jpg" alt="이미지_설명" />
               </div>
           </div>
           <div>
               <div className='CarouselBox'>
-                  <img src="이미지_주소_또는_경로" alt="이미지_설명" />
+                  <img src="/img/CarouselImg05.jpg" alt="이미지_설명" />
               </div>
           </div>
       </Slider>

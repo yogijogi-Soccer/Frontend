@@ -16,7 +16,7 @@ function TeamDetailOption() {
   const handleJoinButtonClick = () => {
     setShowJoinForm(true);
   };
-
+ 
   return (
     <div className='TeamDetailOption'>
       <div className='TeamDetailOption1'>

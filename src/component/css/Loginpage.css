@@ -71,6 +71,12 @@
  margin-bottom: 10vw;
 }
 
-.kakaoButton Button{
+.kakaoButton{
  background-color: #FFDC23;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  font-size: 20px;
+  border-radius: 50px;
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../component/header';
 import Navigationbar from '../component/navigationbar';
 import Button from '../component/Button';
+import KakaoLogin from '../component//KakaoLogin';
 import "../component/css/Loginpage.css";
 import { Link } from "react-router-dom";
 
@@ -48,6 +49,25 @@ function Loginpage() {
     mobile: "‘-’ 제외 11자리를 입력해주세요"
   };
 
+  // const kakaoLogin = ()=> {
+  //     const Rest_api_key='947bb0721b6df0ee8869d2df3904662b' //REST API KEY
+  //     const redirect_uri = 'https://localhost:3000/login' //Redirect URI
+  //     // oauth 요청 URL
+  //     const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${Rest_api_key}&redirect_uri=${redirect_uri}&response_type=code`
+  //     const handleLogin = ()=>{
+  //         window.location.href = kakaoURL
+  //     }
+  //     return(
+  //     <>
+  //     <button onClick={handleLogin}>카카오 로그인</button>
+  //     </>
+  //     )
+  // }
+
+  // <script>
+  //   {/* 	14f48d8c4a5f885c0da0c781a0dbb5e0 */}
+  // </script>
+
   return (
     <div>
       <Header />
@@ -86,7 +106,7 @@ function Loginpage() {
             <Link to="/signup"><button type="button">회원가입 하기</button></Link>
           </div>
           <hr />
-          <div className='kakaoButton'><Button>카카오톡으로 로그인하기</Button></div>
+          <KakaoLogin />
         </div>
       </div>
       <Navigationbar />

@@ -4,7 +4,6 @@ import Header from "../../component/header";
 import Navigationbar from "../../component/navigationbar";
 import "../css/teamdetail.css";
 import "../../index.css";
-import { Link } from "react-router-dom";
 import TeamNav from "../../component/teamNav";
 import Noticlist from "../../component/Noticelist";
 
@@ -20,13 +19,7 @@ function TeamNoticepage() {
       <Header />
       <div className="div-page">
         <TeamNav menu="공지사항" />
-        {role ? (
-          <Link to="/write" className="link">
-            <button className="link Noticediv-btn">글쓰기</button>
-          </Link>
-        ) : (
-          ""
-        )}
+        {role ? <button className="Noticediv-btn">글쓰기</button> : ""}
         <Noticlist list={noticelist} />
       </div>
       <Navigationbar />

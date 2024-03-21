@@ -4,6 +4,7 @@ import Header from "../../component/header";
 import Navigationbar from "../../component/navigationbar";
 import "../css/noticewrite.css";
 import "../../index.css";
+import EditorBox from "../../component/EditorBox";
 
 function TeamNoticepage() {
   let role = true;
@@ -12,7 +13,7 @@ function TeamNoticepage() {
     <div>
       <Header />
       <div className="div-page">
-        <div>도구모음</div>
+        <EditorBox />
         <div>제목</div>
         <div>내용</div>
         <button>등록하기</button>

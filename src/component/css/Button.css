@@ -37,6 +37,7 @@ button {
 .weekButton {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 12vw;
 }
 
 .weekButton button,

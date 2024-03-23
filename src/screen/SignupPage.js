@@ -5,6 +5,7 @@ import Navigationbar from "../component/navigationbar";
 import Button from "../component/Button";
 import Button2 from "../component/Button2";
 import WeekButton from "../component/weekButton";
+import TimeOption from "../component/TimeOption";
 
 import "../component/css/SignupPage.css";
 
@@ -73,11 +74,14 @@ function SignupPage() {
   const SignupComponent2 = () => (
     //이메일 및 비밀번호
     <div className="SignupPage">
-      <h1>닉네임, 이메일과 비밀번호를 입력해주세요</h1>
+      <h1>
+        닉네임, 이메일과 비밀번호를
+        <br /> 입력해주세요
+      </h1>
       <div className="SignupComponentBox2">
         {/* 이메일 주소 */}
         <span>이메일 주소</span>
-        <div className="email">
+        <div className="signupEmail SignupComponentInner">
           <input type="text" placeholder="이메일 주소를 입력하세요" />
           <span>@</span>
           <select>
@@ -91,7 +95,7 @@ function SignupPage() {
         </div>
         {/* 비밀번호 */}
         <span>비밀번호</span>
-        <div>
+        <div className="SignupComponentInner signuPassword">
           <input type="text" placeholder="영문, 숫자, 특수문자 포함 8자 이상" />
         </div>
       </div>
@@ -112,34 +116,34 @@ function SignupPage() {
       <h1>추가정보를 적어주세요. (1/2)</h1>
       <div className="SignupComponentBox3">
         {/* 추가 정보 입력 */}
-        <span>선수 경험</span>
-        <div>
+        <h3>선수 경험</h3>
+        <div className="SignupComponentInner">
           <Button2>선수 경험이 있습니다</Button2>
           <Button2>없습니다</Button2>
         </div>
-        <span>포지션 (최대 3개)</span>
-        <div>
+        <h3>포지션 (최대 3개)</h3>
+        <div className="signupPositionBox">
           <span>골기퍼</span>
-          <div>
+          <div className="positionBtn">
             <Button2>GK</Button2>
           </div>
 
           <span>수비</span>
-          <div>
+          <div className="positionBtn">
             <Button2>LB</Button2>
             <Button2>CB</Button2>
             <Button2>RB</Button2>
           </div>
 
           <span>미드필더</span>
-          <div>
+          <div className="positionBtn">
             <Button2>LM</Button2>
             <Button2>CM</Button2>
             <Button2>RB</Button2>
           </div>
 
           <span>공격</span>
-          <div>
+          <div className="positionBtn">
             <Button2>LW</Button2>
             <Button2>RW</Button2>
             <Button2>CF</Button2>
@@ -162,19 +166,22 @@ function SignupPage() {
     <div className="SignupPage">
       <h1>추가정보를 적어주세요. (2/2)</h1>
       <div>
-        <span>가능한 요일(중복가능)</span>
-        {/* 요일 버튼 */}
-        <WeekButton />
-        <span>가능한 시간대(중복가능)</span>
-        <div>
-          <span>시작시간</span>
-          <select>
-            <option></option>
-          </select>
-          <span>끝시간</span>
-          <select>
-            <option></option>
-          </select>
+        <div className="SignupComponentBox4">
+          <h3>가능한 요일(중복가능)</h3>
+          {/* 요일 버튼 */}
+          <WeekButton />
+          <h3>가능한 시간대(중복가능)</h3>
+          <div className="signupTimeOption">
+            <div className="signupTimeOption1">
+              <span>시작시간</span>
+              <span> 끝시간</span>
+            </div>
+            <div className="signupTimeOption2">
+              <TimeOption />
+              <span>~</span>
+              <TimeOption />
+            </div>
+          </div>
         </div>
         <div>
           <Button className="prevButton" onClick={handlePrevButtonClick}>
@@ -193,33 +200,33 @@ function SignupPage() {
     <div className="SignupPage">
       <h1>서비스 약관에 동의해주세요.</h1>
       <div>
-        <div>
-          <div>
+        <div className="SignupComponentBox5">
+          <div className="checkboxContainer">
             <input type="checkbox" />
             <span>네, 모두 동의합니다.</span>
           </div>
           <hr />
-          <div>
+          <div className="checkboxContainer">
             <input type="checkbox" />
             <span>(필수) 만 14세 이상입니다.</span>
           </div>
-          <div>
+          <div className="checkboxContainer">
             <input type="checkbox" />
             <span>(필수) 서비스 이용약관에 동의</span>
           </div>
-          <div>
+          <div className="checkboxContainer">
             <input type="checkbox" />
             <span>(필수) 개인정보 수집 이용에 동의</span>
           </div>
-          <div>
+          <div className="checkboxContainer">
             <input type="checkbox" />
             <span>(선택) 야간 혜택 수신에 동의</span>
           </div>
-          <div>
+          <div className="checkboxContainer">
             <input type="checkbox" />
             <span>(선택) 홍보 및 마케팅 이용에 동의</span>
           </div>
-          <div>
+          <div className="checkboxContainer">
             <input type="checkbox" />
             <span>(선택) 마케팅 개인정보 제3자 제공 동의</span>
           </div>
@@ -241,11 +248,13 @@ function SignupPage() {
     //회원가입 완료창
     <div className="SignupPage">
       <h1>회원가입이 완료되었습니다.</h1>
-      <Button className="SignupSuccessBtn">
-        <Link to="/login" className="link">
-          로그인 하러가기
-        </Link>
-      </Button>
+      <div className="SignupComponentBox6">
+        <Button className="SignupSuccessBtn">
+          <Link to="/login" className="link">
+            로그인 하러가기
+          </Link>
+        </Button>
+      </div>
     </div>
   );
 

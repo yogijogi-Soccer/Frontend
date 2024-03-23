@@ -1,94 +1,95 @@
-button{
-    border: 0;
-    padding: 0;
-    margin: 0;
+button {
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
-
 
 /* Button */
-.Button{
-    color: var(--color-normal9);
-    padding-left: 15vw;
-    padding-right: 15vw;
-    padding-top: 2vw;
-    padding-bottom: 2vw;
-    font-size: 20px;
-    border-radius: 50px;
-    background-color: var(--color-point-applegreen);
+.Button {
+  color: var(--color-normal9);
+  padding-left: 15vw;
+  padding-right: 15vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  font-size: 20px;
+  border-radius: 50px;
+  background-color: var(--color-point-applegreen);
 }
 
-.Button:active{
-    background-color: var(--color-point-lightgreen);
+.Button:active {
+  background-color: var(--color-point-lightgreen);
 }
-
 
 /* Button2 */
-.Button2{
-    color: var(--color-normal1);
-    padding: 2vw 15vw;
-    font-size: 20px;
-    border-radius: 50px;
-    background-color: var(--color-normal3);
+.Button2 {
+  color: var(--color-normal1);
+  padding: 2vw 15vw;
+  font-size: 20px;
+  border-radius: 50px;
+  background-color: var(--color-normal3);
 }
 
 .Button2:focus {
-    background-color: var(--color-point-green);
+  background-color: var(--color-point-green);
 }
-
 
 /* weekButton */
 .weekButton {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
 
-.weekButton button, .timeButton button, .memberFeeButton button, .genderButton button, .ageGroupButton button{
-    color: var(--color-normal1);
-    padding: 2vw 3vw;
-    font-size: 20px;
-    border-radius: 50px;
-    background-color: var(--color-normal3);
-    width: fit-content;
-    margin: 0.5vw;
-    margin: 0 auto;
+.weekButton button,
+.timeButton button,
+.memberFeeButton button,
+.genderButton button,
+.ageGroupButton button {
+  color: var(--color-normal1);
+  padding: 2vw 3vw;
+  font-size: 20px;
+  border-radius: 50px;
+  background-color: var(--color-normal3);
+  width: fit-content;
+  margin: 0.5vw;
+  margin: 0 auto;
 }
 
-.weekButton button:focus,  .timeButton button:focus, .memberFeeButton button:focus, .genderButton button:focus, .ageGroupButton button:focus {
-    background-color: var(--color-point-green);
+.weekButton button:focus,
+.timeButton button:focus,
+.memberFeeButton button:focus,
+.genderButton button:focus,
+.ageGroupButton button:focus {
+  background-color: var(--color-point-green);
 }
-
 
 /* timeButton, memberFeeButton */
-.timeButton, .memberFeeButton {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+.timeButton,
+.memberFeeButton {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
-
 
 /* genderButton */
 .genderButton {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
-
 
 /* ageGroupButton */
 .ageGroupButton {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(2, auto);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
 }
-
 
 /* GreenButton.js css */
-.btn-green{
-    background-color: var(--color-point-green);
-    color: var(--color-normal1);
-    font-size: 12px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 3px;
+.btn-green {
+  background-color: var(--color-point-green);
+  color: var(--color-normal1);
+  font-size: 12px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 3px;
 }
-

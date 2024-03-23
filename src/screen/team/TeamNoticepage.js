@@ -2,10 +2,11 @@
 import React from "react";
 import Header from "../../component/header";
 import Navigationbar from "../../component/navigationbar";
-import "../css/teamdetail.css";
+import "../css/notice.css";
 import "../../index.css";
 import TeamNav from "../../component/teamNav";
 import Noticlist from "../../component/Noticelist";
+import { Link } from "react-router-dom";
 
 function TeamNoticepage() {
   let role = true;
@@ -19,7 +20,16 @@ function TeamNoticepage() {
       <Header />
       <div className="div-page">
         <TeamNav menu="공지사항" />
-        {role ? <button className="Noticediv-btn">글쓰기</button> : ""}
+        <div className="Noticebtn_div">
+          {role ? (
+            <Link to="/write" className="Noticediv-link">
+              글쓰기
+            </Link>
+          ) : (
+            ""
+          )}
+        </div>
+
         <Noticlist list={noticelist} />
       </div>
       <Navigationbar />

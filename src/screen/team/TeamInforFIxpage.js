@@ -55,6 +55,9 @@ function TeamInforFixpage() {
             <WeekButton />
             <TimeButton />
           </div>
+          <div className="Inforfix-div">
+            <label className="Inforfix-label">월 회비</label>
+          </div>
         </div>
       </div>
       <Navigationbar />

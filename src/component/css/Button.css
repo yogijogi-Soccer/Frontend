@@ -42,7 +42,7 @@ button{
     grid-template-columns: repeat(7, 1fr);
 }
 
-.weekButton button, .timeButton button, .memberFeeButton button, .genderButton button, .ageGroupButton button{
+.weekButton button, .memberFeeButton button, .genderButton button, .ageGroupButton button{
     color: var(--color-normal1);
     padding: 2vw 3vw;
     font-size: 20px;
@@ -64,6 +64,15 @@ button{
     grid-template-columns: repeat(5, 1fr);
 }
 
+/* timeButton 수정 -지현 */
+.timeButton button{
+    color: var(--color-normal1);
+    font-size: 16px;
+    border-radius: 50px;
+    background-color: var(--color-normal3);
+    width: 17vw;
+    height: 17vw;
+}
 
 /* genderButton */
 .genderButton {

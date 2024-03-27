@@ -14,6 +14,7 @@ import TeamDetailpage from "./screen/team/TeamDetailpage";
 import TeamNoticepage from "./screen/team/TeamNoticepage";
 import TeamMemberpage from "./screen/team/TeamMemberpage";
 import NoticeWritepage from "./screen/team/NoticeWritepage";
+import TeamInforFixpage from "./screen/team/TeamInforFIxpage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -33,6 +34,7 @@ root.render(
         <Route path="/detail/notice" element={<TeamNoticepage />} />
         <Route path="/detail/member" element={<TeamMemberpage />} />
         <Route path="/write" element={<NoticeWritepage />} />
+        <Route path="/manger/fix" element={<TeamInforFixpage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

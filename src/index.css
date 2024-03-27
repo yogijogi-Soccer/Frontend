@@ -56,9 +56,16 @@ html {
   align-items: center;
 }
 
+/* link 검정색 글씨 */
 .link{
   text-decoration: none;
-  color: black;
+  color: var(--color-normal9);
+}
+
+/* link 흰색 글씨 */
+.link_white{
+  text-decoration: none;
+  color: var(--color-normal1);
 }
 
 html, body, div, span, applet, object, iframe,

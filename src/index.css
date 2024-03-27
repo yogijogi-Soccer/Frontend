@@ -14,6 +14,8 @@ html {
 
 .div-page{
   margin: 30px;
+  /* 네비게이션바 height만큼 padding을 줘서 네비게이션바 밑으로 페이지가 가려주는 걸 막아줌 */
+  padding-bottom: 92px;
 }
 
 /* header 스타일 */

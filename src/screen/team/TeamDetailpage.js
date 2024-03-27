@@ -6,6 +6,8 @@ import GreenButton from "../../component/GreenButton";
 import "../css/teamdetail.css";
 import "../../index.css";
 import Divbox from "../../component/divbox";
+import DivSquareBox from "../../component/divSquareBox";
+
 function TeamDetailpage() {
   const noticlist = [
     { title: "제목1", date: "2020.03.18 12:00" },
@@ -45,8 +47,19 @@ function TeamDetailpage() {
           link={"notice"}
           item={noticlist}
         ></Divbox>
-        <Divbox title={"팀 정보"} button={"목록보기"} item={teamlist}></Divbox>
+        <Divbox
+          title={"팀 정보"}
+          button={"목록보기"}
+          link={"member"}
+          item={teamlist}
+        ></Divbox>
         <Divbox title={"경기일정"} item={gamelist}></Divbox>
+        <DivSquareBox
+          title={"회비"}
+          content={"10,000원"}
+          button={"더보기"}
+          link={"main"}
+        />
       </div>
 
       <Navigationbar />

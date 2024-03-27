@@ -47,9 +47,13 @@ function divbox(props) {
     <div className="divbox">
       <div className="divbox_div-title">
         <p className="divbox_title">{props.title}</p>
-        <Link to={props.link} className="divbox_button">
-          {props.button}
-        </Link>
+        {!props.link ? (
+          ""
+        ) : (
+          <Link to={props.link} className="divbox_button">
+            {props.button}
+          </Link>
+        )}
       </div>
       {props.title === "팀 정보" ? Teamlist : ItemList}
     </div>

@@ -47,12 +47,17 @@ button {
 .ageGroupButton button {
   color: var(--color-normal1);
   padding: 2vw 3vw;
-  font-size: 20px;
   border-radius: 50px;
   background-color: var(--color-normal3);
   width: fit-content;
   margin: 0.5vw;
   margin: 0 auto;
+}
+
+.weekButton button,
+.genderButton button,
+.ageGroupButton button {
+  font-size: 20px;
 }
 
 .weekButton button:focus,
@@ -66,8 +71,20 @@ button {
 /* timeButton, memberFeeButton */
 .timeButton,
 .memberFeeButton {
-  display: grid;
+  font-size: 1.5vw;
   grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.timeButton {
+  display: grid;
+}
+
+.memberFeeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* genderButton */

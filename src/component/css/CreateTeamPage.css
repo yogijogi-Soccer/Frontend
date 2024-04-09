@@ -1,0 +1,72 @@
+.CreateTeamComponent {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+  padding: 14vw 10vw;
+}
+
+.CreateTeamComponent h1 {
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+.CreateTeamComponent Button {
+  align-items: center;
+  justify-content: center;
+}
+
+.CreateTeamComponent input {
+  height: 4vh;
+  border-radius: 2vw;
+}
+
+.CreateTeamComponent1,
+.CreateTeamComponent2,
+.CreateTeamComponent3 {
+  padding: 8vw 0vw;
+}
+
+/* CreateTeamComponent1 */
+.TeamInfoInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.CreateTeamComponentProfile {
+  width: 56vw;
+  height: 14vh;
+  background-color: var(--color-normal3);
+  border-radius: 30vw;
+}
+
+.CreateTeamComponentInner {
+  display: flex;
+  align-items: center;
+  flex: 1fr, 1fr;
+  margin-bottom: 10vw;
+}
+
+.ImageAddBtn {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgBtn {
+  color: var(--color-normal1);
+  padding: 2vw 5vw;
+  font-size: 20px;
+  border-radius: 50px;
+  background-color: var(--color-point-green);
+}
+
+.imgBtn:active {
+  font-weight: bold;
+}
+
+/* CreateTeamComponent2 */
+.TeamMemberFeeBox {
+  display: grid;
+  margin-bottom: 5vh;
+}

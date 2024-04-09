@@ -1,17 +1,129 @@
 .SignupPage {
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- padding: 14vw 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14vw 10vw;
 }
 
-.SignupPage h1{
- font-size: 5vw;
- font-weight: bold;
-
+.SignupPage h1 {
+  font-size: 5vw;
+  font-weight: bold;
 }
 
-.SignupComponentBox1, .SignupComponentBox2, .SignupComponentBox3{
- padding: 15vw 0vw;
+.SignupComponentBox1,
+.SignupComponentBox2,
+.SignupComponentBox3,
+.SignupComponentBox4,
+.SignupComponentBox5,
+.SignupComponentBox6 {
+  padding: 15vw 0vw;
+}
+
+.SignupPage input {
+  border-radius: 3vw;
+  height: 5vh;
+}
+
+/* SignupComponentBox1 */
+.SignupComponentBox1,
+.SignupComponentBox2,
+.SignupComponentBox4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.SignupComponentInner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4vh;
+}
+
+.SignupComponentInner Button {
+  padding: 1vw 2vw;
+}
+
+.SignupComponentInner input {
+  margin-right: 10px;
+  width: 50vw;
+}
+
+/* genderBtn */
+.genderBtn {
+  color: var(--color-normal1);
+  padding: 2vw 3vw;
+  font-size: 20px;
+  border-radius: 50px;
+  background-color: var(--color-normal3);
+}
+
+.genderBtn:focus {
+  background-color: var(--color-point-green);
+}
+
+/* SignupComponentBox2 */
+.signuPassword input {
+  width: 80vw;
+}
+
+.signupEmail span {
+  font-size: 6vw;
+  font-weight: bold;
+}
+
+.signupEmail select {
+  height: 5vh;
+  width: 30vw;
+  border-radius: 3vw;
+}
+
+/* SignupComponentBox3 */
+.SignupComponentBox3 h3,
+.SignupComponentBox4 h3 {
+  font-weight: bold;
+  margin-bottom: 5vw;
+}
+
+.signupPositionBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.positionBtn Button {
+  padding: 2vw 6vw;
+  margin-bottom: 4vw;
+}
+
+/* SignupComponentBox4 */
+.signupTimeOption {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4vh;
+}
+
+.signupTimeOption div {
+  display: flex;
+  flex-direction: row;
+}
+
+.signupTimeOption span {
+  text-align: center;
+  justify-content: center;
+  padding: 0vw 5vw;
+  margin: 0 auto;
+}
+
+.TimeOption select {
+  height: 5vh;
+  width: 32vw;
+  border-radius: 3vw;
+  text-align: center;
+  font-size: 3.2vw;
+}
+
+/* SignupComponent5 */
+.checkboxContainer {
+  display: flex;
+  align-items: center;
 }

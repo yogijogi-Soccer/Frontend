@@ -1,0 +1,103 @@
+.teamAnalysisBox {
+  max-width: 100vw;
+  min-width: 100vw;
+  min-height: 30vh;
+  position: relative;
+  margin: 10vw 0vw;
+}
+
+.teamAnalysisBox h1 {
+  text-align: center;
+  position: absolute;
+  left: 8vw;
+  top: -2vw;
+}
+
+.teamAnalysisBoxInner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Team1 {
+  background: var(--point4, #25a18e);
+  border-radius: 4vw;
+  width: 21vw;
+  height: 10vh;
+  position: absolute;
+  left: 5%;
+  top: 27px;
+}
+
+.Team1 span {
+  color: var(--normal1, #f8f9fa);
+}
+
+.Team2 {
+  background: #d9d9d9;
+  border-radius: 4vw;
+  width: 21vw;
+  height: 10vh;
+  position: absolute;
+  left: 25%;
+  top: 27px;
+}
+
+.Team2 span {
+  color: var(--normal8, #343a40);
+}
+
+.TeamAnalysisomponent1 {
+  background: var(--point4, #25a18e);
+  border-radius: 4vw;
+  width: 90vw;
+  height: 30vh;
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TeamAnalysisomponent1 span {
+  /* color: #ffffff; */
+  display: block;
+  padding-bottom: 1vh;
+}
+
+.teamAnalysisPersonnel,
+.teamAnalysisPosition,
+.teamAnalysisNotice {
+  background: var(--normal2, #e9ecef);
+  border-radius: 4vw;
+  opacity: 0.3;
+}
+
+.teamAnalysisPersonnel {
+  width: 164px;
+  height: 55px;
+  position: absolute;
+  left: 34px;
+  top: 87px;
+}
+
+.teamAnalysisPosition {
+  width: 164px;
+  height: 55px;
+  position: absolute;
+  left: 206px;
+  top: 87px;
+}
+
+.teamAnalysisNotice {
+  width: 336px;
+  height: 69px;
+  position: absolute;
+  left: 33px;
+  top: 153px;
+}

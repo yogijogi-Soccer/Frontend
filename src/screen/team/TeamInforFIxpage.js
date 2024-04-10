@@ -12,6 +12,8 @@ import DivSquareBox from "../../component/divSquareBox";
 import { Link } from "react-router-dom";
 import WeekButton from "../../component/weekButton";
 import TimeButton from "../../component/timeButton";
+import Button2 from "../../component/Button2";
+import Button from "../../component/Button";
 
 function TeamInforFixpage() {
   //팀 소개 한줄
@@ -19,7 +21,7 @@ function TeamInforFixpage() {
   const introChange = (e) => {
     setIntroText(e.target.value);
   };
-
+  const [dues, setDues] = useState("0");
   return (
     <div>
       <Header />
@@ -57,8 +59,84 @@ function TeamInforFixpage() {
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">월 회비</label>
+            <div>
+              <input
+                id="DuesInput"
+                type="text"
+                className="input-money"
+                placeholder={dues}
+              />{" "}
+              원
+            </div>
+
+            <div className="div-money">
+              <Button2
+                Vpadding={2}
+                Hpadding={3}
+                FontSize={15}
+                Width={16}
+                onClick={(e) => {
+                  setDues("0");
+                }}
+                Name="dues"
+                Type="radio"
+              >
+                무료
+              </Button2>
+              <Button2
+                Vpadding={2}
+                Hpadding={3}
+                FontSize={15}
+                Width={16}
+                onClick={(e) => setDues("10,000")}
+                Name="dues"
+                Type="radio"
+              >
+                1만원
+              </Button2>
+              <Button2
+                Vpadding={2}
+                Hpadding={3}
+                FontSize={15}
+                Width={16}
+                onClick={(e) => {
+                  setDues("30,000");
+                }}
+                Name="dues"
+                Type="radio"
+              >
+                3만원
+              </Button2>
+              <Button2
+                Vpadding={2}
+                Hpadding={3}
+                FontSize={15}
+                Width={16}
+                onClick={(e) => {
+                  setDues("50,000");
+                }}
+                Name="dues"
+                Type="radio"
+              >
+                5만원
+              </Button2>
+              <Button2
+                Vpadding={2}
+                Hpadding={3}
+                FontSize={15}
+                Width={20}
+                onClick={(e) => {
+                  document.getElementById("DuesInput").focus();
+                }}
+                Name="dues"
+                Type="radio"
+              >
+                직접입력
+              </Button2>
+            </div>
           </div>
         </div>
+        <Button>수정완료</Button>
       </div>
       <Navigationbar />
     </div>

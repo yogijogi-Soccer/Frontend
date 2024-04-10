@@ -48,3 +48,15 @@
 .Inforfix-div > * {
     margin-bottom: 1vh;
 }
+
+.input-money{
+    width: 20vw;
+    border-radius: 5px;
+    border: 1px solid var(--color-normal9);
+    height: 5vw;
+}
+
+.div-money{
+    display: flex;
+    justify-content: space-between;
+}

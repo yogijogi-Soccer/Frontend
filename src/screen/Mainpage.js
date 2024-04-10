@@ -7,7 +7,6 @@ import SearchBar from "../component/searchBar";
 import Carousel from "../component/Carousel";
 import ScheduleBox from "../component/scheduleBox";
 import TeamAnalysisBox from "../component/teamAnalysisBox";
-
 import "../component/css/Mainpage.css";
 
 function Mainpage() {

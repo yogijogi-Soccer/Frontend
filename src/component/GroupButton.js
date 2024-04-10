@@ -6,6 +6,7 @@ import { flushSync } from "react-dom";
 
 function GroupButton(props) {
   const [isIndexSelet, setIsIndexSelect] = useState(false);
+  const DisplayFlex = props.display ? props.display : "";
 
   // list 값을 가져온다.
   const list = props.list;
@@ -43,7 +44,13 @@ function GroupButton(props) {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <div
+      style={
+        DisplayFlex === "flex"
+          ? { display: "flex", justifyContent: "space-between" }
+          : {}
+      }
+    >
       {props.list.map((el, index) => {
         return (
           <button

@@ -28,6 +28,22 @@ function TeamInforFixpage() {
   const week = ["월", "화", "수", "목", "금", "토", "일"];
   const [weekResult, setWeekResult] = useState("");
   console.log("요일 : " + weekResult);
+
+  //시간대
+  const time = [
+    "아침\n6~10",
+    "낮\n10~14",
+    "오후\n14~18",
+    "저녁\n18~22",
+    "밤\n22~02",
+  ];
+  const [timeResult, setTimeResult] = useState("");
+  console.log("시간대 : " + timeResult);
+
+  //성별
+  const gender = ["남자", "여자", "남녀 모두"];
+  const [genderResult, setGenderResult] = useState("");
+
   return (
     <div>
       <Header />
@@ -69,7 +85,20 @@ function TeamInforFixpage() {
               height={"12vw"}
               borderRadius={"50px"}
               fontSize={"15px"}
+              display={"flex"}
             />
+            <GroupButton
+              list={time}
+              result={setTimeResult}
+              width={"17vw"}
+              height={"17vw"}
+              borderRadius={"50px"}
+              display={"flex"}
+            />
+          </div>
+          <div className="Inforfix-div">
+            <label className="Inforfix-label">성별</label>
+            <GroupButton list={gender} result={setGenderResult} />
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">월 회비</label>

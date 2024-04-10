@@ -28,7 +28,6 @@ root.render(
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/my" element={<Mypage />} />
         <Route path="/search" element={<Searchpage />} />
-        <Route path="/my" element={<Mypage />} />
         <Route path="/search" element={<Searchpage />} />
         <Route path="/detail" element={<TeamDetailpage />} />
         <Route path="/detail/notice" element={<TeamNoticepage />} />

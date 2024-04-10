@@ -1,5 +1,5 @@
 //팀 상세 페이지
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../component/header";
 import Navigationbar from "../../component/navigationbar";
 import GreenButton from "../../component/GreenButton";
@@ -8,10 +8,17 @@ import "../../index.css";
 import Divbox from "../../component/divbox";
 import DivSquareBox from "../../component/divSquareBox";
 import { Link } from "react-router-dom";
+import GroupButton from "../../component/GroupButton";
 
 function TeamDetailpage() {
   //관리자인가 일반인가?
   const role = "manger";
+  const [x, setX] = useState("x data");
+  const [y, setY] = useState("y");
+  // const onSetX = (x) => {
+  //   setX(x);
+  // };
+  console.log(x);
 
   const noticlist = [
     { title: "제목1", date: "2020.03.18 12:00" },
@@ -26,6 +33,8 @@ function TeamDetailpage() {
   const gamelist = [
     { title: "2월 15일 오후 7시", place: "반포경기장", btn: "자세히 보기" },
   ];
+
+  const list = ["dsdf", "d", "c", "a"];
 
   return (
     <div>
@@ -72,6 +81,8 @@ function TeamDetailpage() {
           button={"더보기"}
           link={"main"}
         />
+        <GroupButton list={list} result={setX}></GroupButton>
+        <GroupButton list={list} result={setY}></GroupButton>
       </div>
 
       <Navigationbar />

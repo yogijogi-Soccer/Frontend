@@ -23,6 +23,12 @@ button{
 
 
 /* Button2 */
+
+.isSelect{
+    background-color: var(--color-point-green);
+    border: 1px solid var(--color-point-green);
+}
+
 .Button2{
     color: var(--color-normal1);
     padding: 2vw 15vw;
@@ -30,6 +36,8 @@ button{
     border-radius: 50px;
     background-color: var(--color-normal3);
 }
+
+
 
 .Button2:focus {
     background-color: var(--color-point-green);

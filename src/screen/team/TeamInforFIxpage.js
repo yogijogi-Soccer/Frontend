@@ -22,7 +22,6 @@ function TeamInforFixpage() {
   const introChange = (e) => {
     setIntroText(e.target.value);
   };
-  const [dues, setDues] = useState("0");
 
   //일주일
   const week = ["월", "화", "수", "목", "금", "토", "일"];
@@ -43,6 +42,30 @@ function TeamInforFixpage() {
   //성별
   const gender = ["남자", "여자", "남녀 모두"];
   const [genderResult, setGenderResult] = useState("");
+
+  //나이대
+  const age = ["10대", "20대", "30대", "40대", "50대", "50대 이상"];
+  const [ageResult, setAgeResult] = useState("");
+
+  //월 회비
+  const dues = ["무료", "1만원", "3만원", "5만원", "직접입력"];
+  const [duesResult, setDuesResult] = useState("0");
+  if (duesResult === "무료") {
+    setDuesResult("0");
+  }
+  if (duesResult === "1만원") {
+    setDuesResult("10,000");
+  }
+  if (duesResult === "3만원") {
+    setDuesResult("30,000");
+  }
+  if (duesResult === "5만원") {
+    setDuesResult("50,000");
+  }
+  if (duesResult === "직접입력") {
+    setDuesResult("");
+    document.getElementById("DuesInput").focus();
+  }
 
   return (
     <div>
@@ -98,7 +121,23 @@ function TeamInforFixpage() {
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">성별</label>
-            <GroupButton list={gender} result={setGenderResult} />
+            <GroupButton
+              list={gender}
+              result={setGenderResult}
+              width={"20vw"}
+              height={"8vw"}
+              borderRadius={"20px"}
+            />
+          </div>
+          <div className="Inforfix-div">
+            <label className="Inforfix-label">나이대</label>
+            <GroupButton
+              list={age}
+              result={setAgeResult}
+              width={"28vw"}
+              height={"8vw"}
+              borderRadius={"20px"}
+            />
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">월 회비</label>
@@ -107,13 +146,20 @@ function TeamInforFixpage() {
                 id="DuesInput"
                 type="text"
                 className="input-money"
-                placeholder={dues}
+                placeholder={duesResult}
               />{" "}
               원
             </div>
-
-            <div className="div-money">
-              <Button2
+            <div>
+              <GroupButton
+                list={dues}
+                result={setDuesResult}
+                display={"flex"}
+                width={"18vw"}
+                height={"8vw"}
+                borderRadius={"20px"}
+              />
+              {/* <Button2
                 Vpadding={2}
                 Hpadding={3}
                 FontSize={15}
@@ -175,7 +221,7 @@ function TeamInforFixpage() {
                 Type="radio"
               >
                 직접입력
-              </Button2>
+              </Button2> */}
             </div>
           </div>
         </div>

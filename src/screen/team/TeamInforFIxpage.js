@@ -14,6 +14,7 @@ import WeekButton from "../../component/weekButton";
 import TimeButton from "../../component/timeButton";
 import Button2 from "../../component/Button2";
 import Button from "../../component/Button";
+import GroupButton from "../../component/GroupButton";
 
 function TeamInforFixpage() {
   //팀 소개 한줄
@@ -22,6 +23,11 @@ function TeamInforFixpage() {
     setIntroText(e.target.value);
   };
   const [dues, setDues] = useState("0");
+
+  //일주일
+  const week = ["월", "화", "수", "목", "금", "토", "일"];
+  const [weekResult, setWeekResult] = useState("");
+  console.log("요일 : " + weekResult);
   return (
     <div>
       <Header />
@@ -54,8 +60,16 @@ function TeamInforFixpage() {
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">주요 활동 지역</label>
-            <WeekButton />
-            <TimeButton />
+            {/* <WeekButton />
+            <TimeButton /> */}
+            <GroupButton
+              list={week}
+              result={setWeekResult}
+              width={"12vw"}
+              height={"12vw"}
+              borderRadius={"50px"}
+              fontSize={"15px"}
+            />
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">월 회비</label>

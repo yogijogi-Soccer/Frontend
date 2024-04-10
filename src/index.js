@@ -34,7 +34,7 @@ root.render(
         <Route path="/detail/notice" element={<TeamNoticepage />} />
         <Route path="/detail/member" element={<TeamMemberpage />} />
         <Route path="/write" element={<NoticeWritepage />} />
-        <Route path="/manger/fix" element={<TeamInforFixpage />} />
+        <Route path="/manager/fix" element={<TeamInforFixpage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

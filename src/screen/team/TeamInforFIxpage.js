@@ -15,6 +15,7 @@ import TimeButton from "../../component/timeButton";
 import Button2 from "../../component/Button2";
 import Button from "../../component/Button";
 import GroupButton from "../../component/GroupButton";
+import ContrySelectBtn from "../../component/ContrySelectBtn";
 
 function TeamInforFixpage() {
   //팀 소개 한줄
@@ -22,6 +23,8 @@ function TeamInforFixpage() {
   const introChange = (e) => {
     setIntroText(e.target.value);
   };
+
+  //시,도
 
   //일주일
   const week = ["월", "화", "수", "목", "금", "토", "일"];
@@ -99,6 +102,10 @@ function TeamInforFixpage() {
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">주요 활동 지역</label>
+            <ContrySelectBtn />
+          </div>
+          <div className="Inforfix-div">
+            <label className="Inforfix-label">주요 활동 시간</label>
             {/* <WeekButton />
             <TimeButton /> */}
             <GroupButton

@@ -53,7 +53,7 @@ function TeamDetailpage() {
                 {role !== "manger" ? (
                   "팀 탈퇴하기"
                 ) : (
-                  <Link to="/manger/fix" className="link_white">
+                  <Link to="/detail/fix" className="link_white">
                     팀 정보 수정
                   </Link>
                 )}

@@ -10,6 +10,7 @@ import "../css/inforfix.css";
 import Button from "../../component/Button";
 import GroupButton from "../../component/GroupButton";
 import ContrySelectBtn from "../../component/CountrySelectBtn";
+import KakaoAddressPopup from "../../component/KakaoAddressPopup";
 
 function TeamInforFixpage() {
   //팀 소개 한줄
@@ -17,7 +18,7 @@ function TeamInforFixpage() {
   const introChange = (e) => {
     setIntroText(e.target.value);
   };
-  
+
   //일주일
   const week = ["월", "화", "수", "목", "금", "토", "일"];
   const [weekResult, setWeekResult] = useState("");
@@ -98,6 +99,7 @@ function TeamInforFixpage() {
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">주요 활동 시간</label>
+            <KakaoAddressPopup />
             {/* <WeekButton />
             <TimeButton /> */}
             <GroupButton

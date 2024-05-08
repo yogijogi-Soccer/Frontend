@@ -11,6 +11,7 @@ import Button from "../../component/Button";
 import GroupButton from "../../component/GroupButton";
 import ContrySelectBtn from "../../component/CountrySelectBtn";
 import KakaoAddressPopup from "../../component/KakaoAddressPopup";
+import { Link } from "react-router-dom";
 
 function TeamInforFixpage() {
   //팀 소개 한줄
@@ -161,73 +162,12 @@ function TeamInforFixpage() {
                 height={"8vw"}
                 borderRadius={"20px"}
               />
-              {/* <Button2
-                Vpadding={2}
-                Hpadding={3}
-                FontSize={15}
-                Width={16}
-                onClick={(e) => {
-                  setDues("0");
-                }}
-                Name="dues"
-                Type="radio"
-              >
-                무료
-              </Button2>
-              <Button2
-                Vpadding={2}
-                Hpadding={3}
-                FontSize={15}
-                Width={16}
-                onClick={(e) => setDues("10,000")}
-                Name="dues"
-                Type="radio"
-              >
-                1만원
-              </Button2>
-              <Button2
-                Vpadding={2}
-                Hpadding={3}
-                FontSize={15}
-                Width={16}
-                onClick={(e) => {
-                  setDues("30,000");
-                }}
-                Name="dues"
-                Type="radio"
-              >
-                3만원
-              </Button2>
-              <Button2
-                Vpadding={2}
-                Hpadding={3}
-                FontSize={15}
-                Width={16}
-                onClick={(e) => {
-                  setDues("50,000");
-                }}
-                Name="dues"
-                Type="radio"
-              >
-                5만원
-              </Button2>
-              <Button2
-                Vpadding={2}
-                Hpadding={3}
-                FontSize={15}
-                Width={20}
-                onClick={(e) => {
-                  document.getElementById("DuesInput").focus();
-                }}
-                Name="dues"
-                Type="radio"
-              >
-                직접입력
-              </Button2> */}
             </div>
           </div>
+          <Link to="/detail" style={{ textAlign: "center" }}>
+            <Button>수정완료</Button>
+          </Link>
         </div>
-        <Button>수정완료</Button>
       </div>
       <Navigationbar />
     </div>

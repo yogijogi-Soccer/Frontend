@@ -15,11 +15,13 @@ import TeamNoticepage from "./screen/team/TeamNoticepage";
 import TeamMemberpage from "./screen/team/TeamMemberpage";
 import NoticeWritepage from "./screen/team/NoticeWritepage";
 import TeamInforFixpage from "./screen/team/TeamInforFixpage";
+import ScrollToTop from "./scrollTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Mainpage />} />
         <Route path="/create" element={<CreateTeampage />} />

@@ -1,3 +1,5 @@
+// 참고 링크 : https://postcode.map.daum.net/guide#attributes
+//카카오 도로명주소 API 연결
 import React, { useEffect } from "react";
 import DaumPostcode from "react-daum-postcode";
 import { useState, useRef } from "react";

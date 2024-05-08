@@ -98,10 +98,11 @@ function TeamInforFixpage() {
             <ContrySelectBtn />
           </div>
           <div className="Inforfix-div">
-            <label className="Inforfix-label">주요 활동 시간</label>
+            <label className="Inforfix-label">활동하는 경기장</label>
             <KakaoAddressPopup />
-            {/* <WeekButton />
-            <TimeButton /> */}
+          </div>
+          <div className="Inforfix-div">
+            <label className="Inforfix-label">주요 활동 시간</label>
             <GroupButton
               list={week}
               result={setWeekResult}

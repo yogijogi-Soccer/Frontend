@@ -16,6 +16,8 @@ import TeamMemberpage from "./screen/team/TeamMemberpage";
 import NoticeWritepage from "./screen/team/NoticeWritepage";
 import TeamInforFixpage from "./screen/team/TeamInforFixpage";
 import ScrollToTop from "./scrollTop";
+import TeamApprovalpage from "./screen/team/TeamApprovalpage";
+import TeamOutpage from "./screen/team/TeamOutpage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -31,11 +33,13 @@ root.render(
         <Route path="/my" element={<Mypage />} />
         <Route path="/search" element={<Searchpage />} />
         <Route path="/search" element={<Searchpage />} />
-        <Route path="/detail" element={<TeamDetailpage />} />
-        <Route path="/detail/notice" element={<TeamNoticepage />} />
-        <Route path="/detail/member" element={<TeamMemberpage />} />
-        <Route path="/write" element={<NoticeWritepage />} />
-        <Route path="/detail/fix" element={<TeamInforFixpage />} />
+        <Route path="/team" element={<TeamDetailpage />} />
+        <Route path="/team/notice" element={<TeamNoticepage />} />
+        <Route path="/team/member" element={<TeamMemberpage />} />
+        <Route path="/manager/write" element={<NoticeWritepage />} />
+        <Route path="/team/fix" element={<TeamInforFixpage />} />
+        <Route path="/team/approval" element={<TeamApprovalpage />} />
+        <Route path="/team/out" element={<TeamOutpage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -15,10 +15,10 @@ function FindTeampage() {
       <div className="FindTeampage">
         <SearchBar />
         <SelectBar />
-        <Link to="/detail" className="link">
+        <Link to="/team" className="link">
           <TeamBox />
         </Link>
-        <Link to="/detail" className="link">
+        <Link to="/team" className="link">
           <TeamBox />
         </Link>
       </div>

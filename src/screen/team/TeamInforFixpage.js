@@ -164,7 +164,7 @@ function TeamInforFixpage() {
               />
             </div>
           </div>
-          <Link to="/detail" style={{ textAlign: "center" }}>
+          <Link to="/team" style={{ textAlign: "center" }}>
             <Button>수정완료</Button>
           </Link>
         </div>

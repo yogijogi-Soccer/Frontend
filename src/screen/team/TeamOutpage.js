@@ -8,7 +8,7 @@ import TeamNav from "../../component/teamNav";
 import Noticlist from "../../component/Noticelist";
 import { Link } from "react-router-dom";
 
-function TeamNoticepage() {
+function TeamOutpage() {
   let role = true;
   const noticelist = [
     { title: "[필독] 팀 개설 안내", date: "2020.03.18 12:00", update: 5 },
@@ -19,10 +19,10 @@ function TeamNoticepage() {
     <div>
       <Header />
       <div className="div-page">
-        <TeamNav menu="공지사항" />
+        <TeamNav menu="탈퇴관리" />
         <div className="Noticebtn_div">
           {role ? (
-            <Link to="/manager/write" className="Noticediv-link">
+            <Link to="/write" className="Noticediv-link">
               글쓰기
             </Link>
           ) : (
@@ -37,4 +37,4 @@ function TeamNoticepage() {
   );
 }
 
-export default TeamNoticepage;
+export default TeamOutpage;

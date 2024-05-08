@@ -12,7 +12,7 @@ import GroupButton from "../../component/GroupButton";
 
 function TeamDetailpage() {
   //관리자인가 일반인가?
-  const role = "manger";
+  const role = "manager";
   const [x, setX] = useState("x data");
   const [y, setY] = useState("y");
   // const onSetX = (x) => {
@@ -50,10 +50,10 @@ function TeamDetailpage() {
             <div className="TeamDetail-profile_title">
               <div>팀 이름</div>
               <GreenButton>
-                {role !== "manger" ? (
+                {role !== "manager" ? (
                   "팀 탈퇴하기"
                 ) : (
-                  <Link to="/detail/fix" className="link_white">
+                  <Link to="/team/fix" className="link_white">
                     팀 정보 수정
                   </Link>
                 )}

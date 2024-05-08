@@ -1,106 +1,106 @@
-.teamNav{
-    display: flex;
-    border-top: 1px solid var(--color-normal4);
-    border-bottom: 1px solid var(--color-normal4);
-    padding: 2vw;
-    margin-bottom: 5vh;
+.teamNav {
+  display: flex;
+  border-top: 1px solid var(--color-normal4);
+  border-bottom: 1px solid var(--color-normal4);
+  padding: 1vw;
+  margin-bottom: 5vh;
+  justify-content: space-between;
 }
 
-.teamNav_menu{
-    margin-right: 10px;
-    padding: 7px;
-    color: var(--color-normal6);
+.teamNav_menu {
+  padding: 0.8vh;
+  color: var(--color-normal6);
 }
 
-.click{
-    color: var(--color-point-green);
-    background-color: var(--color-normal2);
-    border-radius: 5px;
+.click {
+  color: var(--color-point-green);
+  background-color: var(--color-normal2);
+  padding: 0.8vh;
+  border-radius: 2px;
 }
 
-.Member_div-striker{
-    color: var(--color-point-green);
-    margin-bottom: 10px;
+.Member_div-striker {
+  color: var(--color-point-green);
+  margin-bottom: 10px;
 }
 
-.Member_div-defender{
-    color: var(--color-point-green);
-    margin-top: 40px;
-    margin-bottom: 10px;
+.Member_div-defender {
+  color: var(--color-point-green);
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
-.Member_div-goalkeeper{
-    color: var(--color-point-green);
-    margin-top: 40px;
-    margin-bottom: 10px;
+.Member_div-goalkeeper {
+  color: var(--color-point-green);
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
-.Member_div-midfielder{
-    color: var(--color-point-green);
-    margin-top: 40px;
-    
+.Member_div-midfielder {
+  color: var(--color-point-green);
+  margin-top: 40px;
 }
 
-.teamcard{
-    display: flex;
-    flex-direction: row;
+.teamcard {
+  display: flex;
+  flex-direction: row;
 }
 
-body ::-webkit-scrollbar{
-    display: hidden;
+body ::-webkit-scrollbar {
+  display: hidden;
 }
 
-.teamcard_div{
-    width: 22vw;
-    height: 32vw;
-    border-radius: 10px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-right: 10px;
+.teamcard_div {
+  width: 22vw;
+  height: 32vw;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 10px;
 }
 
-.teamcard_div-img{
-    width: 15vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
+.teamcard_div-img {
+  width: 15vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
 }
 
-.teamcard_div-name{
-    margin-top: 10px;
-    font-size: 15px;
+.teamcard_div-name {
+  margin-top: 10px;
+  font-size: 15px;
 }
 
-.teamcard_div-yellowcard{
-    margin-top: 10px;
-    font-size: 12px;
-    color: var(--color-normal8);
+.teamcard_div-yellowcard {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--color-normal8);
 }
 
-.공격수{
-    background-color: var(--color-point-lightgreen);
+.공격수 {
+  background-color: var(--color-point-lightgreen);
 }
 
-.수비수{
-    background-color: var( --color-point-darkturquoise);
+.수비수 {
+  background-color: var(--color-point-darkturquoise);
 }
 
-.골키퍼{
-    background-color: var(--color-point-green);
+.골키퍼 {
+  background-color: var(--color-point-green);
 }
 
-.미드필더{
-    background-color: var(--color-point-applegreen);
+.미드필더 {
+  background-color: var(--color-point-applegreen);
 }
 
-.teamcard_blur{
-    margin: auto;
-    width: 21.5vw;
-    height: 31.5vw;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.608);
+.teamcard_blur {
+  margin: auto;
+  width: 21.5vw;
+  height: 31.5vw;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.608);
 }
 /* 
 #scroll-horizontal .scroll-horizontal > div {
@@ -109,19 +109,17 @@ body ::-webkit-scrollbar{
     grid-auto-flow: column;
 } */
 
-
-.wrap-vertical{
-    overflow: auto hidden;
-    white-space: nowrap;
-    
+.wrap-vertical {
+  overflow: auto hidden;
+  white-space: nowrap;
 }
 
-.Noticediv-btn{
-    background-color: white;
-    margin-left: auto;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    display: flex;
-    text-align: right;
-    color: var(--color-point-green);
+.Noticediv-btn {
+  background-color: white;
+  margin-left: auto;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  display: flex;
+  text-align: right;
+  color: var(--color-point-green);
 }

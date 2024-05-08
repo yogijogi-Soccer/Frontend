@@ -1,22 +1,19 @@
 //팀 가입 페이지
 
-import React from 'react';
-import Header from '../component/header'
-import Navigationbar from '../component/navigationbar';
-import TeamDetailOption from '../../component/TeamDetailOption';
-import JoinForm from '../../component/JoinForm';
+import React from "react";
+import Header from "../component/header";
+import Navigationbar from "../component/navigationbar";
+import TeamDetailOption from "../../component/TeamDetailOption";
 
 function TeamDetailPage() {
-
- return (
-  <div>
-   <Header />
-   <TeamDetailOption />
-   {/* <JoinForm /> */}
-   <Navigationbar />
-  </div>
- )
-
+  return (
+    <div>
+      <Header />
+      <TeamDetailOption />
+      {/* <JoinForm /> */}
+      <Navigationbar />
+    </div>
+  );
 }
 
 export default TeamDetailPage;

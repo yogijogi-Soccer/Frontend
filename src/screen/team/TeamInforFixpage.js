@@ -7,15 +7,9 @@ import "../../index.css";
 import GreenButton from "../../component/GreenButton";
 import "../css/teamdetail.css";
 import "../css/inforfix.css";
-import Divbox from "../../component/divbox";
-import DivSquareBox from "../../component/divSquareBox";
-import { Link } from "react-router-dom";
-import WeekButton from "../../component/weekButton";
-import TimeButton from "../../component/timeButton";
-import Button2 from "../../component/Button2";
 import Button from "../../component/Button";
 import GroupButton from "../../component/GroupButton";
-import ContrySelectBtn from "../../component/ContrySelectBtn";
+import ContrySelectBtn from "../../component/CountrySelectBtn";
 
 function TeamInforFixpage() {
   //팀 소개 한줄
@@ -23,9 +17,7 @@ function TeamInforFixpage() {
   const introChange = (e) => {
     setIntroText(e.target.value);
   };
-
-  //시,도
-
+  
   //일주일
   const week = ["월", "화", "수", "목", "금", "토", "일"];
   const [weekResult, setWeekResult] = useState("");

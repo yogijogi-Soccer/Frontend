@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import "./css/modal.css";
 import React from "react";
 
+//open : boolean 타입. modal 열기
+//onClose : boolean 타입. modal 닫기
+//context : string 타입. 모달에 들어갈 내용
 const Modal = ({ open, onClose, context }) => {
   if (!open) return null;
 

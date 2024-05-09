@@ -4,6 +4,12 @@ import "./css/modal.css";
 import React, { useState } from "react";
 import Modal from "./Modal";
 
+//open : boolean 타입. modal 열기
+//onClose : boolean 타입. modal 닫기
+//title : string 타입. 모달에 들어갈 제목
+//context : string 타입. 모달에 들어갈 내용
+//completeContext : string 타입. 예/아니오 modal 다음에 닫기 modal의 context로 들어갈 내용
+
 const ModalCheck = ({ open, onClose, context, title, completeContext }) => {
   const [isModal, setIsModal] = useState(false);
   const OpenModal = () => {

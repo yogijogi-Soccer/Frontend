@@ -1,34 +1,23 @@
 import React from "react";
 import "./css/component.css";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import { useState } from "react";
+import ModalCheck from "./ModalCheck";
 
 //가입승인 요청 목록
 
 function ApprovalList(props) {
   const [approveOpen, setApproveOpen] = useState(false);
   const [refuseOpen, setRefuseOpen] = useState(false);
-  const [checkApprove, setCheckApprove] = useState(false);
+  const [context, setContext] = useState("");
 
-  const handleApproveOpen = () => {
+  const handleApproveOpen = (name, position) => {
     setApproveOpen(true);
+    setContext(name + position);
   };
 
-  const handleApproveClose = () => {
-    setApproveOpen(false);
-  };
-
-  const handleCheckApprove = () => {
-    setCheckApprove(true);
-    setApproveOpen(false);
-  };
-  const handleCheckClose = () => {
-    setCheckApprove(false);
+  const handleRefuseOpen = (name, position) => {
+    setRefuseOpen(true);
+    setContext(name + position);
   };
 
   const list = props.list.map((el) => {
@@ -51,10 +40,10 @@ function ApprovalList(props) {
           {name}({position})
         </p>
         <div>
-          <Button
-            onClick={handleApproveOpen}
+          <button
+            onClick={() => handleApproveOpen(name, position)}
             style={{
-              padding: "1vh",
+              padding: "1.2vh",
               borderRadius: "1vh",
               marginRight: "1vh",
               backgroundColor: "var(--color-point-green)",
@@ -62,43 +51,7 @@ function ApprovalList(props) {
             }}
           >
             승인
-          </Button>
-          <Dialog
-            open={approveOpen}
-            onClose={handleApproveClose}
-            aria-labelledby="alert-dialog-title"
-            aria-describedby="alert-dialog-description"
-          >
-            <DialogTitle id="alert-dialog-title">
-              {"가입을 승인하시겠습니까?"}
-            </DialogTitle>
-            <DialogContent>
-              <DialogContentText id="alert-dialog-description">
-                대상 : {name} {position}
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={handleCheckApprove}>예</Button>
-              <Button onClick={handleApproveClose} autoFocus>
-                아니요
-              </Button>
-            </DialogActions>
-          </Dialog>
-          <Dialog
-            open={checkApprove}
-            onClose={handleCheckClose}
-            aria-labelledby="alert-dialog-title"
-            aria-describedby="alert-dialog-description"
-          >
-            <DialogTitle id="alert-dialog-title">
-              {"승인이 완료되었습니다."}
-            </DialogTitle>
-            <DialogContent></DialogContent>
-            <DialogActions>
-              <Button onClick={handleCheckClose}>닫기</Button>
-            </DialogActions>
-          </Dialog>
-
+          </button>
           <button
             style={{
               padding: "1.2vh",
@@ -106,6 +59,7 @@ function ApprovalList(props) {
               backgroundColor: "var(--color-normal8)",
               color: "var(--color-normal1)",
             }}
+            onClick={() => handleRefuseOpen(name, position)}
           >
             거절
           </button>
@@ -113,7 +67,25 @@ function ApprovalList(props) {
       </div>
     );
   });
-  return <div>{list}</div>;
+  return (
+    <div>
+      {list}
+      <ModalCheck
+        open={approveOpen}
+        title={"가입을 승인하시겠습니까?"}
+        context={"승인 대상 : " + context}
+        onClose={() => setApproveOpen(false)}
+        completeContext={"승인이 완료되었습니다"}
+      />
+      <ModalCheck
+        open={refuseOpen}
+        title={"가입을 거절하시겠습니까?"}
+        context={"거절 대상 : " + context}
+        onClose={() => setRefuseOpen(false)}
+        completeContext={"거절이 완료되었습니다"}
+      />
+    </div>
+  );
 }
 
 export default ApprovalList;

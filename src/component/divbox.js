@@ -22,7 +22,14 @@ function divbox(props) {
         <div key={el.title} className="divbox_div-content_game">
           <p className="divbox_content-title">{el.title}</p>
           <p>{el.place}</p>
-          <p className="divbox_content-date">{el.btn}</p>
+          <p className="divbox_content-date">
+            <Link
+              to={props.link}
+              style={{ color: "var(--color-normal9)", textDecoration: "none" }}
+            >
+              {el.btn}
+            </Link>
+          </p>
         </div>
       );
     }

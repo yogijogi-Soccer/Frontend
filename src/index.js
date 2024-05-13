@@ -18,6 +18,7 @@ import TeamInforFixpage from "./screen/team/TeamInforFixpage";
 import ScrollToTop from "./scrollTop";
 import TeamApprovalpage from "./screen/team/TeamApprovalpage";
 import TeamOutpage from "./screen/team/TeamOutpage";
+import TeamCreateGamepage from "./screen/team/TeamCreateGamepage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -40,6 +41,7 @@ root.render(
         <Route path="/team/fix" element={<TeamInforFixpage />} />
         <Route path="/team/approval" element={<TeamApprovalpage />} />
         <Route path="/team/out" element={<TeamOutpage />} />
+        <Route path="/team/newgame" element={<TeamCreateGamepage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

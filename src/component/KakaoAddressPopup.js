@@ -57,6 +57,7 @@ const KakaoAddressPopup = () => {
               backgroundColor: "var(--color-normal3)",
               borderRadius: "1vh",
               marginBottom: "0.5vh",
+              border: "0",
             }}
           ></input>
           {buildingName && (

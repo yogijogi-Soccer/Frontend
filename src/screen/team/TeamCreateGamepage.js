@@ -1,5 +1,5 @@
 //팀 멤버관리 페이지
-import React from "react";
+import React, { useRef } from "react";
 import { useState, useEffect } from "react";
 import Header from "../../component/header";
 import Navigationbar from "../../component/navigationbar";
@@ -11,6 +11,9 @@ import axios from "axios";
 import Formation443 from "../../component/Formation443";
 import "../css/inforfix.css";
 import KakaoAddressPopup from "../../component/KakaoAddressPopup";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { ko } from "date-fns/locale";
 
 function TeamCreateGamepage() {
   const [mode, setMode] = useState("");
@@ -19,6 +22,7 @@ function TeamCreateGamepage() {
   const strategyChange = (e) => {
     setStrategy(e.target.value);
   };
+  const [startDate, setStartDate] = useState(new Date());
   return (
     <div>
       <Header />
@@ -35,17 +39,28 @@ function TeamCreateGamepage() {
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">언제 경기하나요?</label>
+            <DatePicker
+              locale={ko}
+              showIcon
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              dateFormat="yyyy년 MM월 dd일"
+              className="Datepicker_custom"
+              minDate={new Date()}
+            />
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">몇 시에 경기하나요?</label>
-            <div>
-              <input type="number" style={{ width: "5vh" }} /> 시
-              <input
-                type="number"
-                style={{ width: "5vh", marginLeft: "2vh" }}
-              />{" "}
-              분
-            </div>
+            <input
+              aria-label="Time"
+              type="time"
+              style={{
+                width: "15vh",
+                height: "3vh",
+                fontSize: "1.8vh",
+                fontWeight: "bold",
+              }}
+            />
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">상대팀은 누군가요?</label>

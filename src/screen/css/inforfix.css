@@ -59,3 +59,31 @@
 .input-money::placeholder {
   color: var(--color-normal9);
 }
+
+.Datepicker_custom {
+  border: 1px solid var(--color-normal6) !important;
+  border-radius: 0.5vh;
+  text-align: center;
+  width: 14vh;
+}
+
+.react-datepicker__triangle {
+  left: 10px !important;
+  fill: var(--color-point-applegreen) !important;
+}
+
+.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {
+  color: var(--color-point-applegreen) !important;
+}
+
+.react-datepicker {
+  margin-right: 10vh !important;
+}
+
+.react-datepicker__header {
+  background-color: var(--color-point-applegreen) !important;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: var(--color-normal7) !important;
+}

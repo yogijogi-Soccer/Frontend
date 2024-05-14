@@ -1,62 +1,61 @@
 /* 팀 정보 수정 페이지 css */
 
-.Inforfix_infor-intro{
-    color: var(--color-normal7);
-    padding-top: 10px;
-    width: (100% - 10px);
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid var(--color-normal6);
-    outline-color: var(--color-point-applegreen);
-    vertical-align: top;
-    padding-left: 10px;
+.Inforfix_infor-intro {
+  color: var(--color-normal7);
+  padding-top: 10px;
+  width: (100% - 10px);
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--color-normal6);
+  outline-color: var(--color-point-applegreen);
+  vertical-align: top;
+  padding-left: 10px;
 }
 
-
-.Inforfix-content{
-    display: flex;
-    flex-direction: column;
+.Inforfix-content {
+  display: flex;
+  flex-direction: column;
 }
 
-.Inforfix-profile_title{
-    color: var(--color-normal9);
-    font-size: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.Inforfix-profile_title {
+  color: var(--color-normal9);
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.Inforfix-label{
-    font-size: 15px;
-    color: var(--color-normal9);
+.Inforfix-label {
+  font-size: 15px;
+  color: var(--color-point-green);
 }
 
-.Inforfix-div{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: space-between;
-    margin-bottom: 3vh;
+.Inforfix-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 3vh;
 }
 
-.Inforfix-div label{
-    margin-bottom: 1.5vh;
+.Inforfix-div label {
+  margin-bottom: 1.5vh;
 }
 
 .Inforfix-div > * {
-    margin-bottom: 1vh;
+  margin-bottom: 1vh;
 }
 
-.input-money{
-    width: 20vw;
-    border-radius: 5px;
-    border: 1px solid var(--color-normal9);
-    color: var(--color-normal9);
-    height: 5vw;
+.input-money {
+  width: 20vw;
+  border-radius: 5px;
+  border: 1px solid var(--color-normal9);
+  color: var(--color-normal9);
+  height: 5vw;
 }
 
-.input-money::placeholder{
-    color: var(--color-normal9);
+.input-money::placeholder {
+  color: var(--color-normal9);
 }

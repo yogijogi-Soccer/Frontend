@@ -1,14 +1,33 @@
 //팀 목록 페이지
 import React from "react";
 
-function Pomation443() {
-  const pomation_name = ["open", "dlwlgus", "dkiiosa", "apple"];
+function Formation443() {
+  const formation_name = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+  ];
 
-  const pomation_xy = [
-    ["0%", "0%"],
-    ["50%", "50%"],
-    ["70%", "70%"],
-    ["100%", "100%"],
+  const formation_xy = [
+    ["30%", "10%"],
+    ["30%", "35%"],
+    ["30%", "60%"],
+    ["30%", "90%"],
+    ["50%", "10%"],
+    ["50%", "35%"],
+    ["50%", "60%"],
+    ["50%", "90%"],
+    ["70%", "20%"],
+    ["70%", "50%"],
+    ["70%", "80%"],
   ];
   return (
     <div
@@ -18,7 +37,7 @@ function Pomation443() {
         height: "90%",
       }}
     >
-      {pomation_xy.map((el, index) => {
+      {formation_xy.map((el, index) => {
         var x = el[0];
         var y = el[1];
         return (
@@ -37,7 +56,7 @@ function Pomation443() {
             }}
           >
             <p style={{ fontSize: "2.5vw", margin: "auto" }}>
-              {pomation_name[index]}
+              {formation_name[index]}
             </p>
           </div>
         );
@@ -46,4 +65,4 @@ function Pomation443() {
   );
 }
 
-export default Pomation443;
+export default Formation443;

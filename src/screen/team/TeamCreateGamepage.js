@@ -8,13 +8,17 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import axios from "axios";
-import Pomation443 from "../../component/Pomation443";
+import Formation443 from "../../component/Formation443";
 import "../css/inforfix.css";
 import KakaoAddressPopup from "../../component/KakaoAddressPopup";
 
 function TeamCreateGamepage() {
   const [mode, setMode] = useState("");
   const gamemode = ["4-4-3", "2-2-2"];
+  const [strategy, setStrategy] = useState("");
+  const strategyChange = (e) => {
+    setStrategy(e.target.value);
+  };
   return (
     <div>
       <Header />
@@ -34,30 +38,43 @@ function TeamCreateGamepage() {
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">몇 시에 경기하나요?</label>
-          </div>
-          <div className="Inforfix-div">
-            <label className="Inforfix-label">어디서 경기하나요?</label>
+            <div>
+              <input type="number" style={{ width: "5vh" }} /> 시
+              <input
+                type="number"
+                style={{ width: "5vh", marginLeft: "2vh" }}
+              />{" "}
+              분
+            </div>
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">상대팀은 누군가요?</label>
+            <input type="string" style={{ height: "3vh" }}></input>
           </div>
           <div className="Inforfix-div">
-            <label className="Inforfix-label">전술을 작성해주세요.</label>
+            <label className="Inforfix-label">
+              전술을 작성해주세요. ( {strategy.length} / 500자 )
+            </label>
+            <textarea
+              type="string"
+              style={{ height: "8vh" }}
+              onChange={strategyChange}
+            />
           </div>
         </div>
         <div className="Inforfix-div">
           <label className="Inforfix-label">포지션을 정해주세요.</label>
           <FormControl sx={{ m: 1, minWidth: 180 }} size="small">
-            <InputLabel id="demo-select-small-label">게임 포지션</InputLabel>
+            <InputLabel id="demo-select-small-label">게임 포메이션</InputLabel>
             <Select
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
-              value={gamemode}
+              value={mode}
               label="gamemode"
               onChange={(e) => setMode(e.target.value)}
             >
               {gamemode.map((el) => {
-                return <MenuItem>{el}</MenuItem>;
+                return <MenuItem value={el}>{el}</MenuItem>;
               })}
             </Select>
           </FormControl>
@@ -73,7 +90,7 @@ function TeamCreateGamepage() {
               position="relative"
               style={{ maxWidth: "100%" }}
             />
-            <Pomation443 />
+            {mode === "4-4-3" && <Formation443 />}
           </div>
         </div>
       </div>

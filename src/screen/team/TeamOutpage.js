@@ -5,32 +5,28 @@ import Navigationbar from "../../component/navigationbar";
 import "../css/notice.css";
 import "../../index.css";
 import TeamNav from "../../component/teamNav";
-import Noticlist from "../../component/Noticelist";
+import OutList from "../../component/OutList";
 import { Link } from "react-router-dom";
 
 function TeamOutpage() {
   let role = true;
-  const noticelist = [
-    { title: "[필독] 팀 개설 안내", date: "2020.03.18 12:00", update: 5 },
-    { title: "제목2", date: "2023.03.14 12:00", update: 10 },
+
+  const list = [
+    { name: "이지현", position: "공격수 - CB", reason: "탈퇴 사유 입니다" },
+    { name: "이서현", position: "골키퍼 - GK", reason: "힘들어서" },
   ];
+  const count = list.length;
 
   return (
     <div>
       <Header />
       <div className="div-page">
         <TeamNav menu="탈퇴관리" />
-        <div className="Noticebtn_div">
-          {role ? (
-            <Link to="/write" className="Noticediv-link">
-              글쓰기
-            </Link>
-          ) : (
-            ""
-          )}
-        </div>
+        <p style={{ fontSize: "1.8vh", color: "var(--color-point-green)" }}>
+          탈퇴 목록 : {count} 명
+        </p>
 
-        <Noticlist list={noticelist} />
+        <OutList list={list} />
       </div>
       <Navigationbar />
     </div>

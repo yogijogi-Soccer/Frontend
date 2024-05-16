@@ -74,7 +74,12 @@ function TeamDetailpage() {
           link={"member"}
           item={teamlist}
         ></Divbox>
-        <Divbox title={"경기일정"} item={gamelist} link={"newgame"}></Divbox>
+        <Divbox
+          title={"경기일정"}
+          item={gamelist}
+          button={"등록하기"}
+          link={"newgame"}
+        ></Divbox>
         <DivSquareBox
           title={"회비"}
           content={"10,000원"}

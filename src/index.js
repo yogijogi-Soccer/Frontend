@@ -19,6 +19,7 @@ import ScrollToTop from "./scrollTop";
 import TeamApprovalpage from "./screen/team/TeamApprovalpage";
 import TeamOutpage from "./screen/team/TeamOutpage";
 import TeamCreateGamepage from "./screen/team/TeamCreateGamepage";
+import TeamGamepage from "./screen/team/TeamGamepage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -42,6 +43,7 @@ root.render(
         <Route path="/team/approval" element={<TeamApprovalpage />} />
         <Route path="/team/out" element={<TeamOutpage />} />
         <Route path="/team/newgame" element={<TeamCreateGamepage />} />
+        <Route path="/team/game1" element={<TeamGamepage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

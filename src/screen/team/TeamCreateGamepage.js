@@ -14,6 +14,8 @@ import KakaoAddressPopup from "../../component/KakaoAddressPopup";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ko } from "date-fns/locale";
+import Button from "../../component/Button";
+import { Link } from "react-router-dom";
 
 function TeamCreateGamepage() {
   const [mode, setMode] = useState("");
@@ -107,6 +109,9 @@ function TeamCreateGamepage() {
             />
             {mode === "4-4-3" && <Formation443 />}
           </div>
+          <Link to="/team" style={{ textAlign: "center" }}>
+            <Button>등록하기</Button>
+          </Link>
         </div>
       </div>
 

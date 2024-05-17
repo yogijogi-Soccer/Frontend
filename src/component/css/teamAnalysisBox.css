@@ -73,7 +73,18 @@
   align-items: center;
 }
 
-.TeamAnalysisomponent1 span {
+.TeamAnalysisomponent2 {
+  background: #d9d9d9;
+  border-radius: 4vw;
+  width: 90vw;
+  height: 30vh;
+  position: absolute;
+  left: -95%;
+  top: 31%;
+}
+
+.TeamAnalysisomponent1 span,
+.TeamAnalysisomponent2 span {
   /* color: #ffffff; */
   display: block;
   padding-bottom: 1vh;

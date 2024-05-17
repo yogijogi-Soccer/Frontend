@@ -46,6 +46,21 @@ const TeamInfo = () => {
         >
           <div className="Team2">
             <span>정모</span>
+            <div className="TeamAnalysisomponent2">
+              <div className="teamAnalysisPersonnel">
+                <span>팀원 수</span>
+                <span>15명</span>
+              </div>
+              <div className="teamAnalysisPosition">
+                <span>내 포지션</span>
+                <span>공격수</span>
+              </div>
+              <div className="teamAnalysisNotice">
+                <span>공지사항</span>
+                <span>[필독] 어쩌고저쩌고 경기장 어쩌고</span>
+                <span>[필독] 어쩌고저쩌고 경기장 어쩌고</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

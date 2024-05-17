@@ -23,12 +23,13 @@ function Mainpage() {
   return (
     <div className="Mainpage">
       <Header />
-      <div className="MainPageComponents"></div>
-      <SearchBar />
-      <Carousel />
-      <ScheduleBox />
-      <TeamAnalysisBox />
-      <Navigationbar />
+      <div className="MainPageComponents">
+        <SearchBar />
+        <Carousel />
+        <ScheduleBox />
+        <TeamAnalysisBox />
+        <Navigationbar />
+      </div>
     </div>
   );
 }

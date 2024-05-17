@@ -22,6 +22,15 @@
   align-items: center;
 }
 
+.selected {
+  z-index: 1;
+  /* transform: translateY(-10px); */
+}
+
+.Team1Box {
+  order: -1; /* Team1Box를 첫 번째로 배치 */
+}
+
 .Team1 {
   background: var(--point4, #25a18e);
   border-radius: 4vw;

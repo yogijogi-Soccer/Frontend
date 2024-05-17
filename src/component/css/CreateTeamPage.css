@@ -34,7 +34,8 @@
   justify-content: center;
 }
 
-.CreateTeamComponentProfile {
+.CreateTeamComponentProfile,
+.CreateTeamComponentProfile img {
   width: 56vw;
   height: 14vh;
   background-color: var(--color-normal3);

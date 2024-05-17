@@ -13,7 +13,8 @@ import AgeGroupButton from "../component/ageGroupButton";
 import "../component/css/CreateTeamPage.css";
 
 function CreateTeampage() {
-  const [createTeamStep, setCreateTeamStep] = useState(1);
+  const [createTeamStep, setCreateTeamStep] = useState(1); //팀 생성 페이지 조정
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleNextButtonClick = () => {
     //다음 버튼 클릭 시
@@ -27,6 +28,17 @@ function CreateTeampage() {
     }
   };
 
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setSelectedImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const CreateTeamComponent = () => (
     //팀 프로필 작성
     <div className="CreateTeamComponent">
@@ -34,10 +46,20 @@ function CreateTeampage() {
       <div className="CreateTeamComponent1">
         <div className="CreateTeamComponentInner">
           <div className="CreateTeamComponentProfile">
-            <img src="" alt="" />
+            {selectedImage && <img src={selectedImage} alt="Selected" />}
           </div>
           <div className="CreateTeamComponentBtnBox">
-            <button className="imgBtn">이미지 추가하기</button>
+            {/* <button className="imgBtn">이미지 추가하기</button> */}
+            <label htmlFor="imageUpload" className="imgBtn">
+              이미지 추가하기
+            </label>
+            <input
+              type="file"
+              id="imageUpload"
+              accept="image/*"
+              style={{ display: "none" }}
+              onChange={handleImageUpload}
+            />
             <button className="imgBtn">단색으로 설정하기</button>
           </div>
         </div>

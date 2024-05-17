@@ -13,6 +13,7 @@ import ContrySelectBtn from "../component/CountrySelectBtn";
 import KakaoAddressPopup from "../component/KakaoAddressPopup";
 import { Link } from "react-router-dom";
 import PhoneInput from "../component/PhoneInput";
+import EmailInput from "../component/EmailInput";
 
 function MyFixpage() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -99,7 +100,7 @@ function MyFixpage() {
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">이메일 주소</label>
-            <ContrySelectBtn />
+            <EmailInput />
           </div>
           <div className="Inforfix-div">
             <label className="Inforfix-label">활동하는 경기장</label>

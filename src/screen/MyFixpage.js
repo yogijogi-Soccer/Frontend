@@ -12,16 +12,11 @@ import GroupButton from "../component/GroupButton";
 import ContrySelectBtn from "../component/CountrySelectBtn";
 import KakaoAddressPopup from "../component/KakaoAddressPopup";
 import { Link } from "react-router-dom";
+import PhoneInput from "../component/PhoneInput";
 
 function MyFixpage() {
   const [phoneNumber, setPhoneNumber] = useState("");
-  const NumberChange = (e) => {
-    setPhoneNumber(e.target.value);
-    if (phoneNumber > 4 && phoneNumber.length <= 7) {
-      setPhoneNumber(e.target.value + "-");
-    } else if (phoneNumber > 4 && phoneNumber.length >= 8)
-      setPhoneNumber(e.target.value + "-");
-  };
+
   //일주일
   const week = ["월", "화", "수", "목", "금", "토", "일"];
   const [weekResult, setWeekResult] = useState("");
@@ -65,7 +60,6 @@ function MyFixpage() {
     setDuesResult("");
     document.getElementById("DuesInput").focus();
   }
-
   return (
     <div>
       <Header />
@@ -99,20 +93,7 @@ function MyFixpage() {
           <div className="Inforfix-div">
             <label className="Inforfix-label">휴대폰 번호</label>
             <div>
-              <input
-                type="text"
-                placeholder="01000000000"
-                value={phoneNumber}
-                onChange={NumberChange}
-                maxLength="13"
-                style={{
-                  width: "15vh",
-                  padding: "1vh",
-                  borderRadius: "0.5vh",
-                  border: "1px solid var(--color-normal5)",
-                  marginRight: "1vh",
-                }}
-              />
+              <PhoneInput />
               <GreenButton>인증받기</GreenButton>
             </div>
           </div>

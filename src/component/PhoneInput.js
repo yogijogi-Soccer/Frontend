@@ -34,10 +34,11 @@ const PhoneInput = () => {
       placeholder="010-1234-5678"
       maxLength={13} // 최대 길이 제한
       style={{
-        padding: "0.7vh",
+        padding: "1.6vh",
         marginRight: "1vh",
         border: "1px solid var(--color-normal5)",
         borderRadius: "0.5vh",
+        width: "30vw",
       }}
     />
   );

@@ -1,11 +1,22 @@
 import React, { useState } from "react";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import OutlinedInput from "@mui/material/OutlinedInput";
 
 const EmailInput = () => {
   const [username, setUsername] = useState("");
   const [domain, setDomain] = useState("");
   const [isValid, setIsValid] = useState(true);
 
-  const domains = ["gmail.com", "naver.com", "daum.net", "yahoo.com"];
+  const domains = [
+    "gmail.com",
+    "naver.com",
+    "kakao.com",
+    "hanmail.com",
+    "nate.com",
+  ];
 
   const validateEmail = (username, domain) => {
     // 이메일 정규식 패턴
@@ -28,29 +39,31 @@ const EmailInput = () => {
 
   return (
     <div>
-      <label htmlFor="email-username">Email Address:</label>
       <div style={{ display: "flex", alignItems: "center" }}>
         <input
           id="email-username"
           type="text"
           value={username}
           onChange={handleUsernameChange}
-          placeholder="example"
-          style={{ borderColor: isValid ? "black" : "red" }}
+          style={{
+            padding: "1.6vh",
+            marginRight: "1vh",
+            border: "1px solid var(--color-normal5)",
+            borderRadius: "0.5vh",
+            width: "30vw",
+          }}
         />
-        <span>@</span>
-        <select value={domain} onChange={handleDomainChange}>
-          <option value="">도메인 선택</option>
-          {domains.map((domainOption) => (
-            <option key={domainOption} value={domainOption}>
-              {domainOption}
-            </option>
-          ))}
-        </select>
+        <span>@ </span>
+        <FormControl sx={{ m: 1 }} fullWidth="true" size="small">
+          <Select value={domain} onChange={handleDomainChange}>
+            {domains.map((domainOption) => (
+              <MenuItem key={domainOption} value={domainOption}>
+                {domainOption}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </div>
-      {!isValid && (
-        <p style={{ color: "red" }}>Please enter a valid email address.</p>
-      )}
     </div>
   );
 };

@@ -19,7 +19,7 @@ function CountrySelectBtn() {
       .get(
         "https://grpc-proxy-server-mkvo6j4wsq-du.a.run.app/v1/regcodes?regcode_pattern=" +
           code +
-          "*00000",
+          "*00000"
       )
       .then((res) => {
         res = res.data.regcodes;
@@ -46,7 +46,7 @@ function CountrySelectBtn() {
   useEffect(() => {
     axios
       .get(
-        "https://grpc-proxy-server-mkvo6j4wsq-du.a.run.app/v1/regcodes?regcode_pattern=*00000000",
+        "https://grpc-proxy-server-mkvo6j4wsq-du.a.run.app/v1/regcodes?regcode_pattern=*00000000"
       )
       .then((res) => {
         res = res.data.regcodes;
@@ -58,35 +58,39 @@ function CountrySelectBtn() {
   }, [code]);
 
   return (
-    <div className="App">
-      <FormControl sx={{ m: 1, minWidth: 180 }} size="small">
-        <InputLabel id="demo-select-small-label">시/도</InputLabel>
-        <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
-          value={country}
-          label="Country"
-          onChange={handleChange}
-        >
-          {countryList.map((el) => {
-            return <MenuItem value={el.code}>{el.name}</MenuItem>;
-          })}
-        </Select>
-      </FormControl>
-      <FormControl sx={{ m: 1, minWidth: 180 }} size="small">
-        <InputLabel id="demo-select-small-label">시/군/구</InputLabel>
-        <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
-          value={gu}
-          label="Gu"
-          onChange={(e) => setGu(e.target.value)}
-        >
-          {guList.map((el) => {
-            return <MenuItem value={el.code}>{el.name}</MenuItem>;
-          })}
-        </Select>
-      </FormControl>
+    <div className="App" style={{ display: "flex" }}>
+      <div style={{ width: "40vw", paddingRight: "1vh" }}>
+        <FormControl sx={{ m: 1 }} fullWidth="true" size="small">
+          <InputLabel id="demo-simple-select-helper-label">시/도</InputLabel>
+          <Select
+            labelId="demo-simple-select-helper-label"
+            id="demo-simple-select-helper"
+            value={country}
+            label="시/도"
+            onChange={handleChange}
+          >
+            {countryList.map((el) => {
+              return <MenuItem value={el.code}>{el.name}</MenuItem>;
+            })}
+          </Select>
+        </FormControl>
+      </div>
+      <div style={{ width: "40vw" }}>
+        <FormControl sx={{ m: 1 }} fullWidth="true" size="small">
+          <InputLabel id="demo-simple-select-helper-label">구/군</InputLabel>
+          <Select
+            labelId="demo-simple-select-helper-label"
+            id="demo-simple-select-helper"
+            value={gu}
+            label="구/군"
+            onChange={(e) => setGu(e.target.value)}
+          >
+            {guList.map((el) => {
+              return <MenuItem value={el.code}>{el.name}</MenuItem>;
+            })}
+          </Select>
+        </FormControl>
+      </div>
     </div>
   );
 }

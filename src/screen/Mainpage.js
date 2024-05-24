@@ -8,6 +8,7 @@ import Carousel from "../component/Carousel";
 import ScheduleBox from "../component/scheduleBox";
 import TeamAnalysisBox from "../component/teamAnalysisBox";
 import "../component/css/Mainpage.css";
+import "../index.css";
 
 function Mainpage() {
   //모바일 웹 앱 100vh 실제 화면 크기로 맞추기
@@ -23,11 +24,14 @@ function Mainpage() {
   return (
     <div className="Mainpage">
       <Header />
-      <div className="MainPageComponents"></div>
-      <SearchBar />
-      <Carousel />
-      <ScheduleBox />
-      <TeamAnalysisBox />
+      <div className="div-page">
+        <div>
+          <SearchBar />
+        </div>
+        <Carousel />
+        <ScheduleBox />
+        <TeamAnalysisBox />
+      </div>
       <Navigationbar />
     </div>
   );

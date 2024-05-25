@@ -4,9 +4,9 @@ import { useEffect } from "react";
 import Header from "../component/header";
 import Navigationbar from "../component/navigationbar";
 import SearchBar from "../component/searchBar";
-import Carousel from "../component/Carousel";
-import ScheduleBox from "../component/scheduleBox";
-import TeamAnalysisBox from "../component/teamAnalysisBox";
+import Carousel from "../component/Mainpage/Carousel";
+import ScheduleBox from "../component/Mainpage/scheduleBox";
+import TeamAnalysisBox from "../component/Mainpage/teamAnalysisBox";
 import "../component/css/Mainpage.css";
 import "../index.css";
 

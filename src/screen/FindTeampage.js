@@ -12,7 +12,7 @@ function FindTeampage() {
   return (
     <div>
       <Header />
-      <div className="FindTeampage">
+      <div className="div-page">
         <SearchBar />
         <SelectBar />
         <Link to="/team" className="link">

@@ -4,10 +4,12 @@ import { useEffect } from "react";
 import Header from "../component/header";
 import Navigationbar from "../component/navigationbar";
 import SearchBar from "../component/searchBar";
-import Carousel from "../component/Carousel";
-import ScheduleBox from "../component/scheduleBox";
-import TeamAnalysisBox from "../component/teamAnalysisBox";
+import Carousel from "../component/Mainpage/Carousel";
+import ScheduleBox from "../component/Mainpage/scheduleBox";
+import TeamAnalysisBox from "../component/Mainpage/teamAnalysisBox";
 import "../component/css/Mainpage.css";
+import "../index.css";
+import { Link } from "react-router-dom";
 
 function Mainpage() {
   //모바일 웹 앱 100vh 실제 화면 크기로 맞추기
@@ -23,6 +25,7 @@ function Mainpage() {
   return (
     <div className="Mainpage">
       <Header />
+<<<<<<< HEAD
       <div className="MainPageComponents">
         <SearchBar />
         <Carousel />
@@ -30,6 +33,19 @@ function Mainpage() {
         <TeamAnalysisBox />
         <Navigationbar />
       </div>
+=======
+      <div className="div-page">
+        <div>
+          <Link to="/search" className="link">
+            <SearchBar />
+          </Link>
+        </div>
+        <Carousel />
+        <ScheduleBox />
+        <TeamAnalysisBox />
+      </div>
+      <Navigationbar />
+>>>>>>> jihyeon
     </div>
   );
 }

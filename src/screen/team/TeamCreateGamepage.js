@@ -87,7 +87,7 @@ function TeamCreateGamepage() {
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
               value={mode}
-              label="gamemode"
+              label="게임 포메이션"
               onChange={(e) => setMode(e.target.value)}
             >
               {gamemode.map((el) => {

@@ -1,11 +1,25 @@
 //검색 페이지
-import React from 'react';
+import React, { useEffect, useRef, useState } from "react";
+import Header from "../component/header";
+import Navigationbar from "../component/navigationbar";
+import SearchBar from "../component/searchBar";
 
-function Searchpage(){
-    return (
-        <div>검색 페이지</div>
-    )
-    
+function Searchpage() {
+  const [isStart, setIsStart] = useState(false);
+  useEffect(() => {
+    if (isStart === false) {
+      setIsStart(true);
+    }
+  }, []);
+  return (
+    <div>
+      <Header />
+      <div className="div-page">
+        <SearchBar autoFocus={true} />
+      </div>
+      <Navigationbar />
+    </div>
+  );
 }
 
 export default Searchpage;

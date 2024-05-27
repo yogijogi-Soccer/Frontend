@@ -9,6 +9,7 @@ import ScheduleBox from "../component/Mainpage/scheduleBox";
 import TeamAnalysisBox from "../component/Mainpage/teamAnalysisBox";
 import "../component/css/Mainpage.css";
 import "../index.css";
+import { Link } from "react-router-dom";
 
 function Mainpage() {
   //모바일 웹 앱 100vh 실제 화면 크기로 맞추기
@@ -26,7 +27,9 @@ function Mainpage() {
       <Header />
       <div className="div-page">
         <div>
-          <SearchBar />
+          <Link to="/search" className="link">
+            <SearchBar />
+          </Link>
         </div>
         <Carousel />
         <ScheduleBox />

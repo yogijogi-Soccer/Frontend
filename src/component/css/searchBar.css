@@ -17,6 +17,7 @@
   font-family: "NotoSansBengaliUi-Regular", sans-serif;
   font-size: 15px;
   font-weight: 400;
+  outline: none;
 }
 
 .searchBar button {

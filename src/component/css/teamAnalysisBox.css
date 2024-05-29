@@ -1,4 +1,4 @@
-.teamAnalysisBox{
+.teamAnalysisBox {
   margin-top: 5vw;
 }
 
@@ -16,7 +16,7 @@
   border-radius: 1.2vw;
 }
 
-.TeamName_button{
+.TeamName_button {
   margin: 2vw;
   margin-right: 0vw;
   background-color: var(--color-normal4);
@@ -25,14 +25,14 @@
   border-radius: 1.2vw;
 }
 
-.teamAnalysisBox_div{
+.teamAnalysisBox_div {
   background-color: var(--color-normal2);
   border-radius: 1.2vw;
   margin: 2vw;
   padding-bottom: 0.5vw;
 }
 
-.teamAnalysisBox_content{
+.teamAnalysisBox_content {
   background-color: var(--color-normal4);
   border-radius: 1.2vw;
   display: flex;
@@ -43,14 +43,12 @@
   font-weight: 600;
 }
 
-.content_div{
+.content_div {
   display: flex;
   justify-content: space-between;
-  
 }
 
-
-.content_teamNumber{
+.content_teamNumber {
   background-color: var(--color-point-green);
   border-radius: 1.2vw;
   padding: 3vw;
@@ -61,94 +59,28 @@
   margin: 2vw;
 }
 
-<<<<<<< HEAD
-.selected {
-  z-index: 1;
-  /* transform: translateY(-10px); */
-}
-
-.Team1Box {
-  order: -1; /* Team1Box를 첫 번째로 배치 */
-}
-
-.Team1 {
-  background: var(--point4, #25a18e);
-  border-radius: 4vw;
-  width: 21vw;
-  height: 10vh;
-  position: absolute;
-  left: 5%;
-  top: 27px;
-}
-
-.Team1 span {
-  color: var(--normal1, #f8f9fa);
-}
-
-.Team2 {
-  background: #d9d9d9;
-  border-radius: 4vw;
-  width: 21vw;
-  height: 10vh;
-  position: absolute;
-  left: 25%;
-  top: 27px;
-}
-
-.Team2 span {
-  color: var(--normal8, #343a40);
-}
-
-.TeamAnalysisomponent1 {
-  background: var(--point4, #25a18e);
-  border-radius: 4vw;
-  width: 90vw;
-  height: 30vh;
-  position: absolute;
-  left: 50%;
-  top: 70%;
-  transform: translate(-50%, -50%);
-=======
-.content_myPosition{
+.content_myPosition {
   background-color: var(--color-point-green);
   border-radius: 1.2vw;
   padding: 3vw;
   width: 100%;
->>>>>>> jihyeon
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 2vw;
 }
 
-<<<<<<< HEAD
-.TeamAnalysisomponent2 {
-  background: #d9d9d9;
-  border-radius: 4vw;
-  width: 90vw;
-  height: 30vh;
-  position: absolute;
-  left: -95%;
-  top: 31%;
-}
-
-.TeamAnalysisomponent1 span,
-.TeamAnalysisomponent2 span {
-  /* color: #ffffff; */
-  display: block;
-  padding-bottom: 1vh;
-=======
-.content_notice{
+.content_notice {
   background-color: var(--color-point-green);
   border-radius: 1.2vw;
   padding: 3vw;
   margin-bottom: 2vw;
   margin-right: 2vw;
   margin-left: 2vw;
->>>>>>> jihyeon
 }
 
-.content_notice-list{
+.content_notice-list {
   margin-top: 2vw;
   font-weight: normal;
   font-size: 3.2vw;

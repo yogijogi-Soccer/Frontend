@@ -25,15 +25,6 @@ function Mainpage() {
   return (
     <div className="Mainpage">
       <Header />
-<<<<<<< HEAD
-      <div className="MainPageComponents">
-        <SearchBar />
-        <Carousel />
-        <ScheduleBox />
-        <TeamAnalysisBox />
-        <Navigationbar />
-      </div>
-=======
       <div className="div-page">
         <div>
           <Link to="/search" className="link">
@@ -45,7 +36,6 @@ function Mainpage() {
         <TeamAnalysisBox />
       </div>
       <Navigationbar />
->>>>>>> jihyeon
     </div>
   );
 }

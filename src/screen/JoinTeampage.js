@@ -2,15 +2,9 @@
 import React, { useState } from "react";
 import Header from "../component/header";
 import Navigationbar from "../component/navigationbar";
-import GreenButton from "../component/GreenButton";
 import "./css/teamdetail.css";
 import "../index.css";
-import Divbox from "../component/divbox";
-import DivSquareBox from "../component/divSquareBox";
-import { Link } from "react-router-dom";
-import GroupButton from "../component/GroupButton";
 import Button from "../component/Button";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
@@ -114,11 +108,11 @@ const JoinCard = () => {
             }}
             value={introText}
             onChange={introChange}
-            placeholder="팀 소개를 입력하세요"
+            placeholder="전달하고 싶은 말을 적어주세요"
             maxLength="50"
           />
         </div>
-        <div style={{ marginTop: "2vh" }}>
+        <div style={{ marㅣginTop: "2vh" }}>
           <p>가입 신청서를 제출하면 제출을 취소할 수 없어요.</p>
           <br />
           <p>신중하게 가입해주세요.</p>
@@ -178,27 +172,13 @@ function JoinTeampage() {
           <div className="TeamDetail-profile_box">
             <div className="TeamDetail-profile_title">
               <div>팀 이름</div>
-              <GreenButton>
-                {role !== "manager" ? (
-                  "팀 탈퇴하기"
-                ) : (
-                  <Link to="/team/fix" className="link_white">
-                    팀 가입하기
-                  </Link>
-                )}
-              </GreenButton>
             </div>
             <div className="TeamDetail-profile_introduce">팀 소개 한줄</div>
           </div>
         </div>
         <div className="divbox">
           <div className="divbox_div-title">팀 안내</div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-around",
-            }}
-          >
+          <div style={{}}>
             <div>
               <div style={{ paddingBottom: "2vw" }}>총 인원 : 20명</div>
               <div style={{ paddingBottom: "2vw" }}>회비 : 30,000원 / 월</div>

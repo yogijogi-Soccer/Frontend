@@ -36,7 +36,6 @@ root.render(
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/my" element={<Mypage />} />
         <Route path="/search" element={<Searchpage />} />
-        <Route path="/search" element={<Searchpage />} />
         <Route path="/team" element={<TeamDetailpage />} />
         <Route path="/team/notice" element={<TeamNoticepage />} />
         <Route path="/team/member" element={<TeamMemberpage />} />

@@ -7,20 +7,46 @@ import SearchBar from "../component/searchBar";
 import SelectBar from "../component/SelectBar";
 import TeamBox from "../component/TeamBox";
 import "../component/css/FindTeamPage.css";
+import GreenButton from "../component/GreenButton";
 
 function FindTeampage() {
   return (
     <div>
       <Header />
       <div className="div-page">
+        <button
+          style={{
+            backgroundColor: "var(--color-point-green)",
+            color: "var(--color-normal1)",
+            padding: "2vw",
+            borderRadius: "5px",
+            width: "100%",
+            marginBottom: "1vh",
+          }}
+        >
+          초대코드로 승인 없이 가입하기
+        </button>
         <SearchBar />
         <SelectBar />
-        <Link to="/team" className="link">
-          <TeamBox />
-        </Link>
-        <Link to="/team" className="link">
-          <TeamBox />
-        </Link>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            columnGap: "4vw",
+            rowGap: "2vh",
+            paddingTop: "2vh",
+          }}
+        >
+          <Link to="/join-team" className="link">
+            <TeamBox />
+          </Link>
+          <Link to="/join-team" className="link">
+            <TeamBox />
+          </Link>
+          <Link to="/join-team" className="link">
+            <TeamBox />
+          </Link>
+        </div>
       </div>
       <Navigationbar />
     </div>

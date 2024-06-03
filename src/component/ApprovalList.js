@@ -71,6 +71,7 @@ function ApprovalList(props) {
     <div>
       {list}
       <ModalCheck
+        onConfrimButtonClick={handleConfirmButtonClick}
         open={approveOpen}
         title={"가입을 승인하시겠습니까?"}
         context={"승인 대상 : " + context}

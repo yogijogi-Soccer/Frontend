@@ -10,7 +10,14 @@ import Modal from "./Modal";
 //context : string 타입. 모달에 들어갈 내용
 //completeContext : string 타입. 예/아니오 modal 다음에 닫기 modal의 context로 들어갈 내용
 
-const ModalCheck = ({ open, onClose, context, title, completeContext }) => {
+const ModalCheck = ({
+  list,
+  open,
+  onClose,
+  context,
+  title,
+  completeContext,
+}) => {
   const [isModal, setIsModal] = useState(false);
   const OpenModal = () => {
     setIsModal(true);

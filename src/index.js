@@ -21,6 +21,7 @@ import TeamOutpage from "./screen/team/TeamOutpage";
 import TeamCreateGamepage from "./screen/team/TeamCreateGamepage";
 import TeamGamepage from "./screen/team/TeamGamepage";
 import MyFixpage from "./screen/MyFixpage";
+import JoinTeampage from "./screen/JoinTeampage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -46,6 +47,7 @@ root.render(
         <Route path="/team/newgame" element={<TeamCreateGamepage />} />
         <Route path="/team/game1" element={<TeamGamepage />} />
         <Route path="/my/fix" element={<MyFixpage />} />
+        <Route path="/join-team" element={<JoinTeampage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

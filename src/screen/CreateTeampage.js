@@ -10,6 +10,10 @@ import MemberFeeButton from "../component/memberFeeButton";
 import GenderButton from "../component/genderButton";
 import AgeGroupButton from "../component/ageGroupButton";
 import GroupButton from "../component/GroupButton";
+import KakaoAddressPopup from "../component/KakaoAddressPopup";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
 
 import "../component/css/CreateTeamPage.css";
 
@@ -39,6 +43,66 @@ function CreateTeampage() {
       reader.readAsDataURL(file);
     }
   };
+
+  //주요 활동 지역
+  const [city, setCities] = useState("서울특별시");
+  const handleCityChange = (event) => {
+    const { value } = event.target;
+    setCities(value);
+  };
+  const cities = [
+    "서울특별시",
+    "부산광역시",
+    "대구광역시",
+    "인천광역시",
+    "광주광역시",
+    "대전광역시",
+    "울산광역시",
+    "세종특별자치시",
+    "경기도",
+    "강원도",
+    "충청북도",
+    "충청남도",
+    "전라북도",
+    "전라남도",
+    "경상북도",
+    "경상남도",
+    "제주특별자치도",
+  ];
+
+  //행정 구역
+  const [district, setDistrict] = useState("관악구");
+  const handleDistrictChange = (event) => {
+    const { value } = event.target;
+    setDistrict(value);
+  };
+  const districts = [
+    "강남구",
+    "강동구",
+    "강북구",
+    "강서구",
+    "관악구",
+    "광진구",
+    "구로구",
+    "금천구",
+    "노원구",
+    "도봉구",
+    "동대문구",
+    "동작구",
+    "마포구",
+    "서대문구",
+    "서초구",
+    "성동구",
+    "성북구",
+    "송파구",
+    "양천구",
+    "영등포구",
+    "용산구",
+    "은평구",
+    "종로구",
+    "중구",
+    "중랑구",
+  ];
 
   //일주일
   const week = ["월", "화", "수", "목", "금", "토", "일"];
@@ -84,6 +148,10 @@ function CreateTeampage() {
     document.getElementById("DuesInput").focus();
   }
 
+  //월 회비
+  const ability = ["상", "중", "하"];
+  const [abilityResult, setAbilityResult] = useState("");
+
   const CreateTeamComponent = () => (
     //팀 프로필 작성
     <div className="CreateTeamComponent">
@@ -116,9 +184,11 @@ function CreateTeampage() {
         </div>
       </div>
       <div>
-        <Button className="nextButton" onClick={handleNextButtonClick}>
-          다음
-        </Button>
+        <div style={{ textAlign: "center", marginTop: "2vh" }}>
+          <Button className="nextButton" onClick={handleNextButtonClick}>
+            다음
+          </Button>
+        </div>
       </div>
     </div>
   );
@@ -127,33 +197,56 @@ function CreateTeampage() {
     //상세정보 작성
     <div className="CreateTeamComponent">
       <h1>상세정보를 작성해주세요</h1>
-      <div>
-        <span>주요 활동 지역</span>
+      <div className="CreateTeamComponent2">
+        <div className="Inforfix-div">
+          <label className="Inforfix-label">주요 활동 지역</label>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <FormControl sx={{ m: 1, flex: 1 }} fullWidth size="small">
+              <Select value={""} onChange={handleCityChange}>
+                {cities.map((citiesOption) => (
+                  <MenuItem key={citiesOption} value={citiesOption}>
+                    {citiesOption}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <FormControl sx={{ m: 1, flex: 1 }} fullWidth size="small">
+              <Select value={""} onChange={handleDistrictChange}>
+                {districts.map((districtsOption) => (
+                  <MenuItem key={districtsOption} value={districtsOption}>
+                    {districtsOption}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </div>
+        </div>
+        <div className="Inforfix-div">
+          <label className="Inforfix-label">활동하는 경기장</label>
+          <KakaoAddressPopup />
+        </div>
+        <div className="Inforfix-div">
+          <label className="Inforfix-label">주요 활동 시간</label>
+          <GroupButton
+            list={week}
+            result={setWeekResult}
+            width={"12vw"}
+            height={"12vw"}
+            borderRadius={"50px"}
+            fontSize={"15px"}
+            display={"flex"}
+          />
+          <GroupButton
+            list={time}
+            result={setTimeResult}
+            width={"17vw"}
+            height={"17vw"}
+            borderRadius={"50px"}
+            display={"flex"}
+          />
+        </div>
       </div>
-      <div>
-        <span>활동하는 경기장 </span>
-      </div>
-      <div className="Inforfix-div">
-        <label className="Inforfix-label">주요 활동 시간</label>
-        <GroupButton
-          list={week}
-          result={setWeekResult}
-          width={"12vw"}
-          height={"12vw"}
-          borderRadius={"50px"}
-          fontSize={"15px"}
-          display={"flex"}
-        />
-        <GroupButton
-          list={time}
-          result={setTimeResult}
-          width={"17vw"}
-          height={"17vw"}
-          borderRadius={"50px"}
-          display={"flex"}
-        />
-      </div>
-      <div>
+      <div style={{ textAlign: "center", marginTop: "2vh" }}>
         <Button className="prevButton" onClick={handlePrevButtonClick}>
           이전
         </Button>
@@ -210,9 +303,21 @@ function CreateTeampage() {
           />
         </div>
         <label className="Inforfix-label">팀 레벨(실력)</label>
-        <Button className="nextButton" onClick={handleNextButtonClick}>
-          완료{" "}
-        </Button>
+        <div>
+          <GroupButton
+            list={ability}
+            result={setAbilityResult}
+            display={"flex"}
+            width={"30vw"}
+            height={"8vw"}
+            borderRadius={"20px"}
+          />
+        </div>
+        <div style={{ textAlign: "center", marginTop: "2vh" }}>
+          <Button className="nextButton" onClick={handleNextButtonClick}>
+            완료{" "}
+          </Button>
+        </div>
       </div>
     </div>
   );
@@ -225,7 +330,7 @@ function CreateTeampage() {
       <div>
         <span>초대코드</span>
       </div>
-      <div>
+      <div style={{ textAlign: "center", marginTop: "2vh" }}>
         <Button className="">복사하기</Button>
       </div>
     </div>

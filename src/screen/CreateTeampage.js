@@ -9,6 +9,7 @@ import TimeButton from "../component/timeButton";
 import MemberFeeButton from "../component/memberFeeButton";
 import GenderButton from "../component/genderButton";
 import AgeGroupButton from "../component/ageGroupButton";
+import GroupButton from "../component/GroupButton";
 
 import "../component/css/CreateTeamPage.css";
 
@@ -38,6 +39,50 @@ function CreateTeampage() {
       reader.readAsDataURL(file);
     }
   };
+
+  //일주일
+  const week = ["월", "화", "수", "목", "금", "토", "일"];
+  const [weekResult, setWeekResult] = useState("");
+  console.log("요일 : " + weekResult);
+
+  //시간대
+  const time = [
+    "아침\n6~10",
+    "낮\n10~14",
+    "오후\n14~18",
+    "저녁\n18~22",
+    "밤\n22~02",
+  ];
+  const [timeResult, setTimeResult] = useState("");
+  console.log("시간대 : " + timeResult);
+
+  //성별
+  const gender = ["남자", "여자", "남녀 모두"];
+  const [genderResult, setGenderResult] = useState("");
+
+  //나이대
+  const age = ["10대", "20대", "30대", "40대", "50대", "50대 이상"];
+  const [ageResult, setAgeResult] = useState("");
+
+  //월 회비
+  const dues = ["무료", "1만원", "3만원", "5만원", "직접입력"];
+  const [duesResult, setDuesResult] = useState("0");
+  if (duesResult === "무료") {
+    setDuesResult("0");
+  }
+  if (duesResult === "1만원") {
+    setDuesResult("10,000");
+  }
+  if (duesResult === "3만원") {
+    setDuesResult("30,000");
+  }
+  if (duesResult === "5만원") {
+    setDuesResult("50,000");
+  }
+  if (duesResult === "직접입력") {
+    setDuesResult("");
+    document.getElementById("DuesInput").focus();
+  }
 
   const CreateTeamComponent = () => (
     //팀 프로필 작성
@@ -83,19 +128,30 @@ function CreateTeampage() {
     <div className="CreateTeamComponent">
       <h1>상세정보를 작성해주세요</h1>
       <div>
-        <div>
-          <span>주요 활동 지역</span>
-        </div>
-        <div>
-          <span>주요 활동 시간</span>
-          <WeekButton />
-          <TimeButton />
-        </div>
-        <div className="TeamMemberFeeBox">
-          <span>월 회비</span>
-          <input type="text" />
-          <MemberFeeButton />
-        </div>
+        <span>주요 활동 지역</span>
+      </div>
+      <div>
+        <span>활동하는 경기장 </span>
+      </div>
+      <div className="Inforfix-div">
+        <label className="Inforfix-label">주요 활동 시간</label>
+        <GroupButton
+          list={week}
+          result={setWeekResult}
+          width={"12vw"}
+          height={"12vw"}
+          borderRadius={"50px"}
+          fontSize={"15px"}
+          display={"flex"}
+        />
+        <GroupButton
+          list={time}
+          result={setTimeResult}
+          width={"17vw"}
+          height={"17vw"}
+          borderRadius={"50px"}
+          display={"flex"}
+        />
       </div>
       <div>
         <Button className="prevButton" onClick={handlePrevButtonClick}>
@@ -112,17 +168,48 @@ function CreateTeampage() {
     //상세정보 작성
     <div className="CreateTeamComponent">
       <h1>상세정보를 작성해주세요</h1>
-      <div>
-        <div>
-          <span>성별</span>
-          <GenderButton />
-        </div>
-        <div>
-          <span>나이대</span>
-          <AgeGroupButton />
-        </div>
+      <div className="Inforfix-div">
+        <label className="Inforfix-label">성별</label>
+        <GroupButton
+          list={gender}
+          result={setGenderResult}
+          width={"20vw"}
+          height={"8vw"}
+          borderRadius={"20px"}
+        />
       </div>
-      <div>
+      <div className="Inforfix-div">
+        <label className="Inforfix-label">나이대</label>
+        <GroupButton
+          list={age}
+          result={setAgeResult}
+          width={"28vw"}
+          height={"8vw"}
+          borderRadius={"20px"}
+        />
+      </div>
+      <div className="Inforfix-div">
+        <label className="Inforfix-label">월 회비</label>
+        <div>
+          <input
+            id="DuesInput"
+            type="text"
+            className="input-money"
+            placeholder={duesResult}
+          />{" "}
+          원
+        </div>
+        <div>
+          <GroupButton
+            list={dues}
+            result={setDuesResult}
+            display={"flex"}
+            width={"18vw"}
+            height={"8vw"}
+            borderRadius={"20px"}
+          />
+        </div>
+        <label className="Inforfix-label">팀 레벨(실력)</label>
         <Button className="nextButton" onClick={handleNextButtonClick}>
           완료{" "}
         </Button>

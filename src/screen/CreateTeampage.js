@@ -3,17 +3,18 @@ import React, { useState } from "react";
 import Header from "../component/header";
 import Navigationbar from "../component/navigationbar";
 import Button from "../component/Button";
-import Button2 from "../component/Button2";
-import WeekButton from "../component/weekButton";
-import TimeButton from "../component/timeButton";
-import MemberFeeButton from "../component/memberFeeButton";
-import GenderButton from "../component/genderButton";
-import AgeGroupButton from "../component/ageGroupButton";
+// import Button2 from "../component/Button2";
+// import WeekButton from "../component/weekButton";
+// import TimeButton from "../component/timeButton";
+// import MemberFeeButton from "../component/memberFeeButton";
+// import GenderButton from "../component/genderButton";
+// import AgeGroupButton from "../component/ageGroupButton";
 import GroupButton from "../component/GroupButton";
 import KakaoAddressPopup from "../component/KakaoAddressPopup";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
+import ModalCheck from "../component/ModalCheck";
 
 import "../component/css/CreateTeamPage.css";
 
@@ -33,7 +34,13 @@ function CreateTeampage() {
     }
   };
 
+  const [teamName, setTeamName] = useState("");
+  const [teamIntro, setTeamIntro] = useState("");
+  //  const [selectedImage, setSelectedImage] = useState(null);
+  const [errors, setErrors] = useState({});
+
   const handleImageUpload = (event) => {
+    //이미지 업로드 버튼
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
@@ -41,6 +48,22 @@ function CreateTeampage() {
         setSelectedImage(reader.result);
       };
       reader.readAsDataURL(file);
+    }
+  };
+
+  const handleMainNextButtonClick = () => {
+    const newErrors = {};
+    if (teamName.length === 0 || teamName.length > 10) {
+      newErrors.teamName = "팀명을 10자 이내로 작성해주세요.";
+    }
+    if (teamIntro.length === 0 || teamIntro.length > 30) {
+      newErrors.teamIntro = "팀 소개를 30자 이내로 작성해주세요.";
+    }
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      //팀명 및 팀 소개 입력을 충족했을 경우 다음 페이지로 이동
+      setCreateTeamStep(createTeamStep + 1);
     }
   };
 
@@ -152,6 +175,12 @@ function CreateTeampage() {
   const ability = ["상", "중", "하"];
   const [abilityResult, setAbilityResult] = useState("");
 
+  //복사하기 버튼 클릭
+  const [invitationCodePopup, setInvitationCodePopup] = useState(false);
+  const clickCopyBtn = () => {
+    setInvitationCodePopup(true);
+  };
+
   const CreateTeamComponent = () => (
     //팀 프로필 작성
     <div className="CreateTeamComponent">
@@ -162,7 +191,6 @@ function CreateTeampage() {
             {selectedImage && <img src={selectedImage} alt="Selected" />}
           </div>
           <div className="CreateTeamComponentBtnBox">
-            {/* <button className="imgBtn">이미지 추가하기</button> */}
             <label htmlFor="imageUpload" className="imgBtn">
               이미지 추가하기
             </label>
@@ -178,14 +206,28 @@ function CreateTeampage() {
         </div>
         <div className="TeamInfoInput">
           <span>팀명(10자 이내)</span>
-          <input type="text" name="teamName" />
+          <input
+            type="text"
+            name="teamName"
+            value={teamName}
+            onChange={(e) => setTeamName(e.target.value)}
+          />
+          {errors.teamName && <p style={{ color: "red" }}>{errors.teamName}</p>}
           <span>팀 소개(30자 이내)</span>
-          <input type="text" name="teamIntro" />
+          <input
+            type="text"
+            name="teamIntro"
+            value={teamIntro}
+            onChange={(e) => setTeamIntro(e.target.value)}
+          />
+          {errors.teamIntro && (
+            <p style={{ color: "red" }}>{errors.teamIntro}</p>
+          )}
         </div>
       </div>
       <div>
         <div style={{ textAlign: "center", marginTop: "2vh" }}>
-          <Button className="nextButton" onClick={handleNextButtonClick}>
+          <Button className="nextButton" onClick={handleMainNextButtonClick}>
             다음
           </Button>
         </div>
@@ -261,57 +303,59 @@ function CreateTeampage() {
     //상세정보 작성
     <div className="CreateTeamComponent">
       <h1>상세정보를 작성해주세요</h1>
-      <div className="Inforfix-div">
-        <label className="Inforfix-label">성별</label>
-        <GroupButton
-          list={gender}
-          result={setGenderResult}
-          width={"20vw"}
-          height={"8vw"}
-          borderRadius={"20px"}
-        />
-      </div>
-      <div className="Inforfix-div">
-        <label className="Inforfix-label">나이대</label>
-        <GroupButton
-          list={age}
-          result={setAgeResult}
-          width={"28vw"}
-          height={"8vw"}
-          borderRadius={"20px"}
-        />
-      </div>
-      <div className="Inforfix-div">
-        <label className="Inforfix-label">월 회비</label>
-        <div>
-          <input
-            id="DuesInput"
-            type="text"
-            className="input-money"
-            placeholder={duesResult}
-          />{" "}
-          원
-        </div>
-        <div>
+      <div className="CreateTeamComponent3">
+        <div className="Inforfix-div">
+          <label className="Inforfix-label">성별</label>
           <GroupButton
-            list={dues}
-            result={setDuesResult}
-            display={"flex"}
-            width={"18vw"}
+            list={gender}
+            result={setGenderResult}
+            width={"20vw"}
             height={"8vw"}
             borderRadius={"20px"}
           />
         </div>
-        <label className="Inforfix-label">팀 레벨(실력)</label>
-        <div>
+        <div className="Inforfix-div">
+          <label className="Inforfix-label">나이대</label>
           <GroupButton
-            list={ability}
-            result={setAbilityResult}
-            display={"flex"}
-            width={"30vw"}
+            list={age}
+            result={setAgeResult}
+            width={"28vw"}
             height={"8vw"}
             borderRadius={"20px"}
           />
+        </div>
+        <div className="Inforfix-div">
+          <label className="Inforfix-label">월 회비</label>
+          <div>
+            <input
+              id="DuesInput"
+              type="text"
+              className="input-money"
+              placeholder={duesResult}
+            />{" "}
+            원
+          </div>
+          <div>
+            <GroupButton
+              list={dues}
+              result={setDuesResult}
+              display={"flex"}
+              width={"18vw"}
+              height={"8vw"}
+              borderRadius={"20px"}
+            />
+          </div>
+          <label className="Inforfix-label">팀 레벨(실력)</label>
+          <div>
+            <GroupButton
+              list={ability}
+              result={setAbilityResult}
+              display={"flex"}
+              width={"30vw"}
+              height={"8vw"}
+              borderRadius={"20px"}
+            />
+          </div>
         </div>
         <div style={{ textAlign: "center", marginTop: "2vh" }}>
           <Button className="nextButton" onClick={handleNextButtonClick}>
@@ -325,14 +369,33 @@ function CreateTeampage() {
   const CreateTeamComponent4 = () => (
     //팀 초대
     <div className="CreateTeamComponent">
-      <h1>7명 이상 가입이 완료되면 팀이 생성돼요.</h1>
+      <h1>7명 이상 가입이 완료되면</h1>
+      <h1>팀이 생성돼요.</h1>
       <h1>초대 코드로 팀원을 초대하세요!</h1>
-      <div>
+      <div className="CreateTeamComponent4">
         <span>초대코드</span>
+        <textarea
+          type="text"
+          style={{
+            width: "100%",
+            fontSize: "1.5vh",
+            borderRadius: "5px",
+            marginTop: "1vh",
+            height: "3vh",
+            padding: "0.5vh",
+          }}
+          maxLength="50"
+        />
       </div>
       <div style={{ textAlign: "center", marginTop: "2vh" }}>
-        <Button className="">복사하기</Button>
+        <Button onClick={clickCopyBtn}>복사하기</Button>
       </div>
+      <ModalCheck
+        open={invitationCodePopup}
+        title={"초대 코드를 복사하시겠습니까?"}
+        onClose={() => setInvitationCodePopup(false)}
+        completeContext={"초대코드가 복사되었습니다."}
+      />
     </div>
   );
 

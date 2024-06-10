@@ -2,7 +2,8 @@
 import React from "react";
 import "./css/TeamBox.css";
 
-function TeamBox() {
+function TeamBox(data) {
+  console.log(data.data[0]);
   return (
     <div className="TeamBox">
       <div style={{ padding: "1vh" }}>
@@ -24,7 +25,7 @@ function TeamBox() {
                 marginRight: "2vw",
               }}
             >
-              서울 서초구
+              {data.gender}
             </div>
             <div
               style={{

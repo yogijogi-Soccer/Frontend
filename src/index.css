@@ -4,12 +4,13 @@
 
    Reset.css
 */
-
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 /* 화면별 스타일 */
 html {
   max-width: 100vw;
   min-width: 100vw;
   min-height: 100vh;
+  font-family: "NanumSquare", sans-serif;
 }
 
 .div-page {
@@ -155,6 +156,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: "NanumSquare", sans-serif;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -170,9 +172,11 @@ menu,
 nav,
 section {
   display: block;
+  font-family: "NanumSquare", sans-serif;
 }
 body {
   line-height: 1;
+  font-family: "NanumSquare", sans-serif;
 }
 ol,
 ul {
@@ -223,6 +227,24 @@ input:focus {
   --color-point-green: #25a18e;
 }
 
+.normal {
+  font-weight: 400;
+}
+.bold {
+  font-weight: 700;
+}
+.bolder {
+  font-weight: 800;
+}
+.light {
+  font-weight: 300;
+}
+button {
+  font-family: "NanumSquare", sans-serif;
+}
+input {
+  font-family: "NanumSquare", sans-serif;
+}
 /* 폰트 스타일 */
 @font-face {
   font-family: "Cafe24Moyamoya-Face-v1.0";

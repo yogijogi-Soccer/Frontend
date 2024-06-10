@@ -1,5 +1,5 @@
 //팀 목록 페이지
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../component/header";
 import Navigationbar from "../component/navigationbar";
@@ -36,17 +36,7 @@ function FindTeampage() {
             rowGap: "2vh",
             paddingTop: "2vh",
           }}
-        >
-          <Link to="/join-team" className="link">
-            <TeamBox />
-          </Link>
-          <Link to="/join-team" className="link">
-            <TeamBox />
-          </Link>
-          <Link to="/join-team" className="link">
-            <TeamBox />
-          </Link>
-        </div>
+        ></div>
       </div>
       <Navigationbar />
     </div>

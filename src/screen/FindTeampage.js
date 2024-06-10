@@ -96,7 +96,7 @@ function FindTeampage() {
         >
           {data.map((el, index) => {
             return (
-              <Link to={"/team_" + index} className="link">
+              <Link to={"/team"} className="link">
                 <TeamBox data={el} index={index} />
               </Link>
             );

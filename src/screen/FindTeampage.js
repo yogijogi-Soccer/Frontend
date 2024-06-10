@@ -10,6 +10,63 @@ import "../component/css/FindTeamPage.css";
 import GreenButton from "../component/GreenButton";
 
 function FindTeampage() {
+  const data = [
+    {
+      teamName: "요기조기",
+      local: "성동구",
+      gender: "여성",
+      memberCount: "10",
+      age: "20대, 30대",
+      meetTime: "오전(9시~12시)",
+      homeground: "성동구 경기장",
+    },
+    {
+      teamName: "요기조기",
+      local: "성동구",
+      gender: "남성",
+      memberCount: "10",
+      age: "20대, 30대",
+      meetTime: "오전(9시~12시)",
+      homeground: "성동구 경기장",
+    },
+    {
+      teamName: "요기조기",
+      local: "성동구",
+      gender: "여성",
+      memberCount: "10",
+      age: "20대, 30대",
+      meetTime: "오전(9시~12시)",
+      homeground: "성동구 경기장",
+    },
+    {
+      teamName: "요기조기",
+      local: "성동구",
+      gender: "남성",
+      memberCount: "10",
+      age: "20대, 30대",
+      meetTime: "오전(9시~12시)",
+      homeground: "성동구 경기장",
+    },
+    {
+      teamName: "요기조기",
+      local: "성동구",
+      gender: "여성",
+      memberCount: "10",
+      age: "20대, 30대",
+      meetTime: "오전(9시~12시)",
+      homeground: "성동구 경기장",
+    },
+    {
+      teamName: "요기조기",
+      local: "성동구",
+      gender: "남성",
+      memberCount: "10",
+      age: "20대, 30대",
+      meetTime: "오전(9시~12시)",
+      homeground: "성동구 경기장",
+    },
+  ];
+
   return (
     <div>
       <Header />
@@ -32,11 +89,19 @@ function FindTeampage() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            columnGap: "4vw",
+            columnGap: "5vw",
             rowGap: "2vh",
             paddingTop: "2vh",
           }}
-        ></div>
+        >
+          {data.map((el, index) => {
+            return (
+              <Link to={"/team_" + index} className="link">
+                <TeamBox data={el} index={index} />
+              </Link>
+            );
+          })}
+        </div>
       </div>
       <Navigationbar />
     </div>

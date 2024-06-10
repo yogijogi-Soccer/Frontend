@@ -28,7 +28,7 @@ html {
   text-align: center;
   place-items: center;
   background-color: var(--color-point-applegreen);
-  font-family: "Cafe24Moyamoya-Face-v1.0";
+  font-family: "Cafe24Moyamoya-Face-v1.0" !important;
   font-size: 24px;
 }
 
@@ -156,7 +156,6 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "NanumSquare", sans-serif;
 }
 
 /* HTML5 display-role reset for older browsers */

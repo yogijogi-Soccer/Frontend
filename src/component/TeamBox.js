@@ -3,55 +3,40 @@ import React from "react";
 import "./css/TeamBox.css";
 
 function TeamBox(data) {
-  console.log(data.data[0]);
+  console.log(data.data);
   return (
     <div className="TeamBox">
-      <div style={{ padding: "1vh" }}>
-        <div className="TeamBox_logo">
-          <img src="" alt="TeamLogo" />
+      <div className="TeamBox_logo">
+        <img src="" alt="TeamLogo" />
+      </div>
+      <div className="TeamBox_content">
+        <div style={{ fontSize: "4vw" }}>{data.data.teamName}</div>
+        <div className="TeamBox_card">
+          <div className="TeamBox_local_gender_card local">
+            {data.data.local}
+          </div>
+          <div
+            className={
+              "TeamBox_local_gender_card " +
+              (data.data.gender === "여성" ? "woman" : "man")
+            }
+          >
+            {data.data.gender}
+          </div>
         </div>
-        <div className="TeamBox_content">
-          <div style={{ fontSize: "4vw" }}>팀 이름</div>
-          <div
-            style={{ display: "flex", marginTop: "1vh", marginBottom: "1vh" }}
-          >
-            <div
-              style={{
-                padding: "2vw",
-                borderRadius: "1vw",
-                backgroundColor: "var(--color-point-lightgreen)",
-                fontSize: "2.5vw",
-                marginLeft: "auto",
-                marginRight: "2vw",
-              }}
-            >
-              {data.gender}
-            </div>
-            <div
-              style={{
-                padding: "2vw",
-                borderRadius: "1vw",
-                backgroundColor: "#D6009A",
-                color: "white",
-                fontSize: "2.5vw",
-                marginRight: "auto",
-              }}
-            >
-              여성
-            </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <div className="TeamBox_content">
+            인원 : {data.data.memberCount} 명
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
-            <div className="TeamBox_content">인원</div>
-            <div className="TeamBox_content">연령대</div>
-            <div className="TeamBox_content">시간</div>
-            <div className="TeamBox_content">장소</div>
-          </div>
+          <div className="TeamBox_content">연령대 : {data.data.age}</div>
+          <div className="TeamBox_content">시간 : {data.data.meetTime}</div>
+          <div className="TeamBox_content">장소 : {data.data.homeground}</div>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
   flex-direction: column;
   /* align-items: center;
   justify-content: center; */
-  padding: 14vw 10vw;
+  padding: 14vw 8vw;
 }
 
 .CreateTeamComponent h1 {
@@ -23,7 +23,8 @@
 
 .CreateTeamComponent1,
 .CreateTeamComponent2,
-.CreateTeamComponent3 {
+.CreateTeamComponent3,
+.CreateTeamComponent4 {
   padding: 8vw 0vw;
 }
 
@@ -34,12 +35,41 @@
   justify-content: center;
 }
 
+.CreateTeamComponentInner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .CreateTeamComponentProfile,
 .CreateTeamComponentProfile img {
-  width: 56vw;
-  height: 14vh;
-  background-color: var(--color-normal3);
-  border-radius: 30vw;
+  width: 8rem;
+  height: 8rem;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+
+.CreateTeamComponentBtnBox {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.imgBtn {
+  color: var(--color-normal1);
+  padding: 2vw 5vw;
+  font-size: 18px;
+  border-radius: 50px;
+  background-color: var(--color-point-green);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.TeamInfoInput span {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
 }
 
 .CreateTeamComponentInner {
@@ -52,14 +82,6 @@
 .ImageAddBtn {
   display: flex;
   flex-direction: column;
-}
-
-.imgBtn {
-  color: var(--color-normal1);
-  padding: 2vw 5vw;
-  font-size: 20px;
-  border-radius: 50px;
-  background-color: var(--color-point-green);
 }
 
 .imgBtn:active {

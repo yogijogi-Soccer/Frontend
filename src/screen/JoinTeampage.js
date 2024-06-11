@@ -1,5 +1,5 @@
 //팀 상세 페이지
-import React, { useState } from "react";
+import React, { useEffect, useReducer, useState, useRef } from "react";
 import Header from "../component/header";
 import Navigationbar from "../component/navigationbar";
 import "./css/teamdetail.css";
@@ -9,6 +9,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import ModalCheck from "../component/ModalCheck";
+import Modal from "../component/Modal";
 
 const JoinCard = () => {
   const [introText, setIntroText] = useState("");
@@ -16,9 +17,10 @@ const JoinCard = () => {
     setIntroText(e.target.value);
   };
 
-  const [isCheck, setIsCheck] = useState(false);
   const checkChange = () => {
-    setIsCheck(!isCheck);
+    document.getElementById("agreeCheck").checked =
+      !document.getElementById("agreeCheck").checked;
+    console.log(document.getElementById("agreeCheck").checked);
   };
   const [position, setPosition] = useState("");
   const positionList = [
@@ -128,8 +130,6 @@ const JoinCard = () => {
             <input
               type="checkbox"
               id="agreeCheck"
-              checked={isCheck}
-              onClick={checkChange}
               style={{
                 width: "1.8vh",
                 height: "1.8vh",
@@ -154,9 +154,18 @@ function JoinTeampage() {
     setIsVisible(true);
   };
 
+  //제출하시겠습니까? 팝업 오픈인지 아닌지
   const [submitPopupOpen, setSubmitPopupOpen] = useState(false);
+  //'확인했습니다' 체크 안했을 때, 체크해댤라는 팝업 오픈인지 아닌지
+  const [checkPopupOpen, setCheckPopupOpen] = useState(false);
   const handlesubmit = () => {
-    setSubmitPopupOpen(true);
+    console.log("joincard : " + document.getElementById("agreeCheck").checked);
+    if (document.getElementById("agreeCheck").checked === true) {
+      setSubmitPopupOpen(true);
+    } else {
+      console.log("확인했습니다를 눌러주세요");
+      setCheckPopupOpen(true);
+    }
   };
 
   return (
@@ -212,6 +221,11 @@ function JoinTeampage() {
           title={"제출하시겠습니까?"}
           onClose={() => setSubmitPopupOpen(false)}
           completeContext={"제출이 완료되었습니다"}
+        />
+        <Modal
+          open={checkPopupOpen}
+          onClose={() => setCheckPopupOpen(false)}
+          context={"확인했습니다를 체크해주세요"}
         />
       </div>
 

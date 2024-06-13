@@ -3,6 +3,8 @@ import "react-quill/dist/quill.snow.css";
 import React, { useRef, useState, useEffect } from "react";
 import "../screen/css/notice.css";
 import "../component/css/Button.css";
+import ModalCheck from "./ModalCheck";
+import { useNavigate } from "react-router-dom";
 
 // 사용하고 싶은 옵션, 나열 되었으면 하는 순서대로 나열
 const toolbarOptions = [
@@ -50,7 +52,10 @@ const EditorQuill = ({ placeholder, value, ...rest }) => {
   const onChange = () => {
     // const data = editerRef.current.getInstance().getHTML();
     console.log(editorValue);
+    setModalCheckOpen(true);
   };
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const quill = quillRef.current;
@@ -58,6 +63,9 @@ const EditorQuill = ({ placeholder, value, ...rest }) => {
 
     //이미지 핸들로직
   });
+
+  //모달 State
+  const [modalCheckOpen, setModalCheckOpen] = useState(false);
 
   return (
     <div className="editorPage">
@@ -88,6 +96,15 @@ const EditorQuill = ({ placeholder, value, ...rest }) => {
           overflow: "hidden",
           whiteSpace: "pre-wrap",
         }}
+      />
+      <ModalCheck
+        open={modalCheckOpen}
+        onClose={() => {
+          setModalCheckOpen(false);
+          navigate("/team/notice");
+        }}
+        title={"등록하시겠습니까?"}
+        completeContext={"등록되었습니다"}
       />
     </div>
   );

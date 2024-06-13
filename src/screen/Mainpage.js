@@ -24,7 +24,7 @@ function Mainpage() {
 
   return (
     <div className="Mainpage">
-      <Header />
+      <Header main={true} />
       <div className="div-page">
         <div>
           <Link to="/search" className="link">

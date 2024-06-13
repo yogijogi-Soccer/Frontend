@@ -69,7 +69,7 @@ function FindTeampage() {
 
   return (
     <div>
-      <Header />
+      <Header main={true} />
       <div className="div-page">
         <button
           style={{

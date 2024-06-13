@@ -5,15 +5,11 @@ import Navigationbar from "../../component/navigationbar";
 import "../css/notice.css";
 import "../../index.css";
 import TeamNav from "../../component/teamNav";
-import Noticlist from "../../component/Noticelist";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import notice from "../../data/notice";
 
 function TeamNoticepage() {
   let role = true;
-  const noticelist = [
-    { title: "[필독] 팀 개설 안내", date: "2020.03.18 12:00", update: 5 },
-    { title: "제목2", date: "2023.03.14 12:00", update: 10 },
-  ];
 
   return (
     <div>
@@ -30,11 +26,34 @@ function TeamNoticepage() {
           )}
         </div>
 
-        <Noticlist list={noticelist} />
+        <Noticelist list={notice} />
       </div>
       <Navigationbar />
     </div>
   );
+}
+
+//공지사항 리스트
+function Noticelist(props) {
+  const navigate = useNavigate();
+  const list = props.list.map((el) => {
+    return (
+      <div
+        onClick={() => {
+          navigate("/team/notice/1");
+        }}
+        className="Notice_div"
+      >
+        <p className="Notice_div-title">{el.title}</p>
+        <div className="Notice_div-update">
+          <img src="/img/eye.png" alt="눈이미지" width="20vw" />
+          <p>{el.count}</p>
+        </div>
+        <p className="Notice_div-date">{el.date}</p>
+      </div>
+    );
+  });
+  return list;
 }
 
 export default TeamNoticepage;

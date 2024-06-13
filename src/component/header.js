@@ -1,13 +1,36 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
 
-function header() {
+function Useheader({ main }) {
+  return <div>{main === true ? <MainHeader /> : <MenuHeader />}</div>;
+}
+
+function MainHeader() {
   return (
-    <div className="header">
-      <Link to="/">요기조기</Link>
+    <div className="mainHeader">
+      <Link to="/" className="link">
+        요기조기
+      </Link>
     </div>
   );
 }
 
-export default header;
+function MenuHeader() {
+  const navigate = useNavigate();
+  return (
+    <div className="menuHeader">
+      <button
+        style={{ marginLeft: "3vw", marginRight: "auto" }}
+        onClick={() => navigate(-1)}
+      >
+        이전
+      </button>
+      <Link to="/" className="link">
+        요기조기
+      </Link>
+    </div>
+  );
+}
+
+export default Useheader;

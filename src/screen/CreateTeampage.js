@@ -401,7 +401,7 @@ function CreateTeampage() {
 
   return (
     <div>
-      <Header />
+      <Header main={true} />
       {createTeamStep === 1 && <CreateTeamComponent />}
       {createTeamStep === 2 && <CreateTeamComponent2 />}
       {createTeamStep === 3 && <CreateTeamComponent3 />}

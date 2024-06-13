@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
+import { TiArrowLeftThick } from "react-icons/ti";
 
 function Useheader({ main }) {
   return <div>{main === true ? <MainHeader /> : <MenuHeader />}</div>;
@@ -20,12 +21,11 @@ function MenuHeader() {
   const navigate = useNavigate();
   return (
     <div className="menuHeader">
-      <button
+      <TiArrowLeftThick
         style={{ marginLeft: "3vw", marginRight: "auto" }}
         onClick={() => navigate(-1)}
-      >
-        이전
-      </button>
+      />
+
       <Link to="/" className="link">
         요기조기
       </Link>

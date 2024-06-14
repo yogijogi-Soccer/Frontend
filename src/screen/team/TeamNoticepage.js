@@ -7,6 +7,7 @@ import "../../index.css";
 import TeamNav from "../../component/teamNav";
 import { Link, useNavigate } from "react-router-dom";
 import notice from "../../data/notice";
+import { BsEyeFill } from "react-icons/bs";
 
 function TeamNoticepage() {
   let role = true;
@@ -46,7 +47,7 @@ function Noticelist(props) {
       >
         <p className="Notice_div-title">{el.title}</p>
         <div className="Notice_div-update">
-          <img src="/img/eye.png" alt="눈이미지" width="20vw" />
+          <BsEyeFill size={"3vw"} />
           <p>{el.count}</p>
         </div>
         <p className="Notice_div-date">{el.date}</p>

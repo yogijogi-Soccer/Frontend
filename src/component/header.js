@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
-import { TiArrowLeftThick } from "react-icons/ti";
+import { BsFillCaretLeftFill } from "react-icons/bs";
 
 function Useheader({ main }) {
   return <div>{main === true ? <MainHeader /> : <MenuHeader />}</div>;
@@ -23,7 +23,7 @@ function MenuHeader() {
   const navigate = useNavigate();
   return (
     <div className="menuHeader">
-      <TiArrowLeftThick
+      <BsFillCaretLeftFill
         style={{ marginLeft: "3vw", marginRight: "auto" }}
         onClick={() => navigate(-1)}
       />

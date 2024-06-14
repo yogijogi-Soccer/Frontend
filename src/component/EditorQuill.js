@@ -6,6 +6,8 @@ import "../component/css/Button.css";
 import ModalCheck from "./ModalCheck";
 import { useNavigate } from "react-router-dom";
 
+//글쓰기 컴포넌트
+
 // 사용하고 싶은 옵션, 나열 되었으면 하는 순서대로 나열
 const toolbarOptions = [
   ["link", "image"],

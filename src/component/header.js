@@ -7,6 +7,7 @@ function Useheader({ main }) {
   return <div>{main === true ? <MainHeader /> : <MenuHeader />}</div>;
 }
 
+//이전 버튼 없는 헤더 (제일 처음 메뉴 헤더)
 function MainHeader() {
   return (
     <div className="mainHeader">
@@ -17,6 +18,7 @@ function MainHeader() {
   );
 }
 
+//이전 버튼이 있는 헤더
 function MenuHeader() {
   const navigate = useNavigate();
   return (

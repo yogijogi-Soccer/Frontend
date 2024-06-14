@@ -107,6 +107,7 @@ const EditorQuill = ({ placeholder, value, ...rest }) => {
         }}
         title={"등록하시겠습니까?"}
         completeContext={"등록되었습니다"}
+        completeNext={"/team/notice"}
       />
     </div>
   );

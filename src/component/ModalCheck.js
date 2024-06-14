@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./css/modal.css";
 import React, { useState } from "react";
 import Modal from "./Modal";
-
+import { useNavigate } from "react-router-dom";
 //open : boolean 타입. modal 열기
 //onClose : boolean 타입. modal 닫기
 //title : string 타입. 모달에 들어갈 제목
@@ -17,10 +17,19 @@ const ModalCheck = ({
   context,
   title,
   completeContext,
+  noComplete,
+  next,
+  completeNext,
 }) => {
   const [isModal, setIsModal] = useState(false);
+  const navigate = useNavigate();
   const OpenModal = () => {
+    if (noComplete === true) {
+      setIsModal(true);
+      navigate(-1);
+    }
     setIsModal(true);
+    if (next !== undefined) navigate(next);
   };
   if (!open) return null;
 
@@ -52,6 +61,7 @@ const ModalCheck = ({
           onClose={() => {
             setIsModal(false);
             onClose();
+            navigate(completeNext);
           }}
         />
       </div>

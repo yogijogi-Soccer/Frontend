@@ -7,13 +7,14 @@ import "../index.css";
 import GreenButton from "../component/GreenButton";
 import "./css/teamdetail.css";
 import "./css/inforfix.css";
-import Button from "../component/Button";
+import "../component/css/Button.css";
 import GroupButton from "../component/GroupButton";
 import ContrySelectBtn from "../component/CountrySelectBtn";
 import KakaoAddressPopup from "../component/KakaoAddressPopup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PhoneInput from "../component/PhoneInput";
 import EmailInput from "../component/EmailInput";
+import ModalCheck from "../component/ModalCheck";
 
 function MyFixpage() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -61,17 +62,31 @@ function MyFixpage() {
     setDuesResult("");
     document.getElementById("DuesInput").focus();
   }
+  const [selectedImage, setSelectedImage] = useState(null);
+  const handleImageUpload = (event) => {
+    //이미지 업로드 버튼
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setSelectedImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navigate = useNavigate();
   return (
     <div>
-      <Header />
+      <Header cancel={true} />
       <div className="div-page">
         {/* 팀 이름, 팀 사진, 프로필 사진 수정 */}
         <div className="TeamDetail-profile">
-          <img
-            className="TeamDetail-profile_img"
-            alt="프로필"
-            src="../img/profile.png"
-          />
+          <div className="CreateTeamComponentProfile TeamDetail-profile_img">
+            {selectedImage && <img src={selectedImage} alt="Selected" />}
+          </div>
           <div className="TeamDetail-profile_box">
             <div className="Inforfix-profile_title">사용자 이름</div>
             <div
@@ -84,7 +99,16 @@ function MyFixpage() {
             >
               내 포지션 : CB, GK
               <div style={{ marginTop: "1vh" }}>
-                <GreenButton>사진 변경하기</GreenButton>
+                <label className="btn-green" htmlFor="imageUpload">
+                  프로필 사진 변경하기
+                </label>
+                <input
+                  type="file"
+                  id="imageUpload"
+                  accept="image/*"
+                  style={{ display: "none" }}
+                  onChange={handleImageUpload}
+                />
               </div>
             </div>
           </div>
@@ -168,9 +192,27 @@ function MyFixpage() {
               />
             </div>
           </div>
-          <Link to="/team" style={{ textAlign: "center" }}>
-            <Button>수정완료</Button>
-          </Link>
+
+          <button
+            style={{ margin: "auto" }}
+            className="Button"
+            onClick={() => {
+              setIsOpen(true);
+              console.log(isOpen);
+            }}
+          >
+            수정완료
+          </button>
+
+          <ModalCheck
+            open={isOpen}
+            onClose={() => {
+              setIsOpen(false);
+            }}
+            next={"/my"}
+            title={"수정하시겠습니까?"}
+            completeContext={"수정이 완료되었습니다."}
+          />
         </div>
       </div>
       <Navigationbar />

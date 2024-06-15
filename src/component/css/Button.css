@@ -35,7 +35,8 @@ button {
   background-color: var(--color-normal3);
 }
 
-.Button2:focus {
+.Button2.selected {
+  /* 선택된 버튼 스타일 */
   background-color: var(--color-point-green);
 }
 

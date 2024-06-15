@@ -52,7 +52,7 @@ function SignupPage() {
 
   //일주일
   const week = ["월", "화", "수", "목", "금", "토", "일"];
-  const [weekResult, setWeekResult] = useState("");
+  const [weekResult, setWeekResult] = useState([]);
   console.log("요일 : " + weekResult);
 
   const handleAllCheckboxChange = (event) => {
@@ -66,6 +66,38 @@ function SignupPage() {
       marketing: checked,
       thirdParty: checked,
     });
+  };
+
+  const MultiSelectGroupButton = ({ list, result, ...props }) => {
+    const [selectedItems, setSelectedItems] = useState([]);
+
+    const handleItemClick = (item) => {
+      setSelectedItems((prev) => {
+        if (prev.includes(item)) {
+          return prev.filter((i) => i !== item);
+        } else {
+          return [...prev, item];
+        }
+      });
+    };
+
+    React.useEffect(() => {
+      result(selectedItems);
+    }, [selectedItems, result]);
+
+    return (
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {list.map((item) => (
+          <GroupButton
+            key={item}
+            list={[item]}
+            result={() => handleItemClick(item)}
+            {...props}
+            selected={selectedItems.includes(item)}
+          />
+        ))}
+      </div>
+    );
   };
 
   const SignupComponent = ({ onClick }) => (
@@ -166,43 +198,274 @@ function SignupPage() {
     </div>
   );
 
-  const SignupComponent3 = () => (
-    //추가정보 (1)
-    <div className="SignupPage">
-      <h1>추가정보를 적어주세요. (1/2)</h1>
-      <div className="SignupComponentBox3">
-        {/* 추가 정보 입력 */}
-        <h3>선수 경험</h3>
-        <div className="SignupComponentInner">
-          <Button2>선수 경험이 있습니다</Button2>
-          <Button2>없습니다</Button2>
+  const SignupComponent3 = () => {
+    const [selectedPositions, setSelectedPositions] = useState({
+      player: null,
+      goalkeeper: null,
+      defense: null,
+      midfielder: null,
+      attack: null,
+    });
+
+    const handlePositionClick = (category, position) => {
+      setSelectedPositions((prev) => ({
+        ...prev,
+        [category]: position,
+      }));
+    };
+
+    return (
+      <div className="SignupPage">
+        <h1>추가정보를 적어주세요. (1/2)</h1>
+        <div className="SignupComponentBox3">
+          {/* 추가 정보 입력 */}
+          <h3>선수 경험</h3>
+          <div className="SignupComponentInner">
+            <Button2
+              onClick={() => handlePositionClick("player", "YES")}
+              selected={selectedPositions.player === "YES"}
+            >
+              선수 경험이 있습니다
+            </Button2>
+            <Button2
+              onClick={() => handlePositionClick("player", "NO")}
+              selected={selectedPositions.player === "NO"}
+            >
+              없습니다
+            </Button2>
+          </div>
+          <h3>포지션 (최대 3개)</h3>
+          <div className="signupPositionBox">
+            <span>골기퍼</span>
+            <div className="positionBtn">
+              <Button2
+                onClick={() => handlePositionClick("goalkeeper", "GK")}
+                selected={selectedPositions.goalkeeper === "GK"}
+              >
+                GK
+              </Button2>
+            </div>
+
+            <span>수비</span>
+            <div className="positionBtn">
+              <Button2
+                onClick={() => handlePositionClick("defense", "LB")}
+                selected={selectedPositions.defense === "LB"}
+              >
+                LB
+              </Button2>
+              <Button2
+                onClick={() => handlePositionClick("defense", "CB")}
+                selected={selectedPositions.defense === "CB"}
+              >
+                CB
+              </Button2>
+              <Button2
+                onClick={() => handlePositionClick("defense", "RB")}
+                selected={selectedPositions.defense === "RB"}
+              >
+                RB
+              </Button2>
+            </div>
+
+            <span>미드필더</span>
+            <div className="positionBtn">
+              <Button2
+                onClick={() => handlePositionClick("midfielder", "LM")}
+                selected={selectedPositions.midfielder === "LM"}
+              >
+                LM
+              </Button2>
+              <Button2
+                onClick={() => handlePositionClick("midfielder", "CM")}
+                selected={selectedPositions.midfielder === "CM"}
+              >
+                CM
+              </Button2>
+              <Button2
+                onClick={() => handlePositionClick("midfielder", "RM")}
+                selected={selectedPositions.midfielder === "RM"}
+              >
+                RM
+              </Button2>
+            </div>
+
+            <span>공격</span>
+            <div className="positionBtn">
+              <Button2
+                onClick={() => handlePositionClick("attack", "LW")}
+                selected={selectedPositions.attack === "LW"}
+              >
+                LW
+              </Button2>
+              <Button2
+                onClick={() => handlePositionClick("attack", "ST")}
+                selected={selectedPositions.attack === "ST"}
+              >
+                ST
+              </Button2>
+              <Button2
+                onClick={() => handlePositionClick("attack", "RW")}
+                selected={selectedPositions.attack === "RW"}
+              >
+                RW
+              </Button2>
+            </div>
+          </div>
         </div>
-        <h3>포지션 (최대 3개)</h3>
-        <div className="signupPositionBox">
-          <span>골기퍼</span>
-          <div className="positionBtn">
-            <Button2>GK</Button2>
-          </div>
+        <div className="buttonContainer">
+          <Button className="prevButton" onClick={handlePrevButtonClick}>
+            이전
+          </Button>
+          <Button className="nextButton" onClick={handleNextButtonClick}>
+            다음
+          </Button>
+        </div>
+      </div>
+    );
+  };
 
-          <span>수비</span>
-          <div className="positionBtn">
-            <Button2>LB</Button2>
-            <Button2>CB</Button2>
-            <Button2>RB</Button2>
-          </div>
+  const SignupComponent4 = () => {
+    const week = ["월", "화", "수", "목", "금", "토", "일"];
+    const [selectedWeek, setSelectedWeek] = useState([]);
 
-          <span>미드필더</span>
-          <div className="positionBtn">
-            <Button2>LM</Button2>
-            <Button2>CM</Button2>
-            <Button2>RB</Button2>
+    return (
+      <div className="SignupPage">
+        <h1>추가정보를 적어주세요. (2/2)</h1>
+        <div className="SignupComponentBox3">
+          {/* 추가 정보 입력 */}
+          <h3>가능한 요일(중복가능)</h3>
+          <div
+            className="SignupComponentInner"
+            style={{ justifyContent: "center" }}
+          >
+            <MultiSelectGroupButton
+              list={week}
+              result={setSelectedWeek}
+              width={"10vw"}
+              height={"10vw"}
+              borderRadius={"50px"}
+              fontSize={"15px"}
+            />
           </div>
+          <div>
+            <h3>가능한 시간대(중복가능)</h3>
+            <div className="signupTimeOption">
+              <div className="signupTimeOption1">
+                <span>시작시간</span>
+                <span> 끝시간</span>
+              </div>
+              <div className="signupTimeOption2">
+                <TimeOption />
+                <span>~</span>
+                <TimeOption />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="buttonContainer">
+          <Button className="prevButton" onClick={handlePrevButtonClick}>
+            이전
+          </Button>
+          <Link to="/main">
+            <Button className="nextButton">회원가입</Button>
+          </Link>
+        </div>
+      </div>
+    );
+  };
 
-          <span>공격</span>
-          <div className="positionBtn">
-            <Button2>LW</Button2>
-            <Button2>RW</Button2>
-            <Button2>CF</Button2>
+  const SignupComponent5 = () => (
+    //이용약관 동의
+    <div className="SignupPage">
+      <h1>
+        약관동의 및
+        <br /> 개인정보수집 이용동의
+      </h1>
+      <div className="SignupComponentBox4">
+        {/* 이용약관 */}
+        <div className="SignupComponentInner checkbox">
+          <div>
+            <input
+              type="checkbox"
+              checked={allChecked}
+              onChange={handleAllCheckboxChange}
+            />
+            <span>
+              전체 동의합니다.
+              <br />
+              (전체 동의는 필수 및 선택정보에 대한 동의도 포함되어 있으며,
+              <br />
+              개별적으로도 동의를 선택하실 수 있습니다.)
+            </span>
+          </div>
+        </div>
+        <div className="line"></div>
+        <div className="SignupComponentInner checkbox">
+          <div>
+            <input
+              type="checkbox"
+              name="age"
+              checked={checkboxes.age}
+              onChange={handleCheckboxChange}
+            />
+            <span>(필수) 만 14세 이상입니다.</span>
+          </div>
+        </div>
+        <div className="SignupComponentInner checkbox">
+          <div>
+            <input
+              type="checkbox"
+              name="terms"
+              checked={checkboxes.terms}
+              onChange={handleCheckboxChange}
+            />
+            <span>(필수) 서비스 이용약관에 동의</span>
+          </div>
+        </div>
+        <div className="SignupComponentInner checkbox">
+          <div>
+            <input
+              type="checkbox"
+              name="privacy"
+              checked={checkboxes.privacy}
+              onChange={handleCheckboxChange}
+            />
+            <span>(필수) 개인정보 수집 및 이용동의</span>
+          </div>
+        </div>
+        <div className="SignupComponentInner checkbox">
+          <div>
+            <input
+              type="checkbox"
+              name="nightBenefit"
+              checked={checkboxes.nightBenefit}
+              onChange={handleCheckboxChange}
+            />
+            <span>(필수) 개인정보 수집 및 이용동의</span>
+          </div>
+        </div>
+        <div className="line"></div>
+        <div className="SignupComponentInner checkbox">
+          <div>
+            <input
+              type="checkbox"
+              name="marketing"
+              checked={checkboxes.marketing}
+              onChange={handleCheckboxChange}
+            />
+            <span>(선택) 마케팅 정보 수신 동의</span>
+          </div>
+        </div>
+        <div className="SignupComponentInner checkbox">
+          <div>
+            <input
+              type="checkbox"
+              name="thirdParty"
+              checked={checkboxes.thirdParty}
+              onChange={handleCheckboxChange}
+            />
+            <span>(선택) 개인정보 제 3자 제공 동의</span>
           </div>
         </div>
       </div>
@@ -217,155 +480,19 @@ function SignupPage() {
     </div>
   );
 
-  const SignupComponent4 = () => (
-    //추가정보 (2)
-    <div className="SignupPage">
-      <h1>추가정보를 적어주세요. (2/2)</h1>
-      <div>
-        <div className="SignupComponentBox4">
-          <h3>가능한 요일(중복가능)</h3>
-          {/* 요일 버튼 */}
-          <GroupButton
-            list={week}
-            result={setWeekResult}
-            width={"12vw"}
-            height={"12vw"}
-            borderRadius={"50px"}
-            fontSize={"15px"}
-            display={"flex"}
-          />
-          <h3>가능한 시간대(중복가능)</h3>
-          <div className="signupTimeOption">
-            <div className="signupTimeOption1">
-              <span>시작시간</span>
-              <span> 끝시간</span>
-            </div>
-            <div className="signupTimeOption2">
-              <TimeOption />
-              <span>~</span>
-              <TimeOption />
-            </div>
-          </div>
-        </div>
-        <div className="buttonContainer">
-          <Button className="prevButton" onClick={handlePrevButtonClick}>
-            이전
-          </Button>
-          <Button className="nextButton" onClick={handleNextButtonClick}>
-            다음
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-
-  const SignupComponent5 = () => (
-    //서비스 약관 동의
-    <div className="SignupPage">
-      <h1>서비스 약관에 동의해주세요.</h1>
-      <div>
-        <div className="SignupComponentBox5">
-          <div className="checkboxContainer">
-            <input
-              type="checkbox"
-              checked={allChecked}
-              onChange={handleAllCheckboxChange}
-            />
-            <span>네, 모두 동의합니다.</span>
-          </div>
-          <hr />
-          <div className="checkboxContainer">
-            <input
-              type="checkbox"
-              name="age"
-              checked={checkboxes.age}
-              onChange={handleCheckboxChange}
-            />
-            <span>(필수) 만 14세 이상입니다.</span>
-          </div>
-          <div className="checkboxContainer">
-            <input
-              type="checkbox"
-              name="terms"
-              checked={checkboxes.terms}
-              onChange={handleCheckboxChange}
-            />
-            <span>(필수) 서비스 이용약관에 동의</span>
-          </div>
-          <div className="checkboxContainer">
-            <input
-              type="checkbox"
-              name="privacy"
-              checked={checkboxes.privacy}
-              onChange={handleCheckboxChange}
-            />
-            <span>(필수) 개인정보 수집 이용에 동의</span>
-          </div>
-          <div className="checkboxContainer">
-            <input
-              type="checkbox"
-              name="nightBenefit"
-              checked={checkboxes.nightBenefit}
-              onChange={handleCheckboxChange}
-            />
-            <span>(선택) 야간 혜택 수신에 동의</span>
-          </div>
-          <div className="checkboxContainer">
-            <input
-              type="checkbox"
-              name="marketing"
-              checked={checkboxes.marketing}
-              onChange={handleCheckboxChange}
-            />
-            <span>(선택) 홍보 및 마케팅 이용에 동의</span>
-          </div>
-          <div className="checkboxContainer">
-            <input
-              type="checkbox"
-              name="thirdParty"
-              checked={checkboxes.thirdParty}
-              onChange={handleCheckboxChange}
-            />
-            <span>(선택) 마케팅 개인정보 제3자 제공 동의</span>
-          </div>
-        </div>
-
-        <div className="buttonContainer">
-          <Button className="prevButton" onClick={handlePrevButtonClick}>
-            이전
-          </Button>
-          <Button className="nextButton" onClick={handleNextButtonClick}>
-            완료
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-
-  const SignupComponent6 = () => (
-    //회원가입 완료창
-    <div className="SignupPage">
-      <h1>회원가입이 완료되었습니다.</h1>
-      <div className="SignupComponentBox6">
-        <Button className="SignupSuccessBtn">
-          <Link to="/login" className="link">
-            로그인 하러가기
-          </Link>
-        </Button>
-      </div>
-    </div>
-  );
-
   return (
     <div>
       <Header />
-      {signupStep === 1 && <SignupComponent />}
-      {signupStep === 2 && <SignupComponent2 />}
-      {signupStep === 3 && <SignupComponent3 />}
-      {signupStep === 4 && <SignupComponent4 />}
-      {signupStep === 5 && <SignupComponent5 />}
-      {signupStep === 6 && <SignupComponent6 />}
       <Navigationbar />
+      <div>
+        {signupStep === 1 && (
+          <SignupComponent onClick={handleNextButtonClick} />
+        )}
+        {signupStep === 2 && <SignupComponent2 />}
+        {signupStep === 3 && <SignupComponent3 />}
+        {signupStep === 4 && <SignupComponent4 />}
+        {signupStep === 5 && <SignupComponent5 />}
+      </div>
     </div>
   );
 }

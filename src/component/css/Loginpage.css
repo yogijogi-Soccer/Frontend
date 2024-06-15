@@ -1,46 +1,46 @@
-.LoginCompoent{
- padding: 14vw 0vw 14vw 0vw;
+.LoginCompoent {
+  padding: 14vw 0vw 14vw 0vw;
 }
 
-.error-msg{
- color: red;
- font-size: 2.7vw;
+.error-msg {
+  color: red;
+  font-size: 2.7vw;
 }
 
 .LoginBox1 {
- display: flex;
- flex-direction: column;
- align-items: center;
- padding-bottom: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15vw;
 }
 
-.LoginBox1 h1{
- font-size: 8vw;
- padding: 0vw 5vw 10vw 5vw;
+.LoginBox1 h1 {
+  font-size: 8vw;
+  padding: 0vw 5vw 10vw 5vw;
 }
 
-.LoginBox1 input{
- width: 70vw;
- height: 6vh;
- margin-bottom: 2vw;
- border-radius: 2vw;
+.LoginBox1 input {
+  width: 70vw;
+  height: 6vh;
+  margin-bottom: 2vw;
+  border-radius: 2vw;
 }
 
-.LoginCompoent Button{
- width: 90vw;
- font-size: 20px;
+.LoginCompoent Button {
+  width: 90vw;
+  font-size: 20px;
 }
 
-.LoginBox2{
- align-items: center;
- text-align: center;
+.LoginBox2 {
+  align-items: center;
+  text-align: center;
 }
 
-.memberInfo{
- display: flex;
- align-items: center; 
- padding-bottom: 8vw;
- margin: 0vw 10vw;
+.memberInfo {
+  display: flex;
+  align-items: center;
+  padding-bottom: 8vw;
+  margin: 0vw 10vw;
 }
 
 .memberInfo a,
@@ -48,31 +48,31 @@
   align-items: center;
 }
 
-.memberInfo a{
+.memberInfo a {
   width: 26vw;
   color: black;
 }
 
 .memberInfo button {
- background: none;
- border: none;
- width: 26vw;
- padding: 0;
- margin: 0;
- font: inherit;
- color: inherit;
- cursor: pointer;
- outline: none;
- font-size: 2.8vw;
+  background: none;
+  border: none;
+  width: 26vw;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  font-size: 2.8vw;
 }
 
-.LoginBox2 hr{
- width: 80vw;
- margin-bottom: 10vw;
+.LoginBox2 hr {
+  width: 80vw;
+  margin-bottom: 10vw;
 }
 
-.kakaoButton{
- background-color: #FFDC23;
+.kakaoButton {
+  background-color: #ffdc23;
   padding-left: 15vw;
   padding-right: 15vw;
   padding-top: 2vw;

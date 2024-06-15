@@ -6,12 +6,24 @@ import Button from "../component/Button";
 import Button2 from "../component/Button2";
 import WeekButton from "../component/weekButton";
 import TimeOption from "../component/TimeOption";
+import GroupButton from "../component/GroupButton";
 import "../component/css/SignupPage.css";
-
 import "../index.css";
 
 function SignupPage() {
-  const [signupStep, setSignupStep] = useState(1);
+  const [signupStep, setSignupStep] = useState(1); //페이지 조정
+  const [smsMessage, setSmsMessage] = useState(""); //인증번호 전송 메세지
+  const [verificationMessage, setVerificationMessage] = useState(""); // 인증 완료 메세지
+  const [allChecked, setAllChecked] = useState(false); //모든 체크 박스 활성화
+  const [checkboxes, setCheckboxes] = useState({
+    //서비스 약관 체크박스
+    age: false,
+    terms: false,
+    privacy: false,
+    nightBenefit: false,
+    marketing: false,
+    thirdParty: false,
+  });
 
   const handleNextButtonClick = () => {
     //다음 버튼 클릭 시
@@ -25,6 +37,37 @@ function SignupPage() {
     }
   };
 
+  const handleSendSMSClick = () => {
+    setSmsMessage("인증번호가 전송되었습니다.");
+  };
+
+  const handleVerifyClick = () => {
+    setVerificationMessage("인증이 완료되었습니다.");
+  };
+
+  const handleCheckboxChange = (event) => {
+    const { name, checked } = event.target;
+    setCheckboxes((prev) => ({ ...prev, [name]: checked }));
+  };
+
+  //일주일
+  const week = ["월", "화", "수", "목", "금", "토", "일"];
+  const [weekResult, setWeekResult] = useState("");
+  console.log("요일 : " + weekResult);
+
+  const handleAllCheckboxChange = (event) => {
+    const { checked } = event.target;
+    setAllChecked(checked);
+    setCheckboxes({
+      age: checked,
+      terms: checked,
+      privacy: checked,
+      nightBenefit: checked,
+      marketing: checked,
+      thirdParty: checked,
+    });
+  };
+
   const SignupComponent = ({ onClick }) => (
     //본인인증 (이름, 생년월일, 휴대폰)
     <div className="SignupPage">
@@ -33,7 +76,9 @@ function SignupPage() {
         {/* 이름 */}
         <span>이름</span>
         <div className="NameGender SignupComponentInner">
-          <input type="text" placeholder="홍길동" />
+          <div className="inputContainer">
+            <input type="text" placeholder="홍길동" />
+          </div>
           <div className="gender">
             <button className="genderBtn" onClick={onClick}>
               남
@@ -47,24 +92,34 @@ function SignupPage() {
         {/* 생년월일 */}
         <span>생년월일</span>
         <div className="SignupComponentInner">
-          <input type="text" placeholder="ex) 001225" />
+          <div className="inputContainer">
+            <input type="text" placeholder="ex) 001225" />
+          </div>
         </div>
 
         {/* 휴대폰 번호 */}
         <span>휴대폰 번호</span>
         <div className="SignupComponentInner">
-          <input type="text" placeholder="ex) 01012345678" />
-          <Button>문자받기</Button>
+          <div className="inputContainer">
+            <input type="text" placeholder="ex) 01012345678" />
+            {smsMessage && <span className="success-msg">{smsMessage}</span>}
+          </div>
+          <Button onClick={handleSendSMSClick}>문자받기</Button>
         </div>
 
         {/* 인증번호 */}
         <span>인증번호</span>
         <div className="SignupComponentInner">
-          <input type="text" placeholder="0000" />
-          <Button>인증하기</Button>
+          <div className="inputContainer">
+            <input type="text" placeholder="0000" />
+            {verificationMessage && (
+              <span className="success-msg">{verificationMessage}</span>
+            )}
+          </div>
+          <Button onClick={handleVerifyClick}>인증하기</Button>
         </div>
       </div>
-      <div>
+      <div className="buttonContainer">
         <Button className="nextButton" onClick={handleNextButtonClick}>
           다음
         </Button>
@@ -82,8 +137,8 @@ function SignupPage() {
       <div className="SignupComponentBox2">
         {/* 이메일 주소 */}
         <span>이메일 주소</span>
-        <div className="signupEmail SignupComponentInner">
-          <input type="text" placeholder="이메일 주소를 입력하세요" />
+        <div className="SignupComponentInner signupEmail">
+          <input type="text" placeholder="abc" />
           <span>@</span>
           <select>
             <option>naver.com</option>
@@ -100,7 +155,7 @@ function SignupPage() {
           <input type="text" placeholder="영문, 숫자, 특수문자 포함 8자 이상" />
         </div>
       </div>
-      <div>
+      <div className="buttonContainer">
         <Button className="prevButton" onClick={handlePrevButtonClick}>
           이전
         </Button>
@@ -151,7 +206,7 @@ function SignupPage() {
           </div>
         </div>
       </div>
-      <div>
+      <div className="buttonContainer">
         <Button className="prevButton" onClick={handlePrevButtonClick}>
           이전
         </Button>
@@ -170,7 +225,15 @@ function SignupPage() {
         <div className="SignupComponentBox4">
           <h3>가능한 요일(중복가능)</h3>
           {/* 요일 버튼 */}
-          <WeekButton />
+          <GroupButton
+            list={week}
+            result={setWeekResult}
+            width={"12vw"}
+            height={"12vw"}
+            borderRadius={"50px"}
+            fontSize={"15px"}
+            display={"flex"}
+          />
           <h3>가능한 시간대(중복가능)</h3>
           <div className="signupTimeOption">
             <div className="signupTimeOption1">
@@ -184,7 +247,7 @@ function SignupPage() {
             </div>
           </div>
         </div>
-        <div>
+        <div className="buttonContainer">
           <Button className="prevButton" onClick={handlePrevButtonClick}>
             이전
           </Button>
@@ -203,37 +266,71 @@ function SignupPage() {
       <div>
         <div className="SignupComponentBox5">
           <div className="checkboxContainer">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={allChecked}
+              onChange={handleAllCheckboxChange}
+            />
             <span>네, 모두 동의합니다.</span>
           </div>
           <hr />
           <div className="checkboxContainer">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              name="age"
+              checked={checkboxes.age}
+              onChange={handleCheckboxChange}
+            />
             <span>(필수) 만 14세 이상입니다.</span>
           </div>
           <div className="checkboxContainer">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              name="terms"
+              checked={checkboxes.terms}
+              onChange={handleCheckboxChange}
+            />
             <span>(필수) 서비스 이용약관에 동의</span>
           </div>
           <div className="checkboxContainer">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              name="privacy"
+              checked={checkboxes.privacy}
+              onChange={handleCheckboxChange}
+            />
             <span>(필수) 개인정보 수집 이용에 동의</span>
           </div>
           <div className="checkboxContainer">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              name="nightBenefit"
+              checked={checkboxes.nightBenefit}
+              onChange={handleCheckboxChange}
+            />
             <span>(선택) 야간 혜택 수신에 동의</span>
           </div>
           <div className="checkboxContainer">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              name="marketing"
+              checked={checkboxes.marketing}
+              onChange={handleCheckboxChange}
+            />
             <span>(선택) 홍보 및 마케팅 이용에 동의</span>
           </div>
           <div className="checkboxContainer">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              name="thirdParty"
+              checked={checkboxes.thirdParty}
+              onChange={handleCheckboxChange}
+            />
             <span>(선택) 마케팅 개인정보 제3자 제공 동의</span>
           </div>
         </div>
 
-        <div>
+        <div className="buttonContainer">
           <Button className="prevButton" onClick={handlePrevButtonClick}>
             이전
           </Button>

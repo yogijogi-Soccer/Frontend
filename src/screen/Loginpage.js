@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 function Loginpage() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
-  const [phoneNumberError, setPhoneNumberError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
+  const [phoneNumberError, setPhoneNumberError] = useState(""); //휴대폰 번호 에러
+  const [passwordError, setPasswordError] = useState(""); //패스워드 에러
   const [loginError, setLoginError] = useState(""); // 로그인 에러 상태
 
   const handlePhoneNumberChange = (e) => {

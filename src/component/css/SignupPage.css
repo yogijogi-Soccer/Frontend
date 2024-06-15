@@ -25,6 +25,16 @@
   height: 5vh;
 }
 
+.buttonContainer {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  justify-items: center;
+  bottom: 200px;
+}
+
 /* SignupComponentBox1 */
 .SignupComponentBox1,
 .SignupComponentBox2,
@@ -45,8 +55,20 @@
 }
 
 .SignupComponentInner input {
-  margin-right: 10px;
+  /* margin-right: 10px; */
   width: 50vw;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer .success-msg,
+.inputContainer .error-msg {
+  margin-top: 5px;
+  color: red;
+  font-size: 2.7vw;
 }
 
 /* genderBtn */
@@ -63,8 +85,13 @@
 }
 
 /* SignupComponentBox2 */
+
+.signupEmail input {
+  width: 30vw;
+}
+
 .signuPassword input {
-  width: 80vw;
+  width: 65vw;
 }
 
 .signupEmail span {

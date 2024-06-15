@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../component/header";
 import Navigationbar from "../component/navigationbar";
 import Button from "../component/Button";
-import KakaoLogin from "../component//KakaoLogin";
+import KakaoLogin from "../component/KakaoLogin";
 import "../component/css/Loginpage.css";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ function Loginpage() {
   const [password, setPassword] = useState("");
   const [phoneNumberError, setPhoneNumberError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const [loginError, setLoginError] = useState(false); // 로그인 에러 상태
+  const [loginError, setLoginError] = useState(""); // 로그인 에러 상태
 
   const handlePhoneNumberChange = (e) => {
     const value = e.target.value;
@@ -37,13 +37,42 @@ function Loginpage() {
   };
 
   const handleLoginButtonClick = () => {
-    // 여기에 로그인 버튼 클릭 시 실행되는 로직을 추가
-    // 로그인 실패 시 에러 메시지 표시
+    let isValid = true;
+
+    // 여기에 실제 로그인 로직을 추가 (예: 서버와의 통신)
     if (
-      phoneNumber !== "올바른 휴대폰 번호" ||
-      password !== "올바른 비밀번호"
+      phoneNumber === "올바른 휴대폰 번호" &&
+      password === "올바른 비밀번호"
     ) {
-      setLoginError(true);
+      // 로그인 성공 로직
+      setLoginError("");
+      alert("로그인 성공");
+    } else {
+      // 로그인 실패 로직
+      isValid = false;
+    }
+
+    // 휴대폰 번호 유효성 검사
+    if (!phoneNumber.match(/^010([0-9]{8})$/)) {
+      setPhoneNumberError(
+        "입력한 휴대폰 번호가 존재하지 않습니다. 다시 시도해주세요."
+      );
+      isValid = false;
+    }
+
+    // 비밀번호 유효성 검사
+    if (
+      !password.match(
+        /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/
+      )
+    ) {
+      setPasswordError("비밀번호가 틀렸습니다. 다시 시도해주세요.");
+      isValid = false;
+    }
+
+    // 유효성 검사 통과 시 로그인 실패 메시지 초기화
+    if (isValid) {
+      setLoginError("");
     }
   };
 
@@ -53,28 +82,9 @@ function Loginpage() {
     mobile: "‘-’ 제외 11자리를 입력해주세요",
   };
 
-  // const kakaoLogin = ()=> {
-  //     const Rest_api_key='947bb0721b6df0ee8869d2df3904662b' //REST API KEY
-  //     const redirect_uri = 'https://localhost:3000/login' //Redirect URI
-  //     // oauth 요청 URL
-  //     const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${Rest_api_key}&redirect_uri=${redirect_uri}&response_type=code`
-  //     const handleLogin = ()=>{
-  //         window.location.href = kakaoURL
-  //     }
-  //     return(
-  //     <>
-  //     <button onClick={handleLogin}>카카오 로그인</button>
-  //     </>
-  //     )
-  // }
-
-  // <script>
-  //   {/* 	14f48d8c4a5f885c0da0c781a0dbb5e0 */}
-  // </script>
-
   return (
     <div>
-      <Header main={true} />
+      <Header />
       <div className="LoginCompoent">
         <div className="LoginBox1">
           <h1>
@@ -103,11 +113,7 @@ function Loginpage() {
           {passwordError && <span className="error-msg">{passwordError}</span>}
           <br />
           <Button onClick={handleLoginButtonClick}>로그인</Button>
-          {loginError && (
-            <span className="error-msg">
-              로그인에 실패했습니다. 다시 시도해주세요.
-            </span>
-          )}
+          {loginError && <span className="error-msg">{loginError}</span>}
           <br />
         </div>
 

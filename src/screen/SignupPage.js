@@ -15,6 +15,7 @@ function SignupPage() {
   const [smsMessage, setSmsMessage] = useState(""); //인증번호 전송 메세지
   const [verificationMessage, setVerificationMessage] = useState(""); // 인증 완료 메세지
   const [allChecked, setAllChecked] = useState(false); //모든 체크 박스 활성화
+  const [error, setError] = useState(""); //유효성 검사 실행
   const [checkboxes, setCheckboxes] = useState({
     //서비스 약관 체크박스
     age: false,
@@ -25,9 +26,18 @@ function SignupPage() {
     thirdParty: false,
   });
 
+  const [name, setName] = useState("");
+  const [gender, setGender] = useState(false);
   const handleNextButtonClick = () => {
     //다음 버튼 클릭 시
-    setSignupStep(signupStep + 1);
+
+    if (name.trim() === "") {
+      setError("이름을 입력해주세요.");
+    } else if (!gender) {
+      setError("성별을 선택해주세요.");
+    } else {
+      setSignupStep(signupStep + 1); //페이지를 다음으로
+    }
   };
 
   const handlePrevButtonClick = () => {
@@ -35,6 +45,11 @@ function SignupPage() {
     if (signupStep > 1) {
       setSignupStep(signupStep - 1);
     }
+  };
+
+  const handleGenderClick = (selectedGender) => {
+    setGender(selectedGender);
+    setError(""); // 성별 선택 시 유효성 검사 메시지 초기화
   };
 
   const handleSendSMSClick = () => {
@@ -107,15 +122,31 @@ function SignupPage() {
       <div className="SignupComponentBox1">
         {/* 이름 */}
         <span>이름</span>
-        <div className="NameGender SignupComponentInner">
+        <div className="SignupComponentInner">
           <div className="inputContainer">
-            <input type="text" placeholder="홍길동" />
+            <input
+              type="text"
+              placeholder="홍길동"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            {error && <span className="error-msg">{error}</span>}
+            {error && !gender && (
+              <span className="error-msg">성별을 선택해주세요.</span>
+            )}
           </div>
+
           <div className="gender">
-            <button className="genderBtn" onClick={onClick}>
+            <button
+              className={`genderBtn ${gender === "남" ? "selected" : ""}`}
+              onClick={() => handleGenderClick("남")}
+            >
               남
             </button>
-            <button className="genderBtn" onClick={onClick}>
+            <button
+              className={`genderBtn ${gender === "여" ? "selected" : ""}`}
+              onClick={() => handleGenderClick("여")}
+            >
               여
             </button>
           </div>
@@ -367,42 +398,30 @@ function SignupPage() {
           <Button className="prevButton" onClick={handlePrevButtonClick}>
             이전
           </Button>
-          <Link to="/main">
-            <Button className="nextButton">회원가입</Button>
-          </Link>
+          <Button className="nextButton" onClick={handleNextButtonClick}>
+            다음
+          </Button>
         </div>
       </div>
     );
   };
 
   const SignupComponent5 = () => (
-    //이용약관 동의
+    //서비스 약관 동의
     <div className="SignupPage">
-      <h1>
-        약관동의 및
-        <br /> 개인정보수집 이용동의
-      </h1>
-      <div className="SignupComponentBox4">
-        {/* 이용약관 */}
-        <div className="SignupComponentInner checkbox">
-          <div>
+      <h1>서비스 약관에 동의해주세요.</h1>
+      <div>
+        <div className="SignupComponentBox5">
+          <div className="checkboxContainer">
             <input
               type="checkbox"
               checked={allChecked}
               onChange={handleAllCheckboxChange}
             />
-            <span>
-              전체 동의합니다.
-              <br />
-              (전체 동의는 필수 및 선택정보에 대한 동의도 포함되어 있으며,
-              <br />
-              개별적으로도 동의를 선택하실 수 있습니다.)
-            </span>
+            <span>네, 모두 동의합니다.</span>
           </div>
-        </div>
-        <div className="line"></div>
-        <div className="SignupComponentInner checkbox">
-          <div>
+          <hr />
+          <div className="checkboxContainer">
             <input
               type="checkbox"
               name="age"
@@ -411,9 +430,7 @@ function SignupPage() {
             />
             <span>(필수) 만 14세 이상입니다.</span>
           </div>
-        </div>
-        <div className="SignupComponentInner checkbox">
-          <div>
+          <div className="checkboxContainer">
             <input
               type="checkbox"
               name="terms"
@@ -422,59 +439,64 @@ function SignupPage() {
             />
             <span>(필수) 서비스 이용약관에 동의</span>
           </div>
-        </div>
-        <div className="SignupComponentInner checkbox">
-          <div>
+          <div className="checkboxContainer">
             <input
               type="checkbox"
               name="privacy"
               checked={checkboxes.privacy}
               onChange={handleCheckboxChange}
             />
-            <span>(필수) 개인정보 수집 및 이용동의</span>
+            <span>(필수) 개인정보 수집 이용에 동의</span>
           </div>
-        </div>
-        <div className="SignupComponentInner checkbox">
-          <div>
+          <div className="checkboxContainer">
             <input
               type="checkbox"
               name="nightBenefit"
               checked={checkboxes.nightBenefit}
               onChange={handleCheckboxChange}
             />
-            <span>(필수) 개인정보 수집 및 이용동의</span>
+            <span>(선택) 야간 혜택 수신에 동의</span>
           </div>
-        </div>
-        <div className="line"></div>
-        <div className="SignupComponentInner checkbox">
-          <div>
+          <div className="checkboxContainer">
             <input
               type="checkbox"
               name="marketing"
               checked={checkboxes.marketing}
               onChange={handleCheckboxChange}
             />
-            <span>(선택) 마케팅 정보 수신 동의</span>
+            <span>(선택) 홍보 및 마케팅 이용에 동의</span>
           </div>
-        </div>
-        <div className="SignupComponentInner checkbox">
-          <div>
+          <div className="checkboxContainer">
             <input
               type="checkbox"
               name="thirdParty"
               checked={checkboxes.thirdParty}
               onChange={handleCheckboxChange}
             />
-            <span>(선택) 개인정보 제 3자 제공 동의</span>
+            <span>(선택) 마케팅 개인정보 제3자 제공 동의</span>
           </div>
         </div>
+
+        <div className="buttonContainer">
+          <Button className="prevButton" onClick={handlePrevButtonClick}>
+            이전
+          </Button>
+          <Button className="nextButton" onClick={handleNextButtonClick}>
+            완료
+          </Button>
+        </div>
       </div>
-      <div className="buttonContainer">
-        <Button className="prevButton" onClick={handlePrevButtonClick}>
-          이전
-        </Button>
-        <Button className="nextButton" onClick={handleNextButtonClick}>
-          다음
+    </div>
+  );
+  const SignupComponent6 = () => (
+    //회원가입 완료창
+    <div className="SignupPage">
+      <h1>회원가입이 완료되었습니다.</h1>
+      <div className="SignupComponentBox6">
+        <Button className="SignupSuccessBtn">
+          <Link to="/login" className="link">
+            로그인 하러가기
+          </Link>
         </Button>
       </div>
     </div>
@@ -485,13 +507,12 @@ function SignupPage() {
       <Header />
       <Navigationbar />
       <div>
-        {signupStep === 1 && (
-          <SignupComponent onClick={handleNextButtonClick} />
-        )}
+        {signupStep === 1 && <SignupComponent />}
         {signupStep === 2 && <SignupComponent2 />}
         {signupStep === 3 && <SignupComponent3 />}
         {signupStep === 4 && <SignupComponent4 />}
         {signupStep === 5 && <SignupComponent5 />}
+        {signupStep === 6 && <SignupComponent6 />}
       </div>
     </div>
   );

@@ -25,6 +25,7 @@
     "web-vitals": "^2.1.0",
     "yarn": "^1.22.22"
   },
+  "proxy": "http://localhost:8080",
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",

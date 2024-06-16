@@ -1,5 +1,5 @@
 //메인페이지
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import Header from "../component/header";
 import Navigationbar from "../component/navigationbar";
@@ -10,6 +10,7 @@ import TeamAnalysisBox from "../component/Mainpage/teamAnalysisBox";
 import "../component/css/Mainpage.css";
 import "../index.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Mainpage() {
   //모바일 웹 앱 100vh 실제 화면 크기로 맞추기
@@ -18,9 +19,15 @@ function Mainpage() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }
+
+  const [data, setData] = useState("");
   useEffect(() => {
     setScreenSize();
-  });
+    axios.get("/main-api/search-gender").then((res) => {
+      setData(res.data);
+      console.log(res.data);
+    });
+  }, []);
 
   return (
     <div className="Mainpage">
@@ -31,6 +38,15 @@ function Mainpage() {
             <SearchBar />
           </Link>
         </div>
+        {data ? (
+          <div>
+            <div>{data[2].gender}</div>
+            <div>{data[2].team_name}</div>
+          </div>
+        ) : (
+          ""
+        )}
+
         <Carousel />
         <ScheduleBox />
         <TeamAnalysisBox />

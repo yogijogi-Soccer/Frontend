@@ -9,7 +9,9 @@ import { useNavigate } from "react-router-dom";
 //title : string 타입. 모달에 들어갈 제목
 //context : string 타입. 모달에 들어갈 내용
 //completeContext : string 타입. 예/아니오 modal 다음에 닫기 modal의 context로 들어갈 내용
-
+//noComplete : 확인모달 뒤에 오는 그냥 모달창 안나오게 하기
+//next : 확인모달창에서 예를 누르면 넘어가는 링크
+//completeNext : 확인모달 뒤에 오는 그냥 모달창에서 닫기 누르면 넘어가는 링크
 const ModalCheck = ({
   list,
   open,

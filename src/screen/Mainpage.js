@@ -23,10 +23,10 @@ function Mainpage() {
   const [data, setData] = useState("");
   useEffect(() => {
     setScreenSize();
-    axios.get("/main-api/search-gender").then((res) => {
-      setData(res.data);
-      console.log(res.data);
-    });
+    // axios.get("/main-api/search-gender").then((res) => {
+    //   setData(res.data);
+    //   console.log(res.data);
+    // });
   }, []);
 
   return (

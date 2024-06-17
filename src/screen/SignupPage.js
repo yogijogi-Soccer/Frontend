@@ -4,7 +4,6 @@ import Header from "../component/header";
 import Navigationbar from "../component/navigationbar";
 import Button from "../component/Button";
 import Button2 from "../component/Button2";
-import WeekButton from "../component/weekButton";
 import TimeOption from "../component/TimeOption";
 import GroupButton from "../component/GroupButton";
 import "../component/css/SignupPage.css";

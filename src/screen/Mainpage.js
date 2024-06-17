@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import Header from "../component/Header";
 import Navigationbar from "../component/Navigationbar";
-import SearchBar from "../component/SearchBar";
+import SearchBar from "../component/SarchBar";
 import Carousel from "../component/Mainpage/Carousel";
 import ScheduleBox from "../component/Mainpage/ScheduleBox";
 import TeamAnalysisBox from "../component/Mainpage/TeamAnalysisBox";

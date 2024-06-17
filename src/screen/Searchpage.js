@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../component/Header";
 import Navigationbar from "../component/Navigationbar";
-import SearchBar from "../component/SearchBar";
+import SearchBar from "../component/SarchBar";
 
 function Searchpage() {
   const [isStart, setIsStart] = useState(false);

@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../component/Header";
 import Navigationbar from "../component/Navigationbar";
-import SearchBar from "../component/SearchBar";
+import SearchBar from "../component/SarchBar";
 import SelectBar from "../component/SelectBar";
 import TeamBox from "../component/TeamBox";
 import "../component/css/FindTeamPage.css";

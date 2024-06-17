@@ -3,7 +3,7 @@ import "./css/component.css";
 import "../index.css";
 import { Link } from "react-router-dom";
 
-function divSquareBox(props) {
+function DivSquareBox(props) {
   return (
     <div className="divsquarebox">
       <div className="divsquarebox_div-title">
@@ -17,4 +17,4 @@ function divSquareBox(props) {
   );
 }
 
-export default divSquareBox;
+export default DivSquareBox;

@@ -1,15 +1,14 @@
 //팀 상세 페이지
 import React, { useEffect, useReducer, useState, useRef } from "react";
-import Header from "../component/header";
-import Navigationbar from "../component/navigationbar";
+import Header from "../component/Header";
+import Navigationbar from "../component/Navigationbar";
 import "./css/teamdetail.css";
 import "../index.css";
-import Button from "../component/Button";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import ModalCheck from "../component/ModalCheck";
-import Modal from "../component/Modal";
+import ModalCheck from "../component/Modal/ModalCheck";
+import Modal from "../component/Modal/Modal";
 
 const JoinCard = () => {
   const [introText, setIntroText] = useState("");
@@ -211,9 +210,13 @@ function JoinTeampage() {
         {isVisible ? <JoinCard /> : ""}
         <div style={{ textAlign: "center", marginTop: "2vh" }}>
           {isVisible ? (
-            <Button onClick={handlesubmit}>제출하기</Button>
+            <button className="button_main applegreen" onClick={handlesubmit}>
+              제출하기
+            </button>
           ) : (
-            <Button onClick={JoinCardChange}>가입하기</Button>
+            <button className="button_main applegreen" onClick={JoinCardChange}>
+              가입하기
+            </button>
           )}
         </div>
         <ModalCheck

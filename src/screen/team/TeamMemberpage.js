@@ -1,10 +1,10 @@
 //팀 멤버관리 페이지
 import React from "react";
-import Header from "../../component/header";
-import Navigationbar from "../../component/navigationbar";
+import Header from "../../component/Header";
+import Navigationbar from "../../component/Navigationbar";
 import "../css/teamdetail.css";
 import "../../index.css";
-import TeamNav from "../../component/teamNav";
+import TeamNav from "../../component/TeamNav";
 
 function PositionCount(props) {
   //총 공격수

@@ -1,20 +1,19 @@
 //팀 정보 수정 페이지
 import React, { useState, useEffect } from "react";
-import Header from "../component/header";
-import Navigationbar from "../component/navigationbar";
+import Header from "../component/Header";
+import Navigationbar from "../component/Navigationbar";
 import "./css/notice.css";
 import "../index.css";
-import GreenButton from "../component/GreenButton";
 import "./css/teamdetail.css";
 import "./css/inforfix.css";
-import "../component/css/Button.css";
-import GroupButton from "../component/GroupButton";
-import ContrySelectBtn from "../component/CountrySelectBtn";
+import "../component/Button/Button.css";
+import GroupButton from "../component/Button/GroupButton";
+import ContrySelectBtn from "../component/Button/CountrySelectBtn";
 import KakaoAddressPopup from "../component/KakaoAddressPopup";
 import { Link, useNavigate } from "react-router-dom";
 import PhoneInput from "../component/PhoneInput";
 import EmailInput from "../component/EmailInput";
-import ModalCheck from "../component/ModalCheck";
+import ModalCheck from "../component/Modal/ModalCheck";
 
 function MyFixpage() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -99,7 +98,7 @@ function MyFixpage() {
             >
               내 포지션 : CB, GK
               <div style={{ marginTop: "1vh" }}>
-                <label className="btn-green" htmlFor="imageUpload">
+                <label className="button_sub green" htmlFor="imageUpload">
                   프로필 사진 변경하기
                 </label>
                 <input
@@ -119,7 +118,7 @@ function MyFixpage() {
             <label className="Inforfix-label">휴대폰 번호</label>
             <div>
               <PhoneInput />
-              <GreenButton>인증받기</GreenButton>
+              <button className="button_sub green">인증받기</button>
             </div>
           </div>
           <div className="Inforfix-div">
@@ -137,7 +136,7 @@ function MyFixpage() {
               result={setWeekResult}
               width={"12vw"}
               height={"12vw"}
-              borderRadius={"50px"}
+              borderRadius={"100vw"}
               fontSize={"15px"}
               display={"flex"}
             />
@@ -146,7 +145,7 @@ function MyFixpage() {
               result={setTimeResult}
               width={"17vw"}
               height={"17vw"}
-              borderRadius={"50px"}
+              borderRadius={"100vw"}
               display={"flex"}
             />
           </div>
@@ -157,7 +156,7 @@ function MyFixpage() {
               result={setGenderResult}
               width={"20vw"}
               height={"8vw"}
-              borderRadius={"20px"}
+              borderRadius={"100vw"}
             />
           </div>
           <div className="Inforfix-div">
@@ -167,7 +166,7 @@ function MyFixpage() {
               result={setAgeResult}
               width={"28vw"}
               height={"8vw"}
-              borderRadius={"20px"}
+              borderRadius={"100vw"}
             />
           </div>
           <div className="Inforfix-div">
@@ -188,14 +187,14 @@ function MyFixpage() {
                 display={"flex"}
                 width={"18vw"}
                 height={"8vw"}
-                borderRadius={"20px"}
+                borderRadius={"100vw"}
               />
             </div>
           </div>
 
           <button
             style={{ margin: "auto" }}
-            className="Button"
+            className="button_main applegreen"
             onClick={() => {
               setIsOpen(true);
               console.log(isOpen);

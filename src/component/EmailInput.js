@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import OutlinedInput from "@mui/material/OutlinedInput";
 
 const EmailInput = () => {
   const [username, setUsername] = useState("");
@@ -54,7 +52,7 @@ const EmailInput = () => {
           }}
         />
         <span>@ </span>
-        <FormControl sx={{ m: 1 }} fullWidth="true" size="small">
+        <FormControl sx={{ m: 2 }} fullWidth="true" size="small">
           <Select value={domain} onChange={handleDomainChange}>
             {domains.map((domainOption) => (
               <MenuItem key={domainOption} value={domainOption}>

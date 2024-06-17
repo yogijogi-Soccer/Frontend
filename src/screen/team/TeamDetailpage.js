@@ -1,14 +1,13 @@
 //팀 상세 페이지
 import React, { useState } from "react";
-import Header from "../../component/header";
-import Navigationbar from "../../component/navigationbar";
-import GreenButton from "../../component/GreenButton";
+import Header from "../../component/Header";
+import Navigationbar from "../../component/Navigationbar";
 import "../css/teamdetail.css";
 import "../../index.css";
-import Divbox from "../../component/divbox";
-import DivSquareBox from "../../component/divSquareBox";
+import Divbox from "../../component/Divbox";
+import DivSquareBox from "../../component/DivSquareBox";
 import { Link } from "react-router-dom";
-import GroupButton from "../../component/GroupButton";
+import GroupButton from "../../component/Button/GroupButton";
 
 function TeamDetailpage() {
   //관리자인가 일반인가?
@@ -49,7 +48,7 @@ function TeamDetailpage() {
           <div className="TeamDetail-profile_box">
             <div className="TeamDetail-profile_title">
               <div>팀 이름</div>
-              <GreenButton>
+              <button className="button_sub green">
                 {role !== "manager" ? (
                   "팀 탈퇴하기"
                 ) : (
@@ -57,7 +56,7 @@ function TeamDetailpage() {
                     팀 정보 수정
                   </Link>
                 )}
-              </GreenButton>
+              </button>
             </div>
             <div className="TeamDetail-profile_introduce">팀 소개 한줄</div>
           </div>

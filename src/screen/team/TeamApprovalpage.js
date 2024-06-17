@@ -1,11 +1,11 @@
 //팀 공지사항 페이지
 import React from "react";
-import Header from "../../component/header";
-import Navigationbar from "../../component/navigationbar";
+import Header from "../../component/Header";
+import Navigationbar from "../../component/Navigationbar";
 import "../css/notice.css";
 import "../../index.css";
-import TeamNav from "../../component/teamNav";
-import ApprovalList from "../../component/ApprovalList";
+import TeamNav from "../../component/TeamNav";
+import ApprovalList from "../../component/list/ApprovalList";
 import { Link } from "react-router-dom";
 
 function TeamApprovalpage() {

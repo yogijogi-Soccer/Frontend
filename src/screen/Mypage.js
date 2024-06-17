@@ -1,9 +1,8 @@
 //마이페이지
 import React from "react";
-import Header from "../component/header";
-import Navigationbar from "../component/navigationbar";
+import Header from "../component/Header";
+import Navigationbar from "../component/Navigationbar";
 import "./css/teamdetail.css";
-import GreenButton from "../component/GreenButton";
 import { Link } from "react-router-dom";
 import "../component/css/component.css";
 
@@ -21,11 +20,11 @@ function Mypage() {
           <div className="TeamDetail-profile_box">
             <div className="TeamDetail-profile_title">
               <div>사용자</div>
-              <GreenButton>
+              <button className="button_sub green">
                 <Link to="fix" className="link_white">
                   개인 정보 수정
                 </Link>
-              </GreenButton>
+              </button>
             </div>
             <div
               style={{

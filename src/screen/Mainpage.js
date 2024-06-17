@@ -1,12 +1,12 @@
 //메인페이지
 import React, { useState } from "react";
 import { useEffect } from "react";
-import Header from "../component/header";
-import Navigationbar from "../component/navigationbar";
-import SearchBar from "../component/searchBar";
+import Header from "../component/Header";
+import Navigationbar from "../component/Navigationbar";
+import SearchBar from "../component/SearchBar";
 import Carousel from "../component/Mainpage/Carousel";
-import ScheduleBox from "../component/Mainpage/scheduleBox";
-import TeamAnalysisBox from "../component/Mainpage/teamAnalysisBox";
+import ScheduleBox from "../component/Mainpage/ScheduleBox";
+import TeamAnalysisBox from "../component/Mainpage/TeamAnalysisBox";
 import "../component/css/Mainpage.css";
 import "../index.css";
 import { Link } from "react-router-dom";

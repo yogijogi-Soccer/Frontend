@@ -1,20 +1,13 @@
 //팀 생성 페이지
 import React, { useState } from "react";
-import Header from "../component/header";
-import Navigationbar from "../component/navigationbar";
-import Button from "../component/Button";
-// import Button2 from "../component/Button2";
-// import WeekButton from "../component/weekButton";
-// import TimeButton from "../component/timeButton";
-// import MemberFeeButton from "../component/memberFeeButton";
-// import GenderButton from "../component/genderButton";
-// import AgeGroupButton from "../component/ageGroupButton";
-import GroupButton from "../component/GroupButton";
+import Header from "../component/Header";
+import Navigationbar from "../component/Navigationbar";
+import GroupButton from "../component/Button/GroupButton";
 import KakaoAddressPopup from "../component/KakaoAddressPopup";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import ModalCheck from "../component/ModalCheck";
+import ModalCheck from "../component/Modal/ModalCheck";
 
 import "../component/css/CreateTeamPage.css";
 
@@ -227,9 +220,12 @@ function CreateTeampage() {
       </div>
       <div>
         <div style={{ textAlign: "center", marginTop: "2vh" }}>
-          <Button className="nextButton" onClick={handleMainNextButtonClick}>
+          <button
+            className="nextButton button_main applegreen"
+            onClick={handleMainNextButtonClick}
+          >
             다음
-          </Button>
+          </button>
         </div>
       </div>
     </div>
@@ -289,12 +285,18 @@ function CreateTeampage() {
         </div>
       </div>
       <div style={{ textAlign: "center", marginTop: "2vh" }}>
-        <Button className="prevButton" onClick={handlePrevButtonClick}>
+        <button
+          className="prevButton button_main applegreen"
+          onClick={handlePrevButtonClick}
+        >
           이전
-        </Button>
-        <Button className="nextButton" onClick={handleNextButtonClick}>
+        </button>
+        <button
+          className="nextButton button_main applegreen"
+          onClick={handleNextButtonClick}
+        >
           다음
-        </Button>
+        </button>
       </div>
     </div>
   );
@@ -358,9 +360,12 @@ function CreateTeampage() {
           </div>
         </div>
         <div style={{ textAlign: "center", marginTop: "2vh" }}>
-          <Button className="nextButton" onClick={handleNextButtonClick}>
+          <button
+            className="nextButton button_main applegreen"
+            onClick={handleNextButtonClick}
+          >
             완료{" "}
-          </Button>
+          </button>
         </div>
       </div>
     </div>
@@ -388,7 +393,9 @@ function CreateTeampage() {
         />
       </div>
       <div style={{ textAlign: "center", marginTop: "2vh" }}>
-        <Button onClick={clickCopyBtn}>복사하기</Button>
+        <button className="button_main applegreen" onClick={clickCopyBtn}>
+          복사하기
+        </button>
       </div>
       <ModalCheck
         open={invitationCodePopup}

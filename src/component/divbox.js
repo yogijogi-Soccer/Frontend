@@ -3,7 +3,7 @@ import "./css/component.css";
 import "../index.css";
 import { Link } from "react-router-dom";
 
-function divbox(props) {
+function Divbox(props) {
   const scount = 0;
   const ItemList =
     props.item &&
@@ -73,4 +73,4 @@ function divbox(props) {
   );
 }
 
-export default divbox;
+export default Divbox;

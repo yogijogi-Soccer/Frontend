@@ -1,6 +1,6 @@
 //"예, 아니오" 버튼이 있는 모달창
 import ReactDOM from "react-dom";
-import "./css/modal.css";
+import "./modal.css";
 import React, { useState } from "react";
 import Modal from "./Modal";
 import { useNavigate } from "react-router-dom";

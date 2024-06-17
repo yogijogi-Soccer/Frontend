@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../component/header";
-import Navigationbar from "../component/navigationbar";
-import Button from "../component/Button";
-import Button2 from "../component/Button2";
+import Header from "../component/Header";
+import Navigationbar from "../component/Navigationbar";
+import Button2 from "../component/Button/Button2";
 import TimeOption from "../component/TimeOption";
-import GroupButton from "../component/GroupButton";
+import GroupButton from "../component/Button/GroupButton";
 import "../component/css/SignupPage.css";
 import "../index.css";
+import "../component/Button/Button.css";
 
 function SignupPage() {
   const [signupStep, setSignupStep] = useState(1); //페이지 조정
@@ -166,7 +166,12 @@ function SignupPage() {
             <input type="text" placeholder="ex) 01012345678" />
             {smsMessage && <span className="success-msg">{smsMessage}</span>}
           </div>
-          <Button onClick={handleSendSMSClick}>문자받기</Button>
+          <button
+            className="button_main applegreen"
+            onClick={handleSendSMSClick}
+          >
+            문자받기
+          </button>
         </div>
 
         {/* 인증번호 */}
@@ -178,13 +183,21 @@ function SignupPage() {
               <span className="success-msg">{verificationMessage}</span>
             )}
           </div>
-          <Button onClick={handleVerifyClick}>인증하기</Button>
+          <button
+            className="button_main applegreen"
+            onClick={handleVerifyClick}
+          >
+            인증하기
+          </button>
         </div>
       </div>
       <div className="buttonContainer">
-        <Button className="nextButton" onClick={handleNextButtonClick}>
+        <button
+          className="nextButton button_main applegreen"
+          onClick={handleNextButtonClick}
+        >
           다음
-        </Button>
+        </button>
       </div>
     </div>
   );
@@ -218,12 +231,18 @@ function SignupPage() {
         </div>
       </div>
       <div className="buttonContainer">
-        <Button className="prevButton" onClick={handlePrevButtonClick}>
+        <button
+          className="prevButton button_main applegreen"
+          onClick={handlePrevButtonClick}
+        >
           이전
-        </Button>
-        <Button className="nextButton" onClick={handleNextButtonClick}>
+        </button>
+        <button
+          className="nextButton button_main applegreen"
+          onClick={handleNextButtonClick}
+        >
           다음
-        </Button>
+        </button>
       </div>
     </div>
   );
@@ -344,12 +363,18 @@ function SignupPage() {
           </div>
         </div>
         <div className="buttonContainer">
-          <Button className="prevButton" onClick={handlePrevButtonClick}>
+          <button
+            className="prevButton button_main applegreen"
+            onClick={handlePrevButtonClick}
+          >
             이전
-          </Button>
-          <Button className="nextButton" onClick={handleNextButtonClick}>
+          </button>
+          <button
+            className="nextButton button_main applegreen"
+            onClick={handleNextButtonClick}
+          >
             다음
-          </Button>
+          </button>
         </div>
       </div>
     );
@@ -394,12 +419,18 @@ function SignupPage() {
           </div>
         </div>
         <div className="buttonContainer">
-          <Button className="prevButton" onClick={handlePrevButtonClick}>
+          <button
+            className="prevButton button_main applegreen"
+            onClick={handlePrevButtonClick}
+          >
             이전
-          </Button>
-          <Button className="nextButton" onClick={handleNextButtonClick}>
+          </button>
+          <button
+            className="nextButton button_main applegreen"
+            onClick={handleNextButtonClick}
+          >
             다음
-          </Button>
+          </button>
         </div>
       </div>
     );
@@ -477,12 +508,18 @@ function SignupPage() {
         </div>
 
         <div className="buttonContainer">
-          <Button className="prevButton" onClick={handlePrevButtonClick}>
+          <button
+            className="prevButton button_main applegreen"
+            onClick={handlePrevButtonClick}
+          >
             이전
-          </Button>
-          <Button className="nextButton" onClick={handleNextButtonClick}>
+          </button>
+          <button
+            className="nextButton button_main applegreen"
+            onClick={handleNextButtonClick}
+          >
             완료
-          </Button>
+          </button>
         </div>
       </div>
     </div>
@@ -492,11 +529,11 @@ function SignupPage() {
     <div className="SignupPage">
       <h1>회원가입이 완료되었습니다.</h1>
       <div className="SignupComponentBox6">
-        <Button className="SignupSuccessBtn">
+        <button className="SignupSuccessBtn button_main applegreen">
           <Link to="/login" className="link">
             로그인 하러가기
           </Link>
-        </Button>
+        </button>
       </div>
     </div>
   );

@@ -1,8 +1,6 @@
 //여러 개 중에 하나만 선택되는 버튼
 
 import React, { useState } from "react";
-import "../index.css";
-import { flushSync } from "react-dom";
 
 function GroupButton(props) {
   const [isIndexSelet, setIsIndexSelect] = useState(false);

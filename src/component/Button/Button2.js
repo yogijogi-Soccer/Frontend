@@ -1,10 +1,10 @@
 import React from "react";
-import "./css/Button.css";
+import "./Button.css";
 
 function Button2({ children, onClick, selected }) {
   return (
     <button
-      className={`Button2 ${selected ? "selected" : ""}`}
+      className={`button_toggle ${selected ? "selected" : ""}`}
       onClick={onClick}
     >
       {children}

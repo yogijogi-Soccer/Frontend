@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import DaumPostcode from "react-daum-postcode";
 import { useState, useRef } from "react";
-import "./css/Button.css";
+import "./Button/Button.css";
 
 const KakaoAddressPopup = () => {
   const [openPostcode, setOpenPostcode] = useState(false);
@@ -76,7 +76,7 @@ const KakaoAddressPopup = () => {
           )}
         </div>
       )}
-      <button className="btn-green" onClick={handle.clickButton}>
+      <button className="button_sub green" onClick={handle.clickButton}>
         주소찾기
       </button>
       {openPostcode && (

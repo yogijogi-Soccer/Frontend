@@ -1,14 +1,13 @@
 //팀 멤버관리 페이지
 import React, { useRef } from "react";
 import { useState, useEffect } from "react";
-import Header from "../../component/header";
-import Navigationbar from "../../component/navigationbar";
+import Header from "../../component/Header";
+import Navigationbar from "../../component/Navigationbar";
 import axios from "axios";
 import "../css/inforfix.css";
 import "react-datepicker/dist/react-datepicker.css";
-import Button from "../../component/Button";
 import { Link } from "react-router-dom";
-import Divbox from "../../component/divbox";
+import Divbox from "../../component/Divbox";
 
 function TeamCreateGamepage() {
   return (
@@ -72,7 +71,7 @@ function TeamCreateGamepage() {
           <Divbox title={"전술 설명"}></Divbox>
           <Divbox title={"포지션 안내"}></Divbox>
           <Link to="/team" style={{ textAlign: "center", marginTop: "3vh" }}>
-            <Button>확인</Button>
+            <button className="button_main applegreen">확인</button>
           </Link>
         </div>
       </div>

@@ -6,3 +6,174 @@
 .MainPageComponents {
   padding: 5vw 0vw 30vw 0vw;
 }
+
+/*Carousel CSS */
+.Carousel {
+  max-width: 100%;
+  min-height: 20vh;
+  /* overflow: hidden; */
+}
+
+.slick-next {
+  right: 0;
+}
+
+.CarouselBox {
+  height: 22vh;
+  margin: 0 auto;
+  background: var(--normal3, #dee2e6);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.CarouselBox > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.CarouselBox:hover > img {
+  transform: scale(1.05);
+}
+
+/*ScheduleBox CSS*/
+.scheduleBox {
+  margin-top: 4vh;
+}
+
+.scheduleBox label {
+  font-size: 3.5vw;
+  font-weight: 800;
+}
+
+.scheduleTable {
+  margin-top: 1vh;
+  width: 100%;
+  text-align: center;
+  border-radius: 2vw;
+  border-collapse: collapse;
+  background-color: var(--color-normal2);
+}
+
+.scheduleTable_title {
+  background-color: var(--color-point-green);
+  color: var(--color-normal2);
+}
+
+.scheduleTable_title td:first-child {
+  border-radius: 2vw 0 0 0;
+}
+
+.scheduleTable_title td:last-child {
+  border-radius: 0 2vw 0 0;
+}
+
+.scheduleTable_title td {
+  padding: 2vw;
+  font-size: 3.5vw;
+  font-weight: 600;
+}
+
+.scheduleTable_content td {
+  padding: 1.2vw;
+}
+
+.scheduleTable_content {
+  border-radius: 2vw;
+  font-size: 3.2vw;
+}
+
+/* TeamAnalysisBox CSS */
+.teamAnalysisBox {
+  margin-top: 5vw;
+}
+
+.teamAnalysisBox_button {
+  display: flex;
+}
+
+.TeamName_button-click {
+  background-color: var(--color-point-green);
+  color: var(--color-normal3);
+  margin: 2vw;
+  margin-right: 0vw;
+  font-size: 3vw;
+  padding: 2vw 4vw 2vw 4vw;
+  border-radius: 1.2vw;
+}
+
+.TeamName_button {
+  margin: 2vw;
+  margin-right: 0vw;
+  background-color: var(--color-normal4);
+  font-size: 3vw;
+  padding: 2vw 4vw 2vw 4vw;
+  border-radius: 1.2vw;
+}
+
+.teamAnalysisBox_div {
+  background-color: var(--color-normal2);
+  border-radius: 1.2vw;
+  margin: 2vw;
+  padding-bottom: 0.5vw;
+}
+
+.teamAnalysisBox_content {
+  background-color: var(--color-normal4);
+  border-radius: 1.2vw;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-normal2);
+  margin: 2vw;
+  margin-top: 0vw;
+  font-weight: 600;
+}
+
+.content_div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content_teamNumber {
+  background-color: var(--color-point-green);
+  border-radius: 1.2vw;
+  padding: 3vw;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2vw;
+}
+
+.content_myPosition {
+  background-color: var(--color-point-green);
+  border-radius: 1.2vw;
+  padding: 3vw;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2vw;
+}
+
+.content_notice {
+  background-color: var(--color-point-green);
+  border-radius: 1.2vw;
+  padding: 3vw;
+  margin-bottom: 2vw;
+  margin-right: 2vw;
+  margin-left: 2vw;
+}
+
+.content_notice-list {
+  margin-top: 2vw;
+  font-weight: normal;
+  font-size: 3.2vw;
+}

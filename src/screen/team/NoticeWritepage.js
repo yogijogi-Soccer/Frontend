@@ -1,10 +1,10 @@
 //[관리자] 공지사항 글쓰기 페이지
 import React from "react";
-import Header from "../../component/header";
-import Navigationbar from "../../component/navigationbar";
+import Header from "../../component/Header";
+import Navigationbar from "../../component/Navigationbar";
 import "../css/notice.css";
 import "../../index.css";
-import EditorQuill from "../../component/EditorQuill";
+import EditorQuill from "../../component/Notice/EditorQuill";
 
 function NoticeWritepage() {
   let role = true;

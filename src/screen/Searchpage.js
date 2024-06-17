@@ -1,8 +1,8 @@
 //검색 페이지
-import React, { useEffect, useRef, useState } from "react";
-import Header from "../component/header";
-import Navigationbar from "../component/navigationbar";
-import SearchBar from "../component/searchBar";
+import React, { useEffect, useState } from "react";
+import Header from "../component/Header";
+import Navigationbar from "../component/Navigationbar";
+import SearchBar from "../component/SearchBar";
 
 function Searchpage() {
   const [isStart, setIsStart] = useState(false);

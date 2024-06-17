@@ -1,10 +1,10 @@
 //팀 공지사항 페이지
 import React from "react";
-import Header from "../../component/header";
-import Navigationbar from "../../component/navigationbar";
+import Header from "../../component/Header";
+import Navigationbar from "../../component/Navigationbar";
 import "../css/notice.css";
 import "../../index.css";
-import TeamNav from "../../component/teamNav";
+import TeamNav from "../../component/TeamNav";
 import { Link, useNavigate } from "react-router-dom";
 import notice from "../../data/notice";
 import { BsEyeFill } from "react-icons/bs";

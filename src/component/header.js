@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
 import { BsFillCaretLeftFill } from "react-icons/bs";
-import ModalCheck from "./ModalCheck";
-import { useScrollTrigger } from "@mui/material";
+import ModalCheck from "./Modal/ModalCheck";
 
 function Useheader({ main, cancel }) {
   console.log(true === cancel);

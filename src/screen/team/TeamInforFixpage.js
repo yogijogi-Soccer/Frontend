@@ -1,15 +1,13 @@
 //팀 정보 수정 페이지
 import React, { useState } from "react";
-import Header from "../../component/header";
-import Navigationbar from "../../component/navigationbar";
+import Header from "../../component/Header";
+import Navigationbar from "../../component/Navigationbar";
 import "../css/notice.css";
 import "../../index.css";
-import GreenButton from "../../component/GreenButton";
 import "../css/teamdetail.css";
 import "../css/inforfix.css";
-import Button from "../../component/Button";
-import GroupButton from "../../component/GroupButton";
-import ContrySelectBtn from "../../component/CountrySelectBtn";
+import GroupButton from "../../component/Button/GroupButton";
+import ContrySelectBtn from "../../component/Button/CountrySelectBtn";
 import KakaoAddressPopup from "../../component/KakaoAddressPopup";
 import { Link } from "react-router-dom";
 
@@ -77,7 +75,7 @@ function TeamInforFixpage() {
           />
           <div className="TeamDetail-profile_box">
             <div className="Inforfix-profile_title">팀 이름</div>
-            <GreenButton>프로필 사진 수정하기</GreenButton>
+            <button className="button_sub green">프로필 사진 수정하기</button>
           </div>
         </div>
         <div className="Inforfix-content">
@@ -109,7 +107,7 @@ function TeamInforFixpage() {
               result={setWeekResult}
               width={"12vw"}
               height={"12vw"}
-              borderRadius={"50px"}
+              borderRadius={"100vw"}
               fontSize={"15px"}
               display={"flex"}
             />
@@ -118,7 +116,7 @@ function TeamInforFixpage() {
               result={setTimeResult}
               width={"17vw"}
               height={"17vw"}
-              borderRadius={"50px"}
+              borderRadius={"100vw"}
               display={"flex"}
             />
           </div>
@@ -129,7 +127,7 @@ function TeamInforFixpage() {
               result={setGenderResult}
               width={"20vw"}
               height={"8vw"}
-              borderRadius={"20px"}
+              borderRadius={"100vw"}
             />
           </div>
           <div className="Inforfix-div">
@@ -139,7 +137,7 @@ function TeamInforFixpage() {
               result={setAgeResult}
               width={"28vw"}
               height={"8vw"}
-              borderRadius={"20px"}
+              borderRadius={"100vw"}
             />
           </div>
           <div className="Inforfix-div">
@@ -160,12 +158,12 @@ function TeamInforFixpage() {
                 display={"flex"}
                 width={"18vw"}
                 height={"8vw"}
-                borderRadius={"20px"}
+                borderRadius={"100vw"}
               />
             </div>
           </div>
           <Link to="/team" style={{ textAlign: "center" }}>
-            <Button>수정완료</Button>
+            <button className="button_main applegreen">수정완료</button>
           </Link>
         </div>
       </div>

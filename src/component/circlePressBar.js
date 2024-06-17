@@ -39,7 +39,7 @@ const Text = ({ percentage }) => {
   );
 };
 
-const circlePressBar = ({ percentage, colour }) => {
+const CirclePressBar = ({ percentage, colour }) => {
   const pct = cleanPercentage(percentage);
   return (
     <svg width={200} height={200}>
@@ -52,4 +52,4 @@ const circlePressBar = ({ percentage, colour }) => {
   );
 };
 
-export default circlePressBar;
+export default CirclePressBar;

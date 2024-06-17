@@ -1,8 +1,8 @@
 //팀 멤버관리 페이지
 import React, { useRef } from "react";
 import { useState, useEffect } from "react";
-import Header from "../../component/header";
-import Navigationbar from "../../component/navigationbar";
+import Header from "../../component/Header";
+import Navigationbar from "../../component/Navigationbar";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -14,7 +14,7 @@ import KakaoAddressPopup from "../../component/KakaoAddressPopup";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ko } from "date-fns/locale";
-import Button from "../../component/Button";
+
 import { Link } from "react-router-dom";
 
 function TeamCreateGamepage() {
@@ -110,7 +110,7 @@ function TeamCreateGamepage() {
             {mode === "4-4-3" && <Formation443 />}
           </div>
           <Link to="/team" style={{ textAlign: "center" }}>
-            <Button>등록하기</Button>
+            <button className="button_main applegreen">등록하기</button>
           </Link>
         </div>
       </div>

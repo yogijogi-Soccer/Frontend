@@ -1,13 +1,12 @@
 //팀 목록 페이지
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../component/header";
-import Navigationbar from "../component/navigationbar";
-import SearchBar from "../component/searchBar";
+import Header from "../component/Header";
+import Navigationbar from "../component/Navigationbar";
+import SearchBar from "../component/SearchBar";
 import SelectBar from "../component/SelectBar";
 import TeamBox from "../component/TeamBox";
 import "../component/css/FindTeamPage.css";
-import GreenButton from "../component/GreenButton";
 
 function FindTeampage() {
   const data = [

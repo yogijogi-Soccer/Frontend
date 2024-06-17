@@ -5,7 +5,7 @@ import "../index.css";
 
 import { BsSearch } from "react-icons/bs"; //npm install react-icons --save 해당 라이브러리 설치 필요
 
-function searchBar({ autoFocus }) {
+function SearchBar({ autoFocus }) {
   return (
     <div className="searchBar">
       {autoFocus ? (
@@ -24,4 +24,4 @@ function searchBar({ autoFocus }) {
   );
 }
 
-export default searchBar;
+export default SearchBar;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; //npm install --save-dev slick-carousel
 import "slick-carousel/slick/slick-theme.css"; //npm install react-slick
-import "../css/Carousel.css";
+import "../css/Mainpage.css";
 
 function Carousel() {
   var settings = {

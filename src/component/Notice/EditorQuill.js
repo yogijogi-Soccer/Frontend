@@ -1,9 +1,9 @@
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import React, { useRef, useState, useEffect } from "react";
-import "../screen/css/notice.css";
-import "../component/css/Button.css";
-import ModalCheck from "./ModalCheck";
+import "../../screen/css/notice.css";
+import "../Button/Button.css";
+import ModalCheck from "../Modal/ModalCheck";
 import { useNavigate } from "react-router-dom";
 
 //글쓰기 컴포넌트
@@ -86,7 +86,10 @@ const EditorQuill = ({ placeholder, value, ...rest }) => {
         ref={quillRef}
         style={{ height: "300px" }}
       />
-      <button onClick={onChange} className="editor_sendBtn Button">
+      <button
+        onClick={onChange}
+        className="editor_sendBtn button_main applegreen"
+      >
         등록하기
       </button>
       <div

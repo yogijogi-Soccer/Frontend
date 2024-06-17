@@ -1,6 +1,6 @@
 //"닫기" 버튼만 있는 모달창
 import ReactDOM from "react-dom";
-import "./css/modal.css";
+import "./modal.css";
 import React from "react";
 
 //open : boolean 타입. modal 열기

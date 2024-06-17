@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/scheduleBox.css";
+import "../css/Mainpage.css";
 
 const ScheduleBox = () => {
   const mySchedule = [

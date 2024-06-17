@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Header from "../component/header";
-import Navigationbar from "../component/navigationbar";
-import Button from "../component/Button";
+import Header from "../component/Header";
+import Navigationbar from "../component/Navigationbar";
 import KakaoLogin from "../component/KakaoLogin";
 import "../component/css/Loginpage.css";
 import { Link } from "react-router-dom";
@@ -112,7 +111,12 @@ function Loginpage() {
           />
           {passwordError && <span className="error-msg">{passwordError}</span>}
           <br />
-          <Button onClick={handleLoginButtonClick}>로그인</Button>
+          <button
+            className="button_main applegreen"
+            onClick={handleLoginButtonClick}
+          >
+            로그인
+          </button>
           {loginError && <span className="error-msg">{loginError}</span>}
           <br />
         </div>
@@ -120,15 +124,15 @@ function Loginpage() {
         <div className="LoginBox2">
           <div className="memberInfo">
             <Link>
-              <button type="button">아이디 찾기</button>
+              <button type="button_main">아이디 찾기</button>
             </Link>
             <span> | </span>
             <Link>
-              <button type="button">비밀번호 찾기</button>
+              <button type="button_main">비밀번호 찾기</button>
             </Link>
             <span> | </span>
             <Link to="/signup">
-              <button type="button">회원가입 하기</button>
+              <button type="button_main">회원가입 하기</button>
             </Link>
           </div>
           <hr />

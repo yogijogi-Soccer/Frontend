@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
 import Divbox from "../../component/Divbox";
 
-function TeamCreateGamepage() {
+function TeamGamepage() {
   return (
     <div>
       <Header />
@@ -81,4 +81,4 @@ function TeamCreateGamepage() {
   );
 }
 
-export default TeamCreateGamepage;
+export default TeamGamepage;

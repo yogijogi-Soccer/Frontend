@@ -8,7 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import axios from "axios";
-import Formation443 from "../../component/Formation443";
+import Formation343 from "../../component/Formation/Formation343";
 import "../css/inforfix.css";
 import KakaoAddressPopup from "../../component/KakaoAddressPopup";
 import DatePicker from "react-datepicker";
@@ -19,7 +19,19 @@ import { Link } from "react-router-dom";
 
 function TeamCreateGamepage() {
   const [mode, setMode] = useState("");
-  const gamemode = ["4-4-3", "2-2-2"];
+  const gamemode = [
+    "3-4-3",
+    "3-5-2",
+    "4-1-2-3",
+    "4-1-2-1-2",
+    "4-2-3-1",
+    "4-2-2-2",
+    "4-3-2-1",
+    "4-3-3",
+    "4-4-2",
+    "5-3-2",
+    "5-4-1",
+  ];
   const [strategy, setStrategy] = useState("");
   const strategyChange = (e) => {
     setStrategy(e.target.value);
@@ -107,7 +119,7 @@ function TeamCreateGamepage() {
               position="relative"
               style={{ maxWidth: "100%" }}
             />
-            {mode === "4-4-3" && <Formation443 />}
+            {mode === "3-4-3" && <Formation343 />}
           </div>
           <Link to="/team" style={{ textAlign: "center" }}>
             <button className="button_main applegreen">등록하기</button>

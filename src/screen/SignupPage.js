@@ -7,7 +7,6 @@ import TimeOption from "../component/TimeOption";
 import GroupButton from "../component/Button/GroupButton";
 import "../component/css/SignupPage.css";
 import "../index.css";
-import "../component/Button/Button.css";
 
 function SignupPage() {
   const [signupStep, setSignupStep] = useState(1); //페이지 조정
@@ -166,12 +165,7 @@ function SignupPage() {
             <input type="text" placeholder="ex) 01012345678" />
             {smsMessage && <span className="success-msg">{smsMessage}</span>}
           </div>
-          <button
-            className="button_main applegreen"
-            onClick={handleSendSMSClick}
-          >
-            문자받기
-          </button>
+          <button onClick={handleSendSMSClick}>문자받기</button>
         </div>
 
         {/* 인증번호 */}
@@ -183,19 +177,11 @@ function SignupPage() {
               <span className="success-msg">{verificationMessage}</span>
             )}
           </div>
-          <button
-            className="button_main applegreen"
-            onClick={handleVerifyClick}
-          >
-            인증하기
-          </button>
+          <button onClick={handleVerifyClick}>인증하기</button>
         </div>
       </div>
       <div className="buttonContainer">
-        <button
-          className="nextButton button_main applegreen"
-          onClick={handleNextButtonClick}
-        >
+        <button className="nextButton" onClick={handleNextButtonClick}>
           다음
         </button>
       </div>
@@ -231,16 +217,10 @@ function SignupPage() {
         </div>
       </div>
       <div className="buttonContainer">
-        <button
-          className="prevButton button_main applegreen"
-          onClick={handlePrevButtonClick}
-        >
+        <button className="prevButton" onClick={handlePrevButtonClick}>
           이전
         </button>
-        <button
-          className="nextButton button_main applegreen"
-          onClick={handleNextButtonClick}
-        >
+        <button className="nextButton" onClick={handleNextButtonClick}>
           다음
         </button>
       </div>
@@ -363,16 +343,10 @@ function SignupPage() {
           </div>
         </div>
         <div className="buttonContainer">
-          <button
-            className="prevButton button_main applegreen"
-            onClick={handlePrevButtonClick}
-          >
+          <button className="prevButton" onClick={handlePrevButtonClick}>
             이전
           </button>
-          <button
-            className="nextButton button_main applegreen"
-            onClick={handleNextButtonClick}
-          >
+          <button className="nextButton" onClick={handleNextButtonClick}>
             다음
           </button>
         </div>
@@ -419,16 +393,10 @@ function SignupPage() {
           </div>
         </div>
         <div className="buttonContainer">
-          <button
-            className="prevButton button_main applegreen"
-            onClick={handlePrevButtonClick}
-          >
+          <button className="prevButton" onClick={handlePrevButtonClick}>
             이전
           </button>
-          <button
-            className="nextButton button_main applegreen"
-            onClick={handleNextButtonClick}
-          >
+          <button className="nextButton" onClick={handleNextButtonClick}>
             다음
           </button>
         </div>
@@ -508,16 +476,10 @@ function SignupPage() {
         </div>
 
         <div className="buttonContainer">
-          <button
-            className="prevButton button_main applegreen"
-            onClick={handlePrevButtonClick}
-          >
+          <button className="prevButton" onClick={handlePrevButtonClick}>
             이전
           </button>
-          <button
-            className="nextButton button_main applegreen"
-            onClick={handleNextButtonClick}
-          >
+          <button className="nextButton" onClick={handleNextButtonClick}>
             완료
           </button>
         </div>
@@ -529,7 +491,7 @@ function SignupPage() {
     <div className="SignupPage">
       <h1>회원가입이 완료되었습니다.</h1>
       <div className="SignupComponentBox6">
-        <button className="SignupSuccessBtn button_main applegreen">
+        <button className="SignupSuccessBtn">
           <Link to="/login" className="link">
             로그인 하러가기
           </Link>

@@ -1,9 +1,5 @@
 //팀 목록 페이지
 import React from "react";
-<<<<<<< HEAD
-import Modal from "react-modal";
-=======
->>>>>>> jihyeon
 import { useState } from "react";
 
 function Formation541() {

@@ -18,15 +18,15 @@ import { Link } from "react-router-dom";
 
 import Formation343 from "../../component/Formation/Formation343";
 import Formation352 from "../../component/Formation/Formation352";
-import Formation4123 from "../../component/Formation/Formation4123";
-import Formation41212 from "../../component/Formation/Formation41212";
-import Formation4231 from "../../component/Formation/Formation4231";
-import Formation4222 from "../../component/Formation/Formation4222";
-import Formation4321 from "../../component/Formation/Formation4321";
-import Formation442 from "../../component/Formation/Formation442";
-import Formation541 from "../../component/Formation/Formation541";
 import Formation433 from "../../component/Formation/Formation433";
+import Formation442 from "../../component/Formation/Formation442";
 import Formation532 from "../../component/Formation/Formation532";
+import Formation541 from "../../component/Formation/Formation541";
+import Formation4123 from "../../component/Formation/Formation4123";
+import Formation4222 from "../../component/Formation/Formation4222";
+import Formation4231 from "../../component/Formation/Formation4231";
+import Formation4321 from "../../component/Formation/Formation4321";
+import Formation41212 from "../../component/Formation/Formation41212";
 
 function TeamCreateGamepage() {
   const [mode, setMode] = useState("");
@@ -132,15 +132,15 @@ function TeamCreateGamepage() {
             />
             {mode === "3-4-3" && <Formation343 />}
             {mode === "3-5-2" && <Formation352 />}
-            {mode === "4-1-2-3" && <Formation4123 />}
-            {mode === "4-1-2-1-2" && <Formation41212 />}
-            {mode === "4-2-3-1" && <Formation4231 />}
-            {mode === "4-2-2-2" && <Formation4222 />}
-            {mode === "4-3-2-1" && <Formation4321 />}
             {mode === "4-3-3" && <Formation433 />}
             {mode === "4-4-2" && <Formation442 />}
             {mode === "5-3-2" && <Formation532 />}
             {mode === "5-4-1" && <Formation541 />}
+            {mode === "4-1-2-3" && <Formation4123 />}
+            {mode === "4-2-2-2" && <Formation4222 />}
+            {mode === "4-2-3-1" && <Formation4231 />}
+            {mode === "4-3-2-1" && <Formation4321 />}
+            {mode === "4-1-2-1-2" && <Formation41212 />}
           </div>
           <Link to="/team" style={{ textAlign: "center" }}>
             <button className="button_main applegreen">등록하기</button>

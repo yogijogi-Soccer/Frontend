@@ -1,6 +1,5 @@
 //팀 목록 페이지
 import React from "react";
-import Modal from "react-modal";
 import { useState } from "react";
 
 function Formation4321() {

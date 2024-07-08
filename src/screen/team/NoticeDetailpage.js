@@ -6,7 +6,6 @@ import "../css/notice.css";
 import "../../index.css";
 import TeamNav from "../../component/TeamNav";
 import { Link } from "react-router-dom";
-import notice from "../../data/Notice";
 
 function NoticeDetailpage() {
   let role = true;

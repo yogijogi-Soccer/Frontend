@@ -1,4 +1,4 @@
-let notice = [
+let Notice = [
   {
     title: "[필독] 팀 개설 안내",
     count: 2,
@@ -13,4 +13,4 @@ let notice = [
   },
 ];
 
-export default notice;
+export default Notice;

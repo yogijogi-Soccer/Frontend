@@ -1,6 +1,5 @@
 //팀 목록 페이지
 import React from "react";
-import Modal from "react-modal";
 import { useState } from "react";
 
 function Formation343() {
@@ -28,9 +27,9 @@ function Formation343() {
     ["45%", "62%"],
     ["45%", "88%"],
     ["65%", "20%"],
-    ["65%", "48%"],
+    ["65%", "48.7%"],
     ["65%", "78%"],
-    ["85%", "48%"],
+    ["85%", "48.7%"],
   ];
   return (
     <div

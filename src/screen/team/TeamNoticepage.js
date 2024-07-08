@@ -6,7 +6,7 @@ import "../css/notice.css";
 import "../../index.css";
 import TeamNav from "../../component/TeamNav";
 import { Link, useNavigate } from "react-router-dom";
-import notice from "../../data/notice";
+import notice from "../../data/Notice";
 import { BsEyeFill } from "react-icons/bs";
 
 function TeamNoticepage() {

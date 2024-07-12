@@ -70,18 +70,20 @@ function FindTeampage() {
     <div>
       <Header main={true} />
       <div className="div-page">
-        <button
-          style={{
-            backgroundColor: "var(--color-point-green)",
-            color: "var(--color-normal1)",
-            padding: "2vw",
-            borderRadius: "5px",
-            width: "100%",
-            marginBottom: "1vh",
-          }}
-        >
-          초대코드로 승인 없이 가입하기
-        </button>
+        <Link to="/invite" className="link">
+          <button
+            style={{
+              backgroundColor: "var(--color-point-green)",
+              color: "var(--color-normal1)",
+              padding: "2vw",
+              borderRadius: "5px",
+              width: "100%",
+              marginBottom: "1vh",
+            }}
+          >
+            초대코드로 승인 없이 가입하기
+          </button>
+        </Link>
         <SearchBar />
         <SelectBar />
         <div

@@ -5,30 +5,31 @@ import { useState } from "react";
 function Formation343() {
   const [modalOpen, setModalOpen] = useState(false);
   const formation_name = [
-    "LW",
-    "ST",
-    "RW",
+    "LS",
+    "RS",
     "LM",
     "LCM",
     "RCM",
     "RM",
     "LB",
     "CB",
+    "CB",
     "RB",
     "GK",
   ];
 
   const formation_xy = [
-    ["25%", "20%"],
-    ["20%", "48%"],
-    ["25%", "78%"],
+    ["25%", "35%"],
+    ["25%", "62%"],
+
     ["45%", "10%"],
     ["45%", "35%"],
     ["45%", "62%"],
     ["45%", "88%"],
-    ["65%", "20%"],
-    ["65%", "48%"],
-    ["65%", "78%"],
+    ["65%", "10%"],
+    ["65%", "35%"],
+    ["65%", "62%"],
+    ["65%", "88%"],
     ["85%", "48%"],
   ];
   return (
